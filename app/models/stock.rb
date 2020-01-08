@@ -12,11 +12,7 @@
 class Stock < ApplicationRecord
     has_many :stock_orders
     
-    belongs_to :watchlist,
-        through: :stock_orders,
-        source: :watchlist
+    belongs_to :watchlist
 
-    belongs_to :portfolio,
-        through: :stock_orders,
-        source: :portfolio
+    belongs_to :portfolio
 end
