@@ -1,304 +1,128 @@
-2020-01-08T17:08:32.932805+00:00 heroku[web.1]: State changed from starting to crashed
-2020-01-08T17:08:32.877778+00:00 app[web.1]: /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/core_ext/hash/keys.rb:81:in `block in assert_valid_keys': Unknown key: :through. Valid keys are: :class_name, :anonymous_class, :foreign_key, :validate, :autosave, :foreign_type, :dependent, :primary_key, :inverse_of, :required, :polymorphic, :touch, :counter_cache, :optional, :default (ArgumentError)
-2020-01-08T17:08:32.877808+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/core_ext/hash/keys.rb:79:in `each_key'
-2020-01-08T17:08:32.878220+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/core_ext/hash/keys.rb:79:in `assert_valid_keys'
-2020-01-08T17:08:32.878222+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/associations/builder/association.rb:75:in `validate_options'
-2020-01-08T17:08:32.878224+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/associations/builder/association.rb:41:in `create_reflection'
-2020-01-08T17:08:32.878226+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/associations/builder/association.rb:31:in `build'
-2020-01-08T17:08:32.878228+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/associations.rb:1654:in `belongs_to'
-2020-01-08T17:08:32.878230+00:00 app[web.1]: from /app/app/models/stock.rb:15:in `<class:Stock>'
-2020-01-08T17:08:32.878231+00:00 app[web.1]: from /app/app/models/stock.rb:12:in `<top (required)>'
-2020-01-08T17:08:32.878233+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `require'
-2020-01-08T17:08:32.878236+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `block in require_with_bootsnap_lfi'
-2020-01-08T17:08:32.878238+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/loaded_features_index.rb:92:in `register'
-2020-01-08T17:08:32.878240+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:21:in `require_with_bootsnap_lfi'
-2020-01-08T17:08:32.878241+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
-2020-01-08T17:08:32.878247+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:291:in `block in require'
-2020-01-08T17:08:32.878248+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:257:in `load_dependency'
-2020-01-08T17:08:32.878250+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:291:in `require'
-2020-01-08T17:08:32.878252+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:378:in `block in require_or_load'
-2020-01-08T17:08:32.878253+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:37:in `block in load_interlock'
-2020-01-08T17:08:32.878255+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies/interlock.rb:14:in `block in loading'
-2020-01-08T17:08:32.878257+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/concurrency/share_lock.rb:151:in `exclusive'
-2020-01-08T17:08:32.878259+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies/interlock.rb:13:in `loading'
-2020-01-08T17:08:32.878260+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:37:in `load_interlock'
-2020-01-08T17:08:32.878262+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:356:in `require_or_load'
-2020-01-08T17:08:32.878264+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/active_support.rb:48:in `block in require_or_load'
-2020-01-08T17:08:32.878265+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/active_support.rb:16:in `allow_bootsnap_retry'
-2020-01-08T17:08:32.878267+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/active_support.rb:47:in `require_or_load'
-2020-01-08T17:08:32.878269+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:334:in `depend_on'
-2020-01-08T17:08:32.878271+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/active_support.rb:85:in `depend_on'
-2020-01-08T17:08:32.878272+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:246:in `require_dependency'
-2020-01-08T17:08:32.878274+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/engine.rb:478:in `block (2 levels) in eager_load!'
-2020-01-08T17:08:32.878277+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/engine.rb:477:in `each'
-2020-01-08T17:08:32.878280+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/engine.rb:477:in `block in eager_load!'
-2020-01-08T17:08:32.878281+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/engine.rb:475:in `each'
-2020-01-08T17:08:32.878283+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/engine.rb:475:in `eager_load!'
-2020-01-08T17:08:32.878285+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/engine.rb:356:in `eager_load!'
-2020-01-08T17:08:32.878286+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/application/finisher.rb:69:in `each'
-2020-01-08T17:08:32.878288+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/application/finisher.rb:69:in `block in <module:Finisher>'
-2020-01-08T17:08:32.878290+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/initializable.rb:32:in `instance_exec'
-2020-01-08T17:08:32.878291+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/initializable.rb:32:in `run'
-2020-01-08T17:08:32.878293+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/initializable.rb:61:in `block in run_initializers'
-2020-01-08T17:08:32.878295+00:00 app[web.1]: from /app/vendor/ruby-2.5.1/lib/ruby/2.5.0/tsort.rb:228:in `block in tsort_each'
-2020-01-08T17:08:32.878296+00:00 app[web.1]: from /app/vendor/ruby-2.5.1/lib/ruby/2.5.0/tsort.rb:350:in `block (2 levels) in each_strongly_connected_component'
-2020-01-08T17:08:32.878298+00:00 app[web.1]: from /app/vendor/ruby-2.5.1/lib/ruby/2.5.0/tsort.rb:431:in `each_strongly_connected_component_from'
-2020-01-08T17:08:32.878300+00:00 app[web.1]: from /app/vendor/ruby-2.5.1/lib/ruby/2.5.0/tsort.rb:349:in `block in each_strongly_connected_component'
-2020-01-08T17:08:32.878302+00:00 app[web.1]: from /app/vendor/ruby-2.5.1/lib/ruby/2.5.0/tsort.rb:347:in `each'
-2020-01-08T17:08:32.878304+00:00 app[web.1]: from /app/vendor/ruby-2.5.1/lib/ruby/2.5.0/tsort.rb:347:in `call'
-2020-01-08T17:08:32.878305+00:00 app[web.1]: from /app/vendor/ruby-2.5.1/lib/ruby/2.5.0/tsort.rb:347:in `each_strongly_connected_component'
-2020-01-08T17:08:32.878307+00:00 app[web.1]: from /app/vendor/ruby-2.5.1/lib/ruby/2.5.0/tsort.rb:226:in `tsort_each'
-2020-01-08T17:08:32.878309+00:00 app[web.1]: from /app/vendor/ruby-2.5.1/lib/ruby/2.5.0/tsort.rb:205:in `tsort_each'
-2020-01-08T17:08:32.878313+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/initializable.rb:60:in `run_initializers'
-2020-01-08T17:08:32.878314+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/application.rb:361:in `initialize!'
-2020-01-08T17:08:32.878316+00:00 app[web.1]: from /app/config/environment.rb:5:in `<top (required)>'
-2020-01-08T17:08:32.878318+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `require'
-2020-01-08T17:08:32.878320+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `block in require_with_bootsnap_lfi'
-2020-01-08T17:08:32.878321+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/loaded_features_index.rb:92:in `register'
-2020-01-08T17:08:32.878323+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:21:in `require_with_bootsnap_lfi'
-2020-01-08T17:08:32.878324+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
-2020-01-08T17:08:32.878326+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:291:in `block in require'
-2020-01-08T17:08:32.878328+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:257:in `load_dependency'
-2020-01-08T17:08:32.878329+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:291:in `require'
-2020-01-08T17:08:32.878331+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:48:in `require_relative'
-2020-01-08T17:08:32.878333+00:00 app[web.1]: from config.ru:3:in `block in <main>'
-2020-01-08T17:08:32.878334+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/rack-2.0.8/lib/rack/builder.rb:55:in `instance_eval'
-2020-01-08T17:08:32.878336+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/rack-2.0.8/lib/rack/builder.rb:55:in `initialize'
-2020-01-08T17:08:32.878338+00:00 app[web.1]: from config.ru:in `new'
-2020-01-08T17:08:32.878340+00:00 app[web.1]: from config.ru:in `<main>'
-2020-01-08T17:08:32.878341+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/rack-2.0.8/lib/rack/builder.rb:49:in `eval'
-2020-01-08T17:08:32.878343+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/rack-2.0.8/lib/rack/builder.rb:49:in `new_from_string'
-2020-01-08T17:08:32.878345+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/rack-2.0.8/lib/rack/builder.rb:40:in `parse_file'
-2020-01-08T17:08:32.878346+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/rack-2.0.8/lib/rack/server.rb:319:in `build_app_and_options_from_config'
-2020-01-08T17:08:32.878348+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/rack-2.0.8/lib/rack/server.rb:219:in `app'
-2020-01-08T17:08:32.878349+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/commands/server/server_command.rb:27:in `app'
-2020-01-08T17:08:32.878351+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/rack-2.0.8/lib/rack/server.rb:354:in `wrapped_app'
-2020-01-08T17:08:32.878353+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/rack-2.0.8/lib/rack/server.rb:283:in `start'
-2020-01-08T17:08:32.878354+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/commands/server/server_command.rb:53:in `start'
-2020-01-08T17:08:32.878356+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/commands/server/server_command.rb:147:in `block in perform'
-2020-01-08T17:08:32.878358+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/commands/server/server_command.rb:142:in `tap'
-2020-01-08T17:08:32.878360+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/commands/server/server_command.rb:142:in `perform'
-2020-01-08T17:08:32.878361+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/thor-1.0.1/lib/thor/command.rb:27:in `run'
-2020-01-08T17:08:32.878363+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/thor-1.0.1/lib/thor/invocation.rb:127:in `invoke_command'
-2020-01-08T17:08:32.878365+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/thor-1.0.1/lib/thor.rb:392:in `dispatch'
-2020-01-08T17:08:32.878367+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/command/base.rb:69:in `perform'
-2020-01-08T17:08:32.878368+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/command.rb:46:in `invoke'
-2020-01-08T17:08:32.878370+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/commands.rb:18:in `<top (required)>'
-2020-01-08T17:08:32.878372+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `require'
-2020-01-08T17:08:32.878374+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `block in require_with_bootsnap_lfi'
-2020-01-08T17:08:32.878375+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/loaded_features_index.rb:92:in `register'
-2020-01-08T17:08:32.878377+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:21:in `require_with_bootsnap_lfi'
-2020-01-08T17:08:32.878381+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
-2020-01-08T17:08:32.878382+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:291:in `block in require'
-2020-01-08T17:08:32.878384+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:257:in `load_dependency'
-2020-01-08T17:08:32.878386+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:291:in `require'
-2020-01-08T17:08:32.878388+00:00 app[web.1]: from bin/rails:9:in `<main>'
-2020-01-08T17:08:32.885864+00:00 app[web.1]: => Booting Puma
-2020-01-08T17:08:32.885868+00:00 app[web.1]: => Rails 5.2.4.1 application starting in production
-2020-01-08T17:08:32.885870+00:00 app[web.1]: => Run `rails server -h` for more startup options
-2020-01-08T17:08:32.885872+00:00 app[web.1]: Exiting
-2020-01-08T17:08:32.932408+00:00 heroku[web.1]: Process exited with status 1
-2020-01-08T17:17:42.137468+00:00 heroku[web.1]: State changed from crashed to starting
-2020-01-08T17:17:47.674092+00:00 heroku[web.1]: Starting process with command `bin/rails server -p 26955 -e production`
-2020-01-08T17:17:53.000228+00:00 heroku[web.1]: State changed from starting to crashed
-2020-01-08T17:17:52.849420+00:00 app[web.1]: /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/core_ext/hash/keys.rb:81:in `block in assert_valid_keys': Unknown key: :through. Valid keys are: :class_name, :anonymous_class, :foreign_key, :validate, :autosave, :foreign_type, :dependent, :primary_key, :inverse_of, :required, :polymorphic, :touch, :counter_cache, :optional, :default (ArgumentError)
-2020-01-08T17:17:52.849444+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/core_ext/hash/keys.rb:79:in `each_key'
-2020-01-08T17:17:52.849447+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/core_ext/hash/keys.rb:79:in `assert_valid_keys'
-2020-01-08T17:17:52.849450+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/associations/builder/association.rb:75:in `validate_options'
-2020-01-08T17:17:52.849452+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/associations/builder/association.rb:41:in `create_reflection'
-2020-01-08T17:17:52.849455+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/associations/builder/association.rb:31:in `build'
-2020-01-08T17:17:52.849457+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/associations.rb:1654:in `belongs_to'
-2020-01-08T17:17:52.849460+00:00 app[web.1]: from /app/app/models/stock.rb:15:in `<class:Stock>'
-2020-01-08T17:17:52.849462+00:00 app[web.1]: from /app/app/models/stock.rb:12:in `<top (required)>'
-2020-01-08T17:17:52.849464+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `require'
-2020-01-08T17:17:52.849467+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `block in require_with_bootsnap_lfi'
-2020-01-08T17:17:52.849469+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/loaded_features_index.rb:92:in `register'
-2020-01-08T17:17:52.849474+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:21:in `require_with_bootsnap_lfi'
-2020-01-08T17:17:52.849476+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
-2020-01-08T17:17:52.849477+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:291:in `block in require'
-2020-01-08T17:17:52.849479+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:257:in `load_dependency'
-2020-01-08T17:17:52.849481+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:291:in `require'
-2020-01-08T17:17:52.849483+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:378:in `block in require_or_load'
-2020-01-08T17:17:52.849484+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:37:in `block in load_interlock'
-2020-01-08T17:17:52.849486+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies/interlock.rb:14:in `block in loading'
-2020-01-08T17:17:52.849488+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/concurrency/share_lock.rb:151:in `exclusive'
-2020-01-08T17:17:52.849490+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies/interlock.rb:13:in `loading'
-2020-01-08T17:17:52.849491+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:37:in `load_interlock'
-2020-01-08T17:17:52.849493+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:356:in `require_or_load'
-2020-01-08T17:17:52.849497+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/active_support.rb:48:in `block in require_or_load'
-2020-01-08T17:17:52.849499+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/active_support.rb:16:in `allow_bootsnap_retry'
-2020-01-08T17:17:52.849500+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/active_support.rb:47:in `require_or_load'
-2020-01-08T17:17:52.849502+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:334:in `depend_on'
-2020-01-08T17:17:52.849504+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/active_support.rb:85:in `depend_on'
-2020-01-08T17:17:52.849505+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:246:in `require_dependency'
-2020-01-08T17:17:52.849507+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/engine.rb:478:in `block (2 levels) in eager_load!'
-2020-01-08T17:17:52.849509+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/engine.rb:477:in `each'
-2020-01-08T17:17:52.849511+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/engine.rb:477:in `block in eager_load!'
-2020-01-08T17:17:52.849514+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/engine.rb:475:in `each'
-2020-01-08T17:17:52.849516+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/engine.rb:475:in `eager_load!'
-2020-01-08T17:17:52.849517+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/engine.rb:356:in `eager_load!'
-2020-01-08T17:17:52.849519+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/application/finisher.rb:69:in `each'
-2020-01-08T17:17:52.849521+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/application/finisher.rb:69:in `block in <module:Finisher>'
-2020-01-08T17:17:52.849522+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/initializable.rb:32:in `instance_exec'
-2020-01-08T17:17:52.849525+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/initializable.rb:32:in `run'
-2020-01-08T17:17:52.849527+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/initializable.rb:61:in `block in run_initializers'
-2020-01-08T17:17:52.849529+00:00 app[web.1]: from /app/vendor/ruby-2.5.1/lib/ruby/2.5.0/tsort.rb:228:in `block in tsort_each'
-2020-01-08T17:17:52.849530+00:00 app[web.1]: from /app/vendor/ruby-2.5.1/lib/ruby/2.5.0/tsort.rb:350:in `block (2 levels) in each_strongly_connected_component'
-2020-01-08T17:17:52.849532+00:00 app[web.1]: from /app/vendor/ruby-2.5.1/lib/ruby/2.5.0/tsort.rb:431:in `each_strongly_connected_component_from'
-2020-01-08T17:17:52.849536+00:00 app[web.1]: from /app/vendor/ruby-2.5.1/lib/ruby/2.5.0/tsort.rb:349:in `block in each_strongly_connected_component'
-2020-01-08T17:17:52.849537+00:00 app[web.1]: from /app/vendor/ruby-2.5.1/lib/ruby/2.5.0/tsort.rb:347:in `each'
-2020-01-08T17:17:52.849539+00:00 app[web.1]: from /app/vendor/ruby-2.5.1/lib/ruby/2.5.0/tsort.rb:347:in `call'
-2020-01-08T17:17:52.849541+00:00 app[web.1]: from /app/vendor/ruby-2.5.1/lib/ruby/2.5.0/tsort.rb:347:in `each_strongly_connected_component'
-2020-01-08T17:17:52.849544+00:00 app[web.1]: from /app/vendor/ruby-2.5.1/lib/ruby/2.5.0/tsort.rb:226:in `tsort_each'
-2020-01-08T17:17:52.849546+00:00 app[web.1]: from /app/vendor/ruby-2.5.1/lib/ruby/2.5.0/tsort.rb:205:in `tsort_each'
-2020-01-08T17:17:52.849547+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/initializable.rb:60:in `run_initializers'
-2020-01-08T17:17:52.849575+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/application.rb:361:in `initialize!'
-2020-01-08T17:17:52.849579+00:00 app[web.1]: from /app/config/environment.rb:5:in `<top (required)>'
-2020-01-08T17:17:52.849586+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `require'
-2020-01-08T17:17:52.849589+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `block in require_with_bootsnap_lfi'
-2020-01-08T17:17:52.849591+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/loaded_features_index.rb:92:in `register'
-2020-01-08T17:17:52.849593+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:21:in `require_with_bootsnap_lfi'
-2020-01-08T17:17:52.849599+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
-2020-01-08T17:17:52.849601+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:291:in `block in require'
-2020-01-08T17:17:52.849603+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:257:in `load_dependency'
-2020-01-08T17:17:52.849606+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:291:in `require'
-2020-01-08T17:17:52.849608+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:48:in `require_relative'
-2020-01-08T17:17:52.849613+00:00 app[web.1]: from config.ru:3:in `block in <main>'
-2020-01-08T17:17:52.849615+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/rack-2.0.8/lib/rack/builder.rb:55:in `instance_eval'
-2020-01-08T17:17:52.849618+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/rack-2.0.8/lib/rack/builder.rb:55:in `initialize'
-2020-01-08T17:17:52.849620+00:00 app[web.1]: from config.ru:in `new'
-2020-01-08T17:17:52.849622+00:00 app[web.1]: from config.ru:in `<main>'
-2020-01-08T17:17:52.849627+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/rack-2.0.8/lib/rack/builder.rb:49:in `eval'
-2020-01-08T17:17:52.849629+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/rack-2.0.8/lib/rack/builder.rb:49:in `new_from_string'
-2020-01-08T17:17:52.849630+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/rack-2.0.8/lib/rack/builder.rb:40:in `parse_file'
-2020-01-08T17:17:52.849632+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/rack-2.0.8/lib/rack/server.rb:319:in `build_app_and_options_from_config'
-2020-01-08T17:17:52.849634+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/rack-2.0.8/lib/rack/server.rb:219:in `app'
-2020-01-08T17:17:52.849636+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/commands/server/server_command.rb:27:in `app'
-2020-01-08T17:17:52.849639+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/rack-2.0.8/lib/rack/server.rb:354:in `wrapped_app'
-2020-01-08T17:17:52.849641+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/rack-2.0.8/lib/rack/server.rb:283:in `start'
-2020-01-08T17:17:52.849643+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/commands/server/server_command.rb:53:in `start'
-2020-01-08T17:17:52.849644+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/commands/server/server_command.rb:147:in `block in perform'
-2020-01-08T17:17:52.849648+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/commands/server/server_command.rb:142:in `tap'
-2020-01-08T17:17:52.849649+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/commands/server/server_command.rb:142:in `perform'
-2020-01-08T17:17:52.849651+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/thor-1.0.1/lib/thor/command.rb:27:in `run'
-2020-01-08T17:17:52.849653+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/thor-1.0.1/lib/thor/invocation.rb:127:in `invoke_command'
-2020-01-08T17:17:52.849656+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/thor-1.0.1/lib/thor.rb:392:in `dispatch'
-2020-01-08T17:17:52.849657+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/command/base.rb:69:in `perform'
-2020-01-08T17:17:52.849659+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/command.rb:46:in `invoke'
-2020-01-08T17:17:52.849662+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/commands.rb:18:in `<top (required)>'
-2020-01-08T17:17:52.849664+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `require'
-2020-01-08T17:17:52.849668+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `block in require_with_bootsnap_lfi'
-2020-01-08T17:17:52.849669+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/loaded_features_index.rb:92:in `register'
-2020-01-08T17:17:52.849673+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:21:in `require_with_bootsnap_lfi'
-2020-01-08T17:17:52.849674+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
-2020-01-08T17:17:52.849678+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:291:in `block in require'
-2020-01-08T17:17:52.849679+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:257:in `load_dependency'
-2020-01-08T17:17:52.849682+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:291:in `require'
-2020-01-08T17:17:52.849684+00:00 app[web.1]: from bin/rails:9:in `<main>'
-2020-01-08T17:17:52.867125+00:00 app[web.1]: => Booting Puma
-2020-01-08T17:17:52.867130+00:00 app[web.1]: => Rails 5.2.4.1 application starting in production
-2020-01-08T17:17:52.867132+00:00 app[web.1]: => Run `rails server -h` for more startup options
-2020-01-08T17:17:52.867134+00:00 app[web.1]: Exiting
-2020-01-08T17:17:52.976351+00:00 heroku[web.1]: Process exited with status 1
-2020-01-08T17:17:53.000228+00:00 heroku[web.1]: State changed from starting to crashed
-2020-01-08T17:17:52.849420+00:00 app[web.1]: /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/core_ext/hash/keys.rb:81:in `block in assert_valid_keys': Unknown key: :through. Valid keys are: :class_name, :anonymous_class, :foreign_key, :validate, :autosave, :foreign_type, :dependent, :primary_key, :inverse_of, :required, :polymorphic, :touch, :counter_cache, :optional, :default (ArgumentError)
-2020-01-08T17:17:52.849444+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/core_ext/hash/keys.rb:79:in `each_key'
-2020-01-08T17:17:52.849447+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/core_ext/hash/keys.rb:79:in `assert_valid_keys'
-2020-01-08T17:17:52.849450+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/associations/builder/association.rb:75:in `validate_options'
-2020-01-08T17:17:52.849452+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/associations/builder/association.rb:41:in `create_reflection'
-2020-01-08T17:17:52.849455+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/associations/builder/association.rb:31:in `build'
-2020-01-08T17:17:52.849457+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/associations.rb:1654:in `belongs_to'
-2020-01-08T17:17:52.849460+00:00 app[web.1]: from /app/app/models/stock.rb:15:in `<class:Stock>'
-2020-01-08T17:17:52.849462+00:00 app[web.1]: from /app/app/models/stock.rb:12:in `<top (required)>'
-2020-01-08T17:17:52.849464+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `require'
-2020-01-08T17:17:52.849467+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `block in require_with_bootsnap_lfi'
-2020-01-08T17:17:52.849469+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/loaded_features_index.rb:92:in `register'
-2020-01-08T17:17:52.849474+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:21:in `require_with_bootsnap_lfi'
-2020-01-08T17:17:52.849476+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
-2020-01-08T17:17:52.849477+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:291:in `block in require'
-2020-01-08T17:17:52.849479+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:257:in `load_dependency'
-2020-01-08T17:17:52.849481+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:291:in `require'
-2020-01-08T17:17:52.849483+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:378:in `block in require_or_load'
-2020-01-08T17:17:52.849484+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:37:in `block in load_interlock'
-2020-01-08T17:17:52.849486+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies/interlock.rb:14:in `block in loading'
-2020-01-08T17:17:52.849488+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/concurrency/share_lock.rb:151:in `exclusive'
-2020-01-08T17:17:52.849490+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies/interlock.rb:13:in `loading'
-2020-01-08T17:17:52.849491+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:37:in `load_interlock'
-2020-01-08T17:17:52.849493+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:356:in `require_or_load'
-2020-01-08T17:17:52.849497+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/active_support.rb:48:in `block in require_or_load'
-2020-01-08T17:17:52.849499+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/active_support.rb:16:in `allow_bootsnap_retry'
-2020-01-08T17:17:52.849500+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/active_support.rb:47:in `require_or_load'
-2020-01-08T17:17:52.849502+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:334:in `depend_on'
-2020-01-08T17:17:52.849504+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/active_support.rb:85:in `depend_on'
-2020-01-08T17:17:52.849505+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:246:in `require_dependency'
-2020-01-08T17:17:52.849507+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/engine.rb:478:in `block (2 levels) in eager_load!'
-2020-01-08T17:17:52.849509+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/engine.rb:477:in `each'
-2020-01-08T17:17:52.849511+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/engine.rb:477:in `block in eager_load!'
-2020-01-08T17:17:52.849514+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/engine.rb:475:in `each'
-2020-01-08T17:17:52.849516+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/engine.rb:475:in `eager_load!'
-2020-01-08T17:17:52.849517+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/engine.rb:356:in `eager_load!'
-2020-01-08T17:17:52.849519+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/application/finisher.rb:69:in `each'
-2020-01-08T17:17:52.849521+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/application/finisher.rb:69:in `block in <module:Finisher>'
-2020-01-08T17:17:52.849522+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/initializable.rb:32:in `instance_exec'
-2020-01-08T17:17:52.849525+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/initializable.rb:32:in `run'
-2020-01-08T17:17:52.849527+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/initializable.rb:61:in `block in run_initializers'
-2020-01-08T17:17:52.849529+00:00 app[web.1]: from /app/vendor/ruby-2.5.1/lib/ruby/2.5.0/tsort.rb:228:in `block in tsort_each'
-2020-01-08T17:17:52.849530+00:00 app[web.1]: from /app/vendor/ruby-2.5.1/lib/ruby/2.5.0/tsort.rb:350:in `block (2 levels) in each_strongly_connected_component'
-2020-01-08T17:17:52.849532+00:00 app[web.1]: from /app/vendor/ruby-2.5.1/lib/ruby/2.5.0/tsort.rb:431:in `each_strongly_connected_component_from'
-2020-01-08T17:17:52.849536+00:00 app[web.1]: from /app/vendor/ruby-2.5.1/lib/ruby/2.5.0/tsort.rb:349:in `block in each_strongly_connected_component'
-2020-01-08T17:17:52.849537+00:00 app[web.1]: from /app/vendor/ruby-2.5.1/lib/ruby/2.5.0/tsort.rb:347:in `each'
-2020-01-08T17:17:52.849539+00:00 app[web.1]: from /app/vendor/ruby-2.5.1/lib/ruby/2.5.0/tsort.rb:347:in `call'
-2020-01-08T17:17:52.849541+00:00 app[web.1]: from /app/vendor/ruby-2.5.1/lib/ruby/2.5.0/tsort.rb:347:in `each_strongly_connected_component'
-2020-01-08T17:17:52.849544+00:00 app[web.1]: from /app/vendor/ruby-2.5.1/lib/ruby/2.5.0/tsort.rb:226:in `tsort_each'
-2020-01-08T17:17:52.849546+00:00 app[web.1]: from /app/vendor/ruby-2.5.1/lib/ruby/2.5.0/tsort.rb:205:in `tsort_each'
-2020-01-08T17:17:52.849547+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/initializable.rb:60:in `run_initializers'
-2020-01-08T17:17:52.849575+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/application.rb:361:in `initialize!'
-2020-01-08T17:17:52.849579+00:00 app[web.1]: from /app/config/environment.rb:5:in `<top (required)>'
-2020-01-08T17:17:52.849586+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `require'
-2020-01-08T17:17:52.849589+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `block in require_with_bootsnap_lfi'
-2020-01-08T17:17:52.849591+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/loaded_features_index.rb:92:in `register'
-2020-01-08T17:17:52.849593+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:21:in `require_with_bootsnap_lfi'
-2020-01-08T17:17:52.849599+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
-2020-01-08T17:17:52.849601+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:291:in `block in require'
-2020-01-08T17:17:52.849603+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:257:in `load_dependency'
-2020-01-08T17:17:52.849606+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:291:in `require'
-2020-01-08T17:17:52.849608+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:48:in `require_relative'
-2020-01-08T17:17:52.849613+00:00 app[web.1]: from config.ru:3:in `block in <main>'
-2020-01-08T17:17:52.849615+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/rack-2.0.8/lib/rack/builder.rb:55:in `instance_eval'
-2020-01-08T17:17:52.849618+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/rack-2.0.8/lib/rack/builder.rb:55:in `initialize'
-2020-01-08T17:17:52.849620+00:00 app[web.1]: from config.ru:in `new'
-2020-01-08T17:17:52.849622+00:00 app[web.1]: from config.ru:in `<main>'
-2020-01-08T17:17:52.849627+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/rack-2.0.8/lib/rack/builder.rb:49:in `eval'
-2020-01-08T17:17:52.849629+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/rack-2.0.8/lib/rack/builder.rb:49:in `new_from_string'
-2020-01-08T17:17:52.849630+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/rack-2.0.8/lib/rack/builder.rb:40:in `parse_file'
-2020-01-08T17:17:52.849632+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/rack-2.0.8/lib/rack/server.rb:319:in `build_app_and_options_from_config'
-2020-01-08T17:17:52.849634+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/rack-2.0.8/lib/rack/server.rb:219:in `app'
-2020-01-08T17:17:52.849636+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/commands/server/server_command.rb:27:in `app'
-2020-01-08T17:17:52.849639+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/rack-2.0.8/lib/rack/server.rb:354:in `wrapped_app'
-2020-01-08T17:17:52.849641+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/rack-2.0.8/lib/rack/server.rb:283:in `start'
-2020-01-08T17:17:52.849643+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/commands/server/server_command.rb:53:in `start'
-2020-01-08T17:17:52.849644+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/commands/server/server_command.rb:147:in `block in perform'
-2020-01-08T17:17:52.849648+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/commands/server/server_command.rb:142:in `tap'
-2020-01-08T17:17:52.849649+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/commands/server/server_command.rb:142:in `perform'
-2020-01-08T17:17:52.849651+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/thor-1.0.1/lib/thor/command.rb:27:in `run'
-2020-01-08T17:17:52.849653+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/thor-1.0.1/lib/thor/invocation.rb:127:in `invoke_command'
-2020-01-08T17:17:52.849656+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/thor-1.0.1/lib/thor.rb:392:in `dispatch'
-2020-01-08T17:17:52.849657+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/command/base.rb:69:in `perform'
-2020-01-08T17:17:52.849659+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/command.rb:46:in `invoke'
-2020-01-08T17:17:52.849662+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/railties-5.2.4.1/lib/rails/commands.rb:18:in `<top (required)>'
-2020-01-08T17:17:52.849664+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `require'
-2020-01-08T17:17:52.849668+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22:in `block in require_with_bootsnap_lfi'
-2020-01-08T17:17:52.849669+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/loaded_features_index.rb:92:in `register'
-2020-01-08T17:17:52.849673+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:21:in `require_with_bootsnap_lfi'
-2020-01-08T17:17:52.849674+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/bootsnap-1.4.5/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:30:in `require'
-2020-01-08T17:17:52.849678+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:291:in `block in require'
-2020-01-08T17:17:52.849679+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:257:in `load_dependency'
-2020-01-08T17:17:52.849682+00:00 app[web.1]: from /app/vendor/bundle/ruby/2.5.0/gems/activesupport-5.2.4.1/lib/active_support/dependencies.rb:291:in `require'
-2020-01-08T17:17:52.849684+00:00 app[web.1]: from bin/rails:9:in `<main>'
-2020-01-08T17:17:52.867125+00:00 app[web.1]: => Booting Puma
-2020-01-08T17:17:52.867130+00:00 app[web.1]: => Rails 5.2.4.1 application starting in production
-2020-01-08T17:17:52.867132+00:00 app[web.1]: => Run `rails server -h` for more startup options
-2020-01-08T17:17:52.867134+00:00 app[web.1]: Exiting
-2020-01-08T17:17:52.976351+00:00 heroku[web.1]: Process exited with status 1
-2020-01-08T17:24:13.179153+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=littlejohn-and-robinhood.herokuapp.com request_id=68a223cb-e9c7-4298-bd1c-ef9ca2b9ef71 fwd="73.93.155.63" dyno= connect= service= status=503 bytes= protocol=https
-2020-01-08T17:24:13.549900+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=littlejohn-and-robinhood.herokuapp.com request_id=7cafdef1-02fc-4abe-8135-2318f4c607f3 fwd="73.93.155.63" dyno= connect= service= status=503 bytes= protocol=https
+2020-01-08T17:56:45.454968+00:00 heroku[router]: at=info method=GET path="/assets/application-33b0a3a41329648540e5ae66d7bb26e7c83c8fb937a11e4f2c5554304e89cf54.js" host=littlejohn-and-robinhood.herokuapp.com request_id=630dacbe-8050-4851-8589-23a3d2283b52 fwd="73.93.155.63" dyno=web.1 connect=0ms service=2ms status=304 bytes=48 protocol=https
+2020-01-08T17:56:45.558144+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=littlejohn-and-robinhood.herokuapp.com request_id=eca262b3-2604-46b6-b617-b62a3ec80029 fwd="73.93.155.63" dyno=web.1 connect=0ms service=1ms status=200 bytes=143 protocol=https
+2020-01-08T17:56:45.455253+00:00 heroku[router]: at=info method=GET path="/assets/application-5b75d0b5d7eeec718ae02824a196fba4d5f35e70314d4ad88db1101584a5f332.css" host=littlejohn-and-robinhood.herokuapp.com request_id=c93dd06e-4ea2-4dab-b50d-1c4c07ee4c31 fwd="73.93.155.63" dyno=web.1 connect=1ms service=2ms status=200 bytes=999 protocol=https
+2020-01-08T17:56:46.333870+00:00 heroku[router]: at=info method=GET path="/assets/application-5b75d0b5d7eeec718ae02824a196fba4d5f35e70314d4ad88db1101584a5f332.css" host=littlejohn-and-robinhood.herokuapp.com request_id=9313d61d-e75f-4e49-b178-358d8ed06952 fwd="73.93.155.63" dyno=web.1 connect=6ms service=1ms status=304 bytes=48 protocol=https
+2020-01-08T17:56:46.212563+00:00 app[web.1]: I, [2020-01-08T17:56:46.212460 #4]  INFO -- : [11c1db2c-21ce-4f3d-b809-6c5ea87483f1] Started GET "/" for 73.93.155.63 at 2020-01-08 17:56:46 +0000
+2020-01-08T17:56:46.213266+00:00 app[web.1]: I, [2020-01-08T17:56:46.213197 #4]  INFO -- : [11c1db2c-21ce-4f3d-b809-6c5ea87483f1] Processing by StaticPagesController#root as HTML
+2020-01-08T17:56:46.214123+00:00 app[web.1]: I, [2020-01-08T17:56:46.214052 #4]  INFO -- : [11c1db2c-21ce-4f3d-b809-6c5ea87483f1]   Rendering static_pages/root.html.erb within layouts/application
+2020-01-08T17:56:46.214284+00:00 app[web.1]: I, [2020-01-08T17:56:46.214224 #4]  INFO -- : [11c1db2c-21ce-4f3d-b809-6c5ea87483f1]   Rendered static_pages/root.html.erb within layouts/application (0.0ms)
+2020-01-08T17:56:46.214996+00:00 app[web.1]: I, [2020-01-08T17:56:46.214914 #4]  INFO -- : [11c1db2c-21ce-4f3d-b809-6c5ea87483f1] Completed 200 OK in 2ms (Views: 1.0ms)
+2020-01-08T17:56:46.214976+00:00 heroku[router]: at=info method=GET path="/" host=littlejohn-and-robinhood.herokuapp.com request_id=11c1db2c-21ce-4f3d-b809-6c5ea87483f1 fwd="73.93.155.63" dyno=web.1 connect=0ms service=9ms status=200 bytes=1414 protocol=https
+2020-01-08T17:56:46.338693+00:00 heroku[router]: at=info method=GET path="/assets/application-33b0a3a41329648540e5ae66d7bb26e7c83c8fb937a11e4f2c5554304e89cf54.js" host=littlejohn-and-robinhood.herokuapp.com request_id=2d2eeb71-26e2-45d5-bd1d-93ce31ac80a8 fwd="73.93.155.63" dyno=web.1 connect=0ms service=8ms status=304 bytes=48 protocol=https
+2020-01-08T17:59:24.017414+00:00 heroku[router]: at=info method=GET path="/" host=littlejohn-and-robinhood.herokuapp.com request_id=c060d4ec-c596-402f-ab29-f1c24547c668 fwd="73.93.155.63" dyno=web.1 connect=1ms service=8ms status=200 bytes=1410 protocol=https
+2020-01-08T17:59:24.012425+00:00 app[web.1]: I, [2020-01-08T17:59:24.012313 #4]  INFO -- : [c060d4ec-c596-402f-ab29-f1c24547c668] Started GET "/" for 73.93.155.63 at 2020-01-08 17:59:24 +0000
+2020-01-08T17:59:24.014257+00:00 app[web.1]: I, [2020-01-08T17:59:24.014172 #4]  INFO -- : [c060d4ec-c596-402f-ab29-f1c24547c668] Processing by StaticPagesController#root as HTML
+2020-01-08T17:59:24.015552+00:00 app[web.1]: I, [2020-01-08T17:59:24.015452 #4]  INFO -- : [c060d4ec-c596-402f-ab29-f1c24547c668]   Rendering static_pages/root.html.erb within layouts/application
+2020-01-08T17:59:24.015755+00:00 app[web.1]: I, [2020-01-08T17:59:24.015659 #4]  INFO -- : [c060d4ec-c596-402f-ab29-f1c24547c668]   Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+2020-01-08T17:59:24.016694+00:00 app[web.1]: I, [2020-01-08T17:59:24.016618 #4]  INFO -- : [c060d4ec-c596-402f-ab29-f1c24547c668] Completed 200 OK in 2ms (Views: 1.5ms)
+2020-01-08T17:59:24.131230+00:00 heroku[router]: at=info method=GET path="/assets/application-5b75d0b5d7eeec718ae02824a196fba4d5f35e70314d4ad88db1101584a5f332.css" host=littlejohn-and-robinhood.herokuapp.com request_id=2db91934-e00f-421a-8788-1c94142bc717 fwd="73.93.155.63" dyno=web.1 connect=1ms service=3ms status=200 bytes=999 protocol=https
+2020-01-08T17:59:24.322872+00:00 heroku[router]: at=info method=GET path="/assets/application-33b0a3a41329648540e5ae66d7bb26e7c83c8fb937a11e4f2c5554304e89cf54.js" host=littlejohn-and-robinhood.herokuapp.com request_id=a62053a3-69ed-4f9a-a5b9-e9ec8fc5b597 fwd="73.93.155.63" dyno=web.1 connect=0ms service=1ms status=304 bytes=48 protocol=https
+2020-01-08T17:59:24.436883+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=littlejohn-and-robinhood.herokuapp.com request_id=a678b7ae-f061-46c0-87b7-e3884520bb2a fwd="73.93.155.63" dyno=web.1 connect=0ms service=1ms status=200 bytes=143 protocol=https
+2020-01-08T17:59:25.618703+00:00 app[web.1]: I, [2020-01-08T17:59:25.618432 #4]  INFO -- : [3e309c02-b42c-45aa-9f3a-3bf8cd63e2c7] Started GET "/" for 73.93.155.63 at 2020-01-08 17:59:25 +0000
+2020-01-08T17:59:25.619815+00:00 app[web.1]: I, [2020-01-08T17:59:25.619729 #4]  INFO -- : [3e309c02-b42c-45aa-9f3a-3bf8cd63e2c7] Processing by StaticPagesController#root as HTML
+2020-01-08T17:59:25.621321+00:00 app[web.1]: I, [2020-01-08T17:59:25.621239 #4]  INFO -- : [3e309c02-b42c-45aa-9f3a-3bf8cd63e2c7]   Rendering static_pages/root.html.erb within layouts/application
+2020-01-08T17:59:25.621592+00:00 app[web.1]: I, [2020-01-08T17:59:25.621515 #4]  INFO -- : [3e309c02-b42c-45aa-9f3a-3bf8cd63e2c7]   Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+2020-01-08T17:59:25.622784+00:00 app[web.1]: I, [2020-01-08T17:59:25.622704 #4]  INFO -- : [3e309c02-b42c-45aa-9f3a-3bf8cd63e2c7] Completed 200 OK in 3ms (Views: 1.8ms)
+2020-01-08T17:59:25.625707+00:00 heroku[router]: at=info method=GET path="/" host=littlejohn-and-robinhood.herokuapp.com request_id=3e309c02-b42c-45aa-9f3a-3bf8cd63e2c7 fwd="73.93.155.63" dyno=web.1 connect=1ms service=11ms status=200 bytes=1416 protocol=https
+2020-01-08T17:59:25.729545+00:00 heroku[router]: at=info method=GET path="/assets/application-33b0a3a41329648540e5ae66d7bb26e7c83c8fb937a11e4f2c5554304e89cf54.js" host=littlejohn-and-robinhood.herokuapp.com request_id=efb7f74a-8adc-41b0-b93a-374b47fc08de fwd="73.93.155.63" dyno=web.1 connect=1ms service=3ms status=304 bytes=48 protocol=https
+2020-01-08T17:59:25.733317+00:00 heroku[router]: at=info method=GET path="/assets/application-5b75d0b5d7eeec718ae02824a196fba4d5f35e70314d4ad88db1101584a5f332.css" host=littlejohn-and-robinhood.herokuapp.com request_id=54f8ea90-4670-4e91-ab4d-ecc6940350f9 fwd="73.93.155.63" dyno=web.1 connect=0ms service=7ms status=200 bytes=999 protocol=https
+2020-01-08T17:59:25.847221+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=littlejohn-and-robinhood.herokuapp.com request_id=50b0d0c7-0934-45bc-ae45-bf07bdbf5159 fwd="73.93.155.63" dyno=web.1 connect=0ms service=1ms status=200 bytes=143 protocol=https
+2020-01-08T18:01:20.000000+00:00 app[api]: Build started by user benjamin.s.huh@gmail.com
+2020-01-08T18:02:09.579626+00:00 heroku[web.1]: Restarting
+2020-01-08T18:02:09.582666+00:00 heroku[web.1]: State changed from up to starting
+2020-01-08T18:02:11.066892+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2020-01-08T18:02:11.090858+00:00 app[web.1]: - Gracefully stopping, waiting for requests to finish
+2020-01-08T18:02:11.095656+00:00 app[web.1]: === puma shutdown: 2020-01-08 18:02:11 +0000 ===
+2020-01-08T18:02:11.095747+00:00 app[web.1]: - Goodbye!
+2020-01-08T18:02:11.095893+00:00 app[web.1]: Exiting
+2020-01-08T18:02:11.206913+00:00 heroku[web.1]: Process exited with status 143
+2020-01-08T18:02:14.394554+00:00 heroku[web.1]: Starting process with command `bin/rails server -p 52002 -e production`
+2020-01-08T18:02:18.092173+00:00 heroku[web.1]: State changed from starting to up
+2020-01-08T18:02:09.339599+00:00 app[api]: Deploy dde8159f by user benjamin.s.huh@gmail.com
+2020-01-08T18:02:09.339599+00:00 app[api]: Release v11 created by user benjamin.s.huh@gmail.com
+2020-01-08T18:02:16.000000+00:00 app[api]: Build succeeded
+2020-01-08T18:03:05.967140+00:00 app[web.1]: => Booting Puma
+2020-01-08T18:03:05.967175+00:00 app[web.1]: => Rails 5.2.4.1 application starting in production
+2020-01-08T18:03:05.967178+00:00 app[web.1]: => Run `rails server -h` for more startup options
+2020-01-08T18:03:05.967182+00:00 app[web.1]: Puma starting in single mode...
+2020-01-08T18:03:05.967185+00:00 app[web.1]: * Version 3.12.2 (ruby 2.5.1-p57), codename: Llamas in Pajamas
+2020-01-08T18:03:05.967189+00:00 app[web.1]: * Min threads: 5, max threads: 5
+2020-01-08T18:03:05.967191+00:00 app[web.1]: * Environment: production
+2020-01-08T18:03:05.967193+00:00 app[web.1]: * Listening on tcp://0.0.0.0:52002
+2020-01-08T18:03:05.967195+00:00 app[web.1]: Use Ctrl-C to stop
+2020-01-08T18:03:05.967199+00:00 app[web.1]: I, [2020-01-08T18:03:05.966997 #4]  INFO -- : [52d80369-ee68-4dda-be0b-036580e71494] Started GET "/" for 73.93.155.63 at 2020-01-08 18:03:05 +0000
+2020-01-08T18:03:05.968717+00:00 app[web.1]: I, [2020-01-08T18:03:05.968624 #4]  INFO -- : [52d80369-ee68-4dda-be0b-036580e71494] Processing by StaticPagesController#root as HTML
+2020-01-08T18:03:05.978330+00:00 app[web.1]: I, [2020-01-08T18:03:05.978255 #4]  INFO -- : [52d80369-ee68-4dda-be0b-036580e71494]   Rendering static_pages/root.html.erb within layouts/application
+2020-01-08T18:03:05.978939+00:00 app[web.1]: I, [2020-01-08T18:03:05.978847 #4]  INFO -- : [52d80369-ee68-4dda-be0b-036580e71494]   Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+2020-01-08T18:03:05.981247+00:00 app[web.1]: I, [2020-01-08T18:03:05.980675 #4]  INFO -- : [52d80369-ee68-4dda-be0b-036580e71494] Completed 200 OK in 12ms (Views: 4.3ms)
+2020-01-08T18:03:06.078752+00:00 heroku[router]: at=info method=GET path="/assets/application-5b75d0b5d7eeec718ae02824a196fba4d5f35e70314d4ad88db1101584a5f332.css" host=littlejohn-and-robinhood.herokuapp.com request_id=06f82257-07e9-4212-82fb-70ca432a1141 fwd="73.93.155.63" dyno=web.1 connect=0ms service=1ms status=200 bytes=999 protocol=https
+2020-01-08T18:03:05.976426+00:00 heroku[router]: at=info method=GET path="/" host=littlejohn-and-robinhood.herokuapp.com request_id=52d80369-ee68-4dda-be0b-036580e71494 fwd="73.93.155.63" dyno=web.1 connect=0ms service=19ms status=200 bytes=1419 protocol=https
+2020-01-08T18:03:06.250070+00:00 heroku[router]: at=info method=GET path="/assets/application-33b0a3a41329648540e5ae66d7bb26e7c83c8fb937a11e4f2c5554304e89cf54.js" host=littlejohn-and-robinhood.herokuapp.com request_id=cc87ec9a-e714-41bf-a92a-7fb1825a4abc fwd="73.93.155.63" dyno=web.1 connect=0ms service=2ms status=304 bytes=48 protocol=https
+2020-01-08T18:03:06.644643+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=littlejohn-and-robinhood.herokuapp.com request_id=068043d4-e05b-4a56-90cf-7e01614b6be2 fwd="73.93.155.63" dyno=web.1 connect=1ms service=1ms status=200 bytes=143 protocol=https
+2020-01-08T18:04:03.168399+00:00 heroku[run.4554]: State changed from starting to up
+2020-01-08T18:04:03.127806+00:00 heroku[run.4554]: Awaiting client
+2020-01-08T18:04:03.149098+00:00 heroku[run.4554]: Starting process with command `npm start`
+2020-01-08T18:03:57.850908+00:00 app[api]: Starting process with command `npm start` by user benjamin.s.huh@gmail.com
+2020-01-08T18:04:16.282957+00:00 heroku[router]: at=info method=GET path="/" host=littlejohn-and-robinhood.herokuapp.com request_id=7e8cf0db-baaf-4a87-b935-6a274b05bbe1 fwd="73.93.155.63" dyno=web.1 connect=0ms service=7ms status=200 bytes=1419 protocol=https
+2020-01-08T18:04:16.283523+00:00 app[web.1]: I, [2020-01-08T18:04:16.283394 #4]  INFO -- : [7e8cf0db-baaf-4a87-b935-6a274b05bbe1] Started GET "/" for 73.93.155.63 at 2020-01-08 18:04:16 +0000
+2020-01-08T18:04:16.284506+00:00 app[web.1]: I, [2020-01-08T18:04:16.284425 #4]  INFO -- : [7e8cf0db-baaf-4a87-b935-6a274b05bbe1] Processing by StaticPagesController#root as HTML
+2020-01-08T18:04:16.285780+00:00 app[web.1]: I, [2020-01-08T18:04:16.285697 #4]  INFO -- : [7e8cf0db-baaf-4a87-b935-6a274b05bbe1]   Rendering static_pages/root.html.erb within layouts/application
+2020-01-08T18:04:16.285974+00:00 app[web.1]: I, [2020-01-08T18:04:16.285897 #4]  INFO -- : [7e8cf0db-baaf-4a87-b935-6a274b05bbe1]   Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+2020-01-08T18:04:16.286926+00:00 app[web.1]: I, [2020-01-08T18:04:16.286841 #4]  INFO -- : [7e8cf0db-baaf-4a87-b935-6a274b05bbe1] Completed 200 OK in 2ms (Views: 1.4ms)
+2020-01-08T18:04:16.471330+00:00 heroku[router]: at=info method=GET path="/assets/application-5b75d0b5d7eeec718ae02824a196fba4d5f35e70314d4ad88db1101584a5f332.css" host=littlejohn-and-robinhood.herokuapp.com request_id=f69bd8de-17ed-4314-92a1-2bd003cf91ab fwd="73.93.155.63" dyno=web.1 connect=0ms service=1ms status=304 bytes=48 protocol=https
+2020-01-08T18:04:16.719489+00:00 heroku[router]: at=info method=GET path="/assets/application-33b0a3a41329648540e5ae66d7bb26e7c83c8fb937a11e4f2c5554304e89cf54.js" host=littlejohn-and-robinhood.herokuapp.com request_id=92a0786b-2d04-4e2e-b7ff-b568be066ab3 fwd="73.93.155.63" dyno=web.1 connect=0ms service=1ms status=304 bytes=48 protocol=https
+2020-01-08T18:04:17.727639+00:00 app[web.1]: I, [2020-01-08T18:04:17.727459 #4]  INFO -- : [8e44d153-c76a-4516-8278-fe6103046bc8] Started GET "/" for 73.93.155.63 at 2020-01-08 18:04:17 +0000
+2020-01-08T18:04:17.728631+00:00 app[web.1]: I, [2020-01-08T18:04:17.728543 #4]  INFO -- : [8e44d153-c76a-4516-8278-fe6103046bc8] Processing by StaticPagesController#root as HTML
+2020-01-08T18:04:17.730009+00:00 app[web.1]: I, [2020-01-08T18:04:17.729897 #4]  INFO -- : [8e44d153-c76a-4516-8278-fe6103046bc8]   Rendering static_pages/root.html.erb within layouts/application
+2020-01-08T18:04:17.730243+00:00 app[web.1]: I, [2020-01-08T18:04:17.730158 #4]  INFO -- : [8e44d153-c76a-4516-8278-fe6103046bc8]   Rendered static_pages/root.html.erb within layouts/application (0.1ms)
+2020-01-08T18:04:17.731285+00:00 app[web.1]: I, [2020-01-08T18:04:17.731205 #4]  INFO -- : [8e44d153-c76a-4516-8278-fe6103046bc8] Completed 200 OK in 2ms (Views: 1.6ms)
+2020-01-08T18:04:17.726157+00:00 heroku[router]: at=info method=GET path="/" host=littlejohn-and-robinhood.herokuapp.com request_id=8e44d153-c76a-4516-8278-fe6103046bc8 fwd="73.93.155.63" dyno=web.1 connect=0ms service=6ms status=200 bytes=1415 protocol=https
+2020-01-08T18:04:17.839624+00:00 heroku[router]: at=info method=GET path="/assets/application-5b75d0b5d7eeec718ae02824a196fba4d5f35e70314d4ad88db1101584a5f332.css" host=littlejohn-and-robinhood.herokuapp.com request_id=93c402f4-3ca5-4a2d-9df2-58d8bf6c39b5 fwd="73.93.155.63" dyno=web.1 connect=6ms service=1ms status=200 bytes=999 protocol=https
+2020-01-08T18:04:17.835036+00:00 heroku[router]: at=info method=GET path="/assets/application-33b0a3a41329648540e5ae66d7bb26e7c83c8fb937a11e4f2c5554304e89cf54.js" host=littlejohn-and-robinhood.herokuapp.com request_id=b4eed8e3-29e8-4458-8b23-3dc80e3639a2 fwd="73.93.155.63" dyno=web.1 connect=0ms service=1ms status=304 bytes=48 protocol=https
+2020-01-08T18:04:17.946815+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=littlejohn-and-robinhood.herokuapp.com request_id=3b92ca6c-8828-419d-812d-765873d35696 fwd="73.93.155.63" dyno=web.1 connect=0ms service=1ms status=200 bytes=143 protocol=https
+2020-01-08T18:04:18.899812+00:00 heroku[router]: at=info method=GET path="/" host=littlejohn-and-robinhood.herokuapp.com request_id=29fa50f0-dd3e-4bca-84e8-1209718c57df fwd="73.93.155.63" dyno=web.1 connect=0ms service=10ms status=200 bytes=1423 protocol=https
+2020-01-08T18:04:18.896261+00:00 app[web.1]: I, [2020-01-08T18:04:18.896155 #4]  INFO -- : [29fa50f0-dd3e-4bca-84e8-1209718c57df] Started GET "/" for 73.93.155.63 at 2020-01-08 18:04:18 +0000
+2020-01-08T18:04:18.896960+00:00 app[web.1]: I, [2020-01-08T18:04:18.896874 #4]  INFO -- : [29fa50f0-dd3e-4bca-84e8-1209718c57df] Processing by StaticPagesController#root as HTML
+2020-01-08T18:04:18.897780+00:00 app[web.1]: I, [2020-01-08T18:04:18.897703 #4]  INFO -- : [29fa50f0-dd3e-4bca-84e8-1209718c57df]   Rendering static_pages/root.html.erb within layouts/application
+2020-01-08T18:04:18.897919+00:00 app[web.1]: I, [2020-01-08T18:04:18.897859 #4]  INFO -- : [29fa50f0-dd3e-4bca-84e8-1209718c57df]   Rendered static_pages/root.html.erb within layouts/application (0.0ms)
+2020-01-08T18:04:18.898565+00:00 app[web.1]: I, [2020-01-08T18:04:18.898502 #4]  INFO -- : [29fa50f0-dd3e-4bca-84e8-1209718c57df] Completed 200 OK in 2ms (Views: 1.0ms)
+2020-01-08T18:04:18.999522+00:00 heroku[router]: at=info method=GET path="/assets/application-5b75d0b5d7eeec718ae02824a196fba4d5f35e70314d4ad88db1101584a5f332.css" host=littlejohn-and-robinhood.herokuapp.com request_id=2183d4b5-3a65-4c81-ac1c-b17514232f5f fwd="73.93.155.63" dyno=web.1 connect=0ms service=1ms status=304 bytes=48 protocol=https
+2020-01-08T18:04:19.001979+00:00 heroku[router]: at=info method=GET path="/assets/application-33b0a3a41329648540e5ae66d7bb26e7c83c8fb937a11e4f2c5554304e89cf54.js" host=littlejohn-and-robinhood.herokuapp.com request_id=862d0a1b-e857-470d-9274-269f5a833d1f fwd="73.93.155.63" dyno=web.1 connect=1ms service=1ms status=304 bytes=48 protocol=https
+2020-01-08T18:04:19.888663+00:00 heroku[router]: at=info method=GET path="/assets/application-33b0a3a41329648540e5ae66d7bb26e7c83c8fb937a11e4f2c5554304e89cf54.js" host=littlejohn-and-robinhood.herokuapp.com request_id=d3eaf581-6fe0-4642-b255-1ddd5f4b4878 fwd="73.93.155.63" dyno=web.1 connect=0ms service=1ms status=304 bytes=48 protocol=https
+2020-01-08T18:04:19.782653+00:00 app[web.1]: I, [2020-01-08T18:04:19.782547 #4]  INFO -- : [1078a6e0-2c9c-487d-b0d4-3b0fc11e0208] Started GET "/" for 73.93.155.63 at 2020-01-08 18:04:19 +0000
+2020-01-08T18:04:19.783361+00:00 app[web.1]: I, [2020-01-08T18:04:19.783283 #4]  INFO -- : [1078a6e0-2c9c-487d-b0d4-3b0fc11e0208] Processing by StaticPagesController#root as HTML
+2020-01-08T18:04:19.784192+00:00 app[web.1]: I, [2020-01-08T18:04:19.784124 #4]  INFO -- : [1078a6e0-2c9c-487d-b0d4-3b0fc11e0208]   Rendering static_pages/root.html.erb within layouts/application
+2020-01-08T18:04:19.784346+00:00 app[web.1]: I, [2020-01-08T18:04:19.784284 #4]  INFO -- : [1078a6e0-2c9c-487d-b0d4-3b0fc11e0208]   Rendered static_pages/root.html.erb within layouts/application (0.0ms)
+2020-01-08T18:04:19.784950+00:00 app[web.1]: I, [2020-01-08T18:04:19.784885 #4]  INFO -- : [1078a6e0-2c9c-487d-b0d4-3b0fc11e0208] Completed 200 OK in 1ms (Views: 0.9ms)
+2020-01-08T18:04:19.780862+00:00 heroku[router]: at=info method=GET path="/" host=littlejohn-and-robinhood.herokuapp.com request_id=1078a6e0-2c9c-487d-b0d4-3b0fc11e0208 fwd="73.93.155.63" dyno=web.1 connect=1ms service=4ms status=200 bytes=1415 protocol=https
+2020-01-08T18:04:19.888571+00:00 heroku[router]: at=info method=GET path="/assets/application-5b75d0b5d7eeec718ae02824a196fba4d5f35e70314d4ad88db1101584a5f332.css" host=littlejohn-and-robinhood.herokuapp.com request_id=93d10358-18d2-4621-8481-9312710edff1 fwd="73.93.155.63" dyno=web.1 connect=0ms service=1ms status=304 bytes=48 protocol=https
+2020-01-08T18:04:39.537262+00:00 heroku[run.4554]: State changed from up to complete
+2020-01-08T18:04:39.523027+00:00 heroku[run.4554]: Process exited with status 130
+2020-01-08T18:08:45.678447+00:00 heroku[web.1]: State changed from up to starting
+2020-01-08T18:08:45.671661+00:00 heroku[web.1]: Restarting
+2020-01-08T18:08:46.494879+00:00 app[web.1]: - Gracefully stopping, waiting for requests to finish
+2020-01-08T18:08:46.495928+00:00 app[web.1]: === puma shutdown: 2020-01-08 18:08:46 +0000 ===
+2020-01-08T18:08:46.495932+00:00 app[web.1]: - Goodbye!
+2020-01-08T18:08:46.496003+00:00 app[web.1]: Exiting
+2020-01-08T18:08:46.490037+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2020-01-08T18:08:46.585503+00:00 heroku[web.1]: Process exited with status 143
+2020-01-08T18:08:51.757902+00:00 heroku[web.1]: Starting process with command `bin/rails server -p 41380 -e production`
+2020-01-08T18:08:56.550881+00:00 heroku[web.1]: State changed from starting to up
+2020-01-08T18:10:07.501220+00:00 heroku[router]: at=info method=GET path="/" host=littlejohn-and-robinhood.herokuapp.com request_id=73972f73-baf4-40b1-a9f8-fc88767915f3 fwd="73.93.155.63" dyno=web.1 connect=1ms service=16ms status=200 bytes=1413 protocol=https
+2020-01-08T18:10:07.619036+00:00 heroku[router]: at=info method=GET path="/assets/application-5b75d0b5d7eeec718ae02824a196fba4d5f35e70314d4ad88db1101584a5f332.css" host=littlejohn-and-robinhood.herokuapp.com request_id=0fccbb80-b2fc-4504-9b30-7ecc4eb0436b fwd="73.93.155.63" dyno=web.1 connect=1ms service=9ms status=200 bytes=999 protocol=https
+2020-01-08T18:10:07.493830+00:00 app[web.1]: => Booting Puma
+2020-01-08T18:10:07.493845+00:00 app[web.1]: => Rails 5.2.4.1 application starting in production
+2020-01-08T18:10:07.493847+00:00 app[web.1]: => Run `rails server -h` for more startup options
+2020-01-08T18:10:07.493850+00:00 app[web.1]: Puma starting in single mode...
+2020-01-08T18:10:07.493852+00:00 app[web.1]: * Version 3.12.2 (ruby 2.5.1-p57), codename: Llamas in Pajamas
+2020-01-08T18:10:07.493854+00:00 app[web.1]: * Min threads: 5, max threads: 5
+2020-01-08T18:10:07.493856+00:00 app[web.1]: * Environment: production
+2020-01-08T18:10:07.493859+00:00 app[web.1]: * Listening on tcp://0.0.0.0:41380
+2020-01-08T18:10:07.493861+00:00 app[web.1]: Use Ctrl-C to stop
+2020-01-08T18:10:07.493864+00:00 app[web.1]: I, [2020-01-08T18:10:07.493700 #4]  INFO -- : [73972f73-baf4-40b1-a9f8-fc88767915f3] Started GET "/" for 73.93.155.63 at 2020-01-08 18:10:07 +0000
+2020-01-08T18:10:07.495253+00:00 app[web.1]: I, [2020-01-08T18:10:07.495148 #4]  INFO -- : [73972f73-baf4-40b1-a9f8-fc88767915f3] Processing by StaticPagesController#root as HTML
+2020-01-08T18:10:07.502626+00:00 app[web.1]: I, [2020-01-08T18:10:07.502509 #4]  INFO -- : [73972f73-baf4-40b1-a9f8-fc88767915f3]   Rendering static_pages/root.html.erb within layouts/application
+2020-01-08T18:10:07.503213+00:00 app[web.1]: I, [2020-01-08T18:10:07.503094 #4]  INFO -- : [73972f73-baf4-40b1-a9f8-fc88767915f3]   Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+2020-01-08T18:10:07.504268+00:00 app[web.1]: I, [2020-01-08T18:10:07.504193 #4]  INFO -- : [73972f73-baf4-40b1-a9f8-fc88767915f3] Completed 200 OK in 9ms (Views: 2.9ms)
+2020-01-08T18:10:07.778912+00:00 heroku[router]: at=info method=GET path="/assets/application-33b0a3a41329648540e5ae66d7bb26e7c83c8fb937a11e4f2c5554304e89cf54.js" host=littlejohn-and-robinhood.herokuapp.com request_id=6d6eb8e0-7fc3-46e1-b44e-7bffad26d720 fwd="73.93.155.63" dyno=web.1 connect=1ms service=3ms status=304 bytes=48 protocol=https
+2020-01-08T18:10:07.890099+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=littlejohn-and-robinhood.herokuapp.com request_id=fecb3bc2-f408-443d-887d-ef45523b1844 fwd="73.93.155.63" dyno=web.1 connect=1ms service=2ms status=200 bytes=143 protocol=https
