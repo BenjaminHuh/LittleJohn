@@ -1,0 +1,22 @@
+# == Schema Information
+#
+# Table name: stocks
+#
+#  id         :bigint           not null, primary key
+#  ticker     :string           not null
+#  name       :string           not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+class Stock < ApplicationRecord
+    has_many :stock_orders
+    
+    belongs_to :watchlist,
+        through: :stock_orders,
+        source: :watchlist
+
+    belongs_to :portfolio,
+        through: :stock_orders,
+        source: :portfolio
+end
