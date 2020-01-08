@@ -12,10 +12,10 @@ import {
 } from 'react-router-dom';
 
 const App = () => (
-  <div>
+  <div className='app'>
     {/* <Switch> */}
     <Route exact path="/" component={Main} />
-    <AuthRoute path="/signin" component={SigninContainer} />
+    <AuthRoute path="/signin" className="signin-container" component={SigninContainer} />
     <AuthRoute path="/signup" component={SignupContainer} />
     {/* </Switch> */}
   </div>

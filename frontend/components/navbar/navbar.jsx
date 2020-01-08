@@ -5,18 +5,22 @@ import { Link } from 'react-router-dom';
 
 const Navbar = ({ currentUser, logout }) => {
   const sessionLinks = () => (
-    <nav className="signin-signup">
-      <Link to="/signin">Sign In</Link>     <Link to="/signup">Sign Up</Link>
-    </nav>
+    <div className="navbar">
+      <h2 className="littlejohn">LittleJohn</h2>
+      <div className="signin-signup">
+        <Link to="/signin" className="signin">Sign In</Link>
+        <Link to="/signup" className="signup slide_right">Sign Up</Link>
+      </div>
+    </div>
   );
-  const loggedIn = () => (
-    <hgroup className="header-group">
+  const signedIn = () => (
+    <div className="header-group">
       <h2 className="header-name">Welcome {currentUser.username}</h2>
       <button className="header-button" onClick={logout}>Log Out</button>
-    </hgroup>
+    </div>
   );
 
-  return currentUser ? loggedIn() : sessionLinks();
+  return currentUser ? signedIn() : sessionLinks();
 };
 
 
