@@ -1,9 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 
 
 const Navbar = ({ currentUser, logout }) => {
+
   const sessionLinks = () => (
     <div className="navbar">
       <h2 className="littlejohn">LittleJohn</h2>
@@ -15,8 +16,16 @@ const Navbar = ({ currentUser, logout }) => {
   );
   const signedIn = () => (
     <div className="signedin-nav">
-      <h2 className="header-name">Welcome {currentUser.username}</h2>
-      <button className="header-button" onClick={logout}>Log Out</button>
+      <h2 className="littlejohn">LittleJohn</h2>
+      <div className="main-dropdown"> 
+        <button className="drop-button">Account</button>
+        <div className="drop-menu">
+          <h2 className="curr-user">{currentUser.username}</h2>
+          <h2>balance</h2>
+          <h2 className="logout" onClick={logout}>Log Out</h2>
+
+        </div>
+      </div>
     </div>
   );
 
