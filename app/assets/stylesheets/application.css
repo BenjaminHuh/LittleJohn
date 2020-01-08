@@ -255,3 +255,7 @@ input[type=password]:focus {
 .signin-button:hover {
     background-color: rgb(86, 240, 181)
 }
+
+.signedin-nav {
+    background-color: white;
+}

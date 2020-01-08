@@ -18,7 +18,8 @@ class Signin extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.signin(this.state)
-      .then(() => this.props.history.push('/'));
+      .then(() => this.props.history.push('/welcome'));
+  
   }
 
   render() {

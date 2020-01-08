@@ -14,7 +14,7 @@ const Navbar = ({ currentUser, logout }) => {
     </div>
   );
   const signedIn = () => (
-    <div className="header-group">
+    <div className="signedin-nav">
       <h2 className="header-name">Welcome {currentUser.username}</h2>
       <button className="header-button" onClick={logout}>Log Out</button>
     </div>
