@@ -21,6 +21,12 @@ class Signin extends React.Component {
       .then(() => this.props.history.push('/welcome'));
   }
 
+  renderErrors() {
+    return this.props.errors.map(error => (
+      <div className="signin-error">{ error }</div> 
+    ))
+  }
+
 
   render() {
 
@@ -31,7 +37,7 @@ class Signin extends React.Component {
           <h2>Welcome to LittleJohn</h2>
           <br/>
           <form>
-            <label>Username
+            <label id="signin-text">Username
               <br/>
               <input id="signin-box"
                 type="text"
@@ -41,7 +47,7 @@ class Signin extends React.Component {
               />
             </label>
             <br/>
-            <label>Password
+            <label id="signin-text">Password
               <br/>
               <input id="signin-box"
                 type="password"
@@ -49,6 +55,7 @@ class Signin extends React.Component {
                 onChange={this.update('password')}
               />
               <br/>
+              {this.renderErrors()}
               <br/>
               <br/>
               <button className="signin-button" onClick={this.handleSubmit}>Sign In</button>
