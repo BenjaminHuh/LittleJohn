@@ -4,8 +4,9 @@ import { signin } from '../../actions/session_actions';
 import Signin from './signin';
 
 
-const mSTP = ({ errors }) => ({
-    errors: errors.session
+const mSTP = state => ({
+    signinErrors: state.errors.session,
+    formType: 'Sign In'
 })
 
 const mDTP = dispatch => ({

@@ -19,12 +19,15 @@ class Signin extends React.Component {
     e.preventDefault();
     this.props.signin(this.state)
       .then(() => this.props.history.push('/welcome'));
+  
   }
 
-  renderErrors() {
-    return this.props.errors.map(error => (
-      <div className="signin-error">{ error }</div> 
-    ))
+  renderSigninErrors() {
+    if (this.props.formType === 'Sign In') {
+      return this.props.signinErrors.map((error, i) => (
+        <div key={`signin-error-${i}`} className="signin-error">{ error }</div> 
+      ))
+    }
   }
 
 
@@ -55,7 +58,7 @@ class Signin extends React.Component {
                 onChange={this.update('password')}
               />
               <br/>
-              {this.renderErrors()}
+              {this.renderSigninErrors()}
               <br/>
               <br/>
               <button className="signin-button" onClick={this.handleSubmit}>Sign In</button>

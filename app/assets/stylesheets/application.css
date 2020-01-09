@@ -169,7 +169,7 @@
 }
 
 .drop-menu > * {
-    font-size: 20px;
+    font-size: 17px;
     line-height: 100px;
     margin-left: 30px;
     text-align: left;
@@ -180,6 +180,9 @@
     display: block; 
 }
 
+.logout {
+    font-size: 15px;
+}
 .logout:hover {
     cursor: pointer;
 }

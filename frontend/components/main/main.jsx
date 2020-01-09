@@ -16,7 +16,7 @@ class Main extends React.Component {
                         <br/>
                         <br/>                 
                         <p>
-                            Robinhood, a pioneer of commission-free investing, gives you more ways to make your money work harder.
+                            LittleJohn, a pioneer of commission-free investing, gives you more ways to make your money work harder.
                         </p>
                         <div>
 
@@ -28,7 +28,7 @@ class Main extends React.Component {
                         <h3>Break Free from Commission Fees</h3>
                         <br/>
                         <p>
-                            Make unlimited commission-free trades in stocks, funds, and options with Robinhood Financial. The same goes for buying and selling cryptocurrencies with Robinhood Crypto. Zero commission fees.
+                            Make unlimited commission-free trades in stocks, funds, and options with LittleJohn Financial. The same goes for buying and selling cryptocurrencies with LittleJohn Crypto. Zero commission fees.
                         </p>
                     </div>
                 </div>
