@@ -10,9 +10,9 @@
 #
 
 class Stock < ApplicationRecord
-    has_many :stock_orders
+    # has_many :stock_orders
     
-    belongs_to :watchlist
+    # belongs_to :watchlist
 
-    belongs_to :portfolio
+    # belongs_to :portfolio
 end
