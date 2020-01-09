@@ -21,7 +21,7 @@ const Navbar = ({ currentUser, logout }) => {
         <button className="drop-button">Account</button>
         <div className="drop-menu">
           <h2 className="curr-user">{currentUser.username}</h2>
-          <a className="curr-user" href={`/api/users/${currentUser.id}`}>{currentUser.username}</a>
+          {/* <a className="curr-user" href={`/api/users/${currentUser.id}`}>{currentUser.username}</a> */}
           <h2>balance</h2>
           <h2 className="logout" onClick={logout}>Log Out</h2>
 
