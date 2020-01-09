@@ -27,9 +27,6 @@
  }
 
 
-
-
-
  body {
      background-color: #21CE99;
      margin: 0px;
@@ -45,10 +42,10 @@
 
 .main_one {
     text-align: center;
-    height: 644px;
+    height: 700px;
 }
 #one > h3 {
-    margin-top: 40px;
+    margin-top: 150px;
     text-align: left;
     font-size: 60px;
 }
@@ -126,17 +123,7 @@
     text-align: center;
 }
 
-.signin-button {
-    margin-top: 70px;
-    font-size: 12px;
-    background-color: #21CE99;
-    color:white;
-    padding: 20px 55px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    border-radius: 7px;
-}
+
 
 
 .main-dropdown {
@@ -173,6 +160,8 @@
     line-height: 100px;
     margin-left: 30px;
     text-align: left;
+    text-decoration: none;
+    color: black;
 }
 
 
@@ -187,3 +176,6 @@
     cursor: pointer;
 }
 
+.curr-user {
+    left: 0;
+}
