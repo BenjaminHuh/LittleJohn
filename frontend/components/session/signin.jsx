@@ -19,8 +19,8 @@ class Signin extends React.Component {
     e.preventDefault();
     this.props.signin(this.state)
       .then(() => this.props.history.push('/welcome'));
-  
   }
+
 
   render() {
 
@@ -33,7 +33,7 @@ class Signin extends React.Component {
           <form>
             <label>Username
               <br/>
-              <input
+              <input id="signin-box"
                 type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
@@ -43,7 +43,7 @@ class Signin extends React.Component {
             <br/>
             <label>Password
               <br/>
-              <input
+              <input id="signin-box"
                 type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
@@ -55,6 +55,7 @@ class Signin extends React.Component {
             </label>
           </form>
         </div>
+        {/* <img id="signin-background" src={window.signinbackground} /> */}
       </div>
     );
   }

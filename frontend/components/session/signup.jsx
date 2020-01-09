@@ -26,12 +26,18 @@ class Signup extends React.Component {
 
   render() {
     return (
-      <div className="session-form">
+
+      <div className="signup-form">
+        <div className="signup-inner"> 
         <h2>Make Your Money Move</h2>
+        <br/>
+        <p>
+          Robinhood lets you invest in companies you love, commission-free.
+        </p>
         <form>
           <label>
             <br/>
-            <input
+            <input id="signup-box"
               type="text"
               value={this.state.username}
               placeholder="Username"
@@ -41,7 +47,7 @@ class Signup extends React.Component {
           <br/>
           <label>
             <br/>
-            <input
+            <input id="signup-box"
               type="text"
               value={this.state.email}
               placeholder="Email address"
@@ -51,7 +57,7 @@ class Signup extends React.Component {
           <br/>
           <label>
             <br/>
-            <input
+            <input id="signup-box"
               type="password"
               value={this.state.password}
               placeholder="Password"
@@ -59,9 +65,10 @@ class Signup extends React.Component {
             />
             <br/>
             <br/>
-            <button onClick={this.handleSubmit}>Continue</button>
+            <button className="signup-cont" onClick={this.handleSubmit}>Continue</button>
           </label>
         </form>
+        </div>
       </div>
     );
   }
