@@ -5,6 +5,13 @@ const Welcome = ({ currentUser }) => {
     return (
         <div>
             <NavbarContainer/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             <h1>main page after signing in</h1>
         </div>
     );

@@ -10,6 +10,7 @@ class Signup extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoUserSignin = this.demoUserSignin.bind(this);
   }
 
   update(type) {
@@ -24,11 +25,20 @@ class Signup extends React.Component {
       .then(() => this.props.history.push('/welcome'));
   }
 
+  demoUserSignin(e) {
+    e.preventDefault();
+    let marian = ( { username: 'ladymarian', password: 'password'});
+    this.setState = marian;
+    this.props.signin(marian).then(() => this.props.history.push('/welcome'));
+  }
+
   renderSignupErrors() {
     if (this.props.formType === 'Sign Up') {
-      return this.props.signupErrors.map((error, i) => (
+      return (this.props.signupErrors.map((error, i) => (
         <div key={`signup-error-${i}`} className="signin-error">{ error }</div> 
-      ))
+      )))
+    } else {
+      return "";
     }
   }
 
@@ -75,6 +85,9 @@ class Signup extends React.Component {
             {this.renderSignupErrors()}
             <br/>
             <button className="signup-cont" onClick={this.handleSubmit}>Continue</button>
+            <br/>
+            <button className="signup-demo" onClick={this.demoUserSignin}>demo</button>
+            
           </label>
         </form>
         </div>
