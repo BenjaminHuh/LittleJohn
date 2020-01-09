@@ -89,7 +89,7 @@
     font-size: 15px;
     width: 412px;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 15px 0px;
     box-sizing: border-box;
     border: 1px solid white;
     -webkit-transition: 0.3s;
@@ -179,4 +179,14 @@
 
 .signup-cont:hover {
     background-color: rgb(49, 175, 137);
+}
+
+.signin-error {
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+#signin-text {
+    margin-top: 20px;
+    font-size: 13px;
 }
