@@ -13,6 +13,10 @@ class Signup extends React.Component {
     this.demoUserSignin = this.demoUserSignin.bind(this);
   }
 
+  componentDidMount() {
+    this.props.clearSessionErrors();
+  }
+
   update(type) {
     return (e) => {
       this.setState({ [type]: e.target.value });
@@ -32,15 +36,12 @@ class Signup extends React.Component {
     this.props.signin(marian).then(() => this.props.history.push('/welcome'));
   }
 
-  renderSignupErrors() {
-    if (this.props.formType === 'Sign Up') {
-      return (this.props.signupErrors.map((error, i) => (
-        <div key={`signup-error-${i}`} className="signin-error">{ error }</div> 
-      )))
-    } else {
-      return "";
-    }
+  renderErrors() {
+    return (this.props.errors.map((error, i) => (
+      <div key={`signup-error-${i}`} className="signin-error">{ error }</div> 
+    )))
   }
+  
 
   render() {
     return (
@@ -82,7 +83,7 @@ class Signup extends React.Component {
               onChange={this.update('password')}
             />
             <br/>
-            {this.renderSignupErrors()}
+            {this.renderErrors()}
             <br/>
             <button className="signup-cont" onClick={this.handleSubmit}>Continue</button>
             <br/>

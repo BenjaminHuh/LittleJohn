@@ -12,6 +12,10 @@ class Signin extends React.Component {
 
   }
 
+  componentDidMount() {
+    this.props.clearSessionErrors();
+  }
+
   update(field) {
     return (e) => {
       this.setState({ [field]: e.target.value });
@@ -25,14 +29,12 @@ class Signin extends React.Component {
   
   }
 
-  renderSigninErrors() {
-    if (this.props.formType === 'Sign In') {
-      return (this.props.signinErrors.map((error, i) => (
+  renderErrors() {
+    return (this.props.errors.map((error, i) => (
+      <div className="error-div">
         <div key={`signin-error-${i}`} className="signin-error">{ error }</div> 
-      )));
-    } else {
-      return "";
-    }
+      </div>
+    )));
   }
 
   demoUserSignin(e) {
@@ -67,7 +69,7 @@ class Signin extends React.Component {
                 onChange={this.update('password')}
               />
               <br/>
-              {this.renderSigninErrors()}
+              {this.renderErrors()}
               <br/>
               <br/>
               <button className="signin-button" onClick={this.handleSubmit}>Sign In</button>

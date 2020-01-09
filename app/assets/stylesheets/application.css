@@ -172,10 +172,12 @@
 .logout {
     font-size: 15px;
 }
+
 .logout:hover {
     cursor: pointer;
 }
 
-.curr-user {
-    left: 0;
+.error-div {
+    position: absolute;
 }
+

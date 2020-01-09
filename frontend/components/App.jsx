@@ -14,12 +14,12 @@ import {
 
 const App = () => (
   <div className='app'>
-    {/* <Switch> */}
-    <Route exact path="/" component={Main} />
-    <ProtectedRoute exact path="/welcome" component={WelcomeContainer} />
-    <AuthRoute path="/signin" className="signin-container" component={SigninContainer} />
-    <AuthRoute path="/signup" component={SignupContainer} />
-    {/* </Switch> */}
+    <Switch>
+      <Route exact path="/" component={Main} />
+      <AuthRoute path="/signin" className="signin-container" component={SigninContainer} />
+      <AuthRoute path="/signup" component={SignupContainer} />
+      <ProtectedRoute exact path="/welcome" component={WelcomeContainer} />
+    </Switch>
   </div>
 );
 
