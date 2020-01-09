@@ -24,6 +24,14 @@ class Signup extends React.Component {
       .then(() => this.props.history.push('/'));
   }
 
+  renderSignupErrors() {
+    if (this.props.formType === 'Sign Up') {
+      return this.props.signupErrors.map((error, i) => (
+        <div key={`signup-error-${i}`} className="signin-error">{ error }</div> 
+      ))
+    }
+  }
+
   render() {
     return (
 
@@ -32,7 +40,7 @@ class Signup extends React.Component {
         <h2>Make Your Money Move</h2>
         <br/>
         <p>
-          Robinhood lets you invest in companies you love, commission-free.
+          LittleJohn lets you invest in companies you love, commission-free.
         </p>
         <form>
           <label>
@@ -64,6 +72,7 @@ class Signup extends React.Component {
               onChange={this.update('password')}
             />
             <br/>
+            {this.renderSignupErrors()}
             <br/>
             <button className="signup-cont" onClick={this.handleSubmit}>Continue</button>
           </label>

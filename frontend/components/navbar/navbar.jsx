@@ -17,6 +17,7 @@ const Navbar = ({ currentUser, logout }) => {
   const signedIn = () => (
     <div className="signedin-nav">
       <h2 className="littlejohn">LittleJohn</h2>
+      <a href="#/">LittleJohn</a>
       <div className="main-dropdown"> 
         <button className="drop-button">Account</button>
         <div className="drop-menu">
