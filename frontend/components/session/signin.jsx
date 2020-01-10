@@ -37,12 +37,58 @@ class Signin extends React.Component {
     )));
   }
 
+  demo(demoUser) {
+    const intervalSpeed = 75;
+    const { username, password } = demoUser;
+    const demoUsernameTime = username.length * intervalSpeed;
+    const demoPasswordTime = password.length * intervalSpeed;
+    const buffer = intervalSpeed * 2;
+    const totalDemoTime = demoUsernameTime + demoPasswordTime + buffer;
+    this.demoUsername(username, intervalSpeed);
+    setTimeout(() => this.demoPassword(password, intervalSpeed), demoUsernameTime);
+    setTimeout(() => this.props.signin(demoUser).then(() => this.props.history.push('/welcome')), totalDemoTime)
+  }
+
+  demoUsername(username, intervalSpeed) {
+    let i = 0;
+    setInterval(() => {
+      if (i <= username.length) {
+        this.setState({ username: username.slice(0, i) })
+        i++
+      } else {
+        clearInterval()
+      }
+    }, intervalSpeed);
+  }
+
+  demoPassword(password, intervalSpeed) {
+    let j = 0;
+    setInterval(() => {
+      if (j <= password.length) {
+        this.setState({ password: password.slice(0, j) })
+        j++
+      } else {
+        clearInterval();
+      }
+    }, intervalSpeed);
+  }
+
+
   demoUserSignin(e) {
     e.preventDefault();
-    let marian = ( { username: 'ladymarian', password: 'password'});
-    this.setState = marian;
-    this.props.signin(marian).then(() => this.props.history.push('/welcome'));
+    const demoUser = ({
+        username: 'ladymarian',
+        password: 'password'
+    });
+    this.demo(demoUser);
   }
+
+  // demoUserSignin(e) {
+  //   e.preventDefault();
+  //   let marian = ( { username: 'ladymarian', password: 'password'});
+  //   this.setState = marian;
+  //   this.props.signin(marian).then(() => this.props.history.push('/welcome'));
+  // }
   
   render() {
     return (
@@ -72,7 +118,7 @@ class Signin extends React.Component {
               {this.renderErrors()}
               <br/>
               <br/>
-              <button className="signin-button" onClick={this.handleSubmit}>Sign In</button>
+              <button type="submit" className="signin-button" onClick={this.handleSubmit}>Sign In</button>
               <button className="demo-signin" onClick={this.demoUserSignin}>Demo</button>
             </label>
           </form>

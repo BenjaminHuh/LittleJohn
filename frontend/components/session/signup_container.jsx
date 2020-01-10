@@ -7,6 +7,7 @@ const mSTP = state => ({
     errors: state.errors.session
 })
 const mDTP = dispatch => ({
+    signin: formUser => dispatch(signin(formUser)),
     signup: formUser => dispatch(signup(formUser)),
     clearSessionErrors: () => dispatch(clearSessionErrors())
 })
