@@ -42,25 +42,47 @@
 
 .main_one {
     text-align: center;
-    height: 950px;
-}
-#one > h3 {
-    margin-top: 150px;
-    text-align: left;
-    font-size: 60px;
+    height: 850px;
 }
 
-#one > p {
+
+
+.one-inner > h3 {
+    
+    margin-top: 200px;
+    text-align: left;
+    font-size: 70px;
+    margin-right: 0px;
+    right: 0;
+}
+
+.one-inner > p {
     text-align: left;
     font-size: 27px;
+    margin-right: 0px;
+    line-height: 50px;
 }
 
 #one {
-    display: inline-block;
-    width: 70%;
-
+    display: flex;
+    width: 50%;
+    justify-content: baseline;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
+.one-inner {
+    margin-left: 20%;
+    display: absolute;
+}
+
+.phone-cont {
+    /* margin-top: 300px;
+    flex-shrink: 1;
+    top: 0; */
+    flex-basis: 500px;
+    margin-right: 40%;
+}
 .main_two {
     height: 284px;
     background-color: white;
@@ -181,21 +203,20 @@
     position: absolute;
 }
 
-.time {
-    position: relative;
-}
-
 .phone-container {
-    margin-top: 150px;
-    margin-left: 100px;
-    top: 0;
-    width: 60%;
-    height: 60%;
+    padding: 0px;
+    top: 80px;
+    bottom: 120px;
+    right: 130px;
+    max-width: 800px;
+    max-height: 800px;
+    width: 85%;
+    height: 85%;
     position: absolute;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: flex;
+    /* display: flex; */
     -webkit-align-items: center;
     -webkit-box-align: center;
     -ms-flex-align: center;
@@ -205,10 +226,11 @@
     -ms-flex-pack: center;
     justify-content: center;
     overflow: hidden;
+    z-index: -1;
 }
 .phone {
-    width: 60%;
-    height: 60%;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
     pointer-events: none;
     position: absolute;
@@ -236,9 +258,9 @@
 }
 
 .phone-frame {
-    max-width: 80%;
-    height: 60%;
-    width: 60%;
+    max-width: 100%;
+    height: 100%;
+    width: 100%;
     object-fit: contain;
     -webkit-user-select: none;
     -moz-user-select: none;

@@ -11,16 +11,18 @@ class Main extends React.Component {
                     <NavbarContainer/>
                 </nav>
                 <div className="main_one">
-                    <div id='one'>                       
-                        <h3 className="time">It's Time to Do Money</h3>  
-                        <br/>
+                    <div id='one'>  
+                        <div className="one-inner">
+                            <h3 className="time">It's Time to Do Money</h3>  
+                            <br/>
 
-                        <br/>                 
-                        <p className="pioneer">
-                            LittleJohn, a pioneer of commission-free investing, gives you more ways to make your money work harder.
-                        </p>
-                        <div>
-                            {/* <Phone className="phone-cont" /> */}
+                            <br/>                 
+                            <p className="pioneer">
+                                LittleJohn, a pioneer of commission-free investing, gives you more ways to make your money work harder.
+                            </p>
+                        </div>                     
+                        <div className="phone-cont" >
+                            <Phone />
                         </div>
                     </div>
                 </div>
