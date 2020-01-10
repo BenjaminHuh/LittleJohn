@@ -25,13 +25,13 @@ class Signin extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.signin(this.state)
-      .then(() => this.props.history.push('/welcome'));
+      .then(() => this.props.history.push('/'));
   
   }
 
   renderErrors() {
     return (this.props.errors.map((error, i) => (
-      <div className="error-div">
+      <div key={`error-div-${i}`} className="error-div">
         <div key={`signin-error-${i}`} className="signin-error">{ error }</div> 
       </div>
     )));
@@ -46,7 +46,7 @@ class Signin extends React.Component {
     const totalDemoTime = demoUsernameTime + demoPasswordTime + buffer;
     this.demoUsername(username, intervalSpeed);
     setTimeout(() => this.demoPassword(password, intervalSpeed), demoUsernameTime);
-    setTimeout(() => this.props.signin(demoUser).then(() => this.props.history.push('/welcome')), totalDemoTime)
+    setTimeout(() => this.props.signin(demoUser).then(() => this.props.history.push('/')), totalDemoTime)
   }
 
   demoUsername(username, intervalSpeed) {
@@ -87,14 +87,14 @@ class Signin extends React.Component {
   //   e.preventDefault();
   //   let marian = ( { username: 'ladymarian', password: 'password'});
   //   this.setState = marian;
-  //   this.props.signin(marian).then(() => this.props.history.push('/welcome'));
+  //   this.props.signin(marian).then(() => this.props.history.push('/dashboard'));
   // }
   
   render() {
     return (
       <div className="signin-main">
         <div className="signin-form">
-          <h2>Welcome to LittleJohn</h2>
+          <h2>Dashboard to LittleJohn</h2>
           <br/>
           <form>
             <label id="signin-text">Username

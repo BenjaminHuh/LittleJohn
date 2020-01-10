@@ -2,8 +2,9 @@ import React from "react";
 import SigninContainer from "./session/signin_container";
 import SignupContainer from "./session/signup_container";
 import Main from "./main/main"
+import HomeContainer from "./home/home_container"
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
-import WelcomeContainer from "./welcome/welcome_container";
+import DashboardContainer from "./dashboard/dashboard_container";
 import NavbarContainer from "./navbar/navbar_container"
 import {
   Route,
@@ -16,15 +17,17 @@ import {
 const App = () => (
   <div className='app'>
     <Switch>
-      <Redirect from="welcome/*" to="welcome" />
-      <Route exact path="/" component={Main} />
+      {/* <Redirect from="dashboard/*" to="dashboard" /> */}
+      {/* <Route exact path="/" component={Main} /> */}
       <AuthRoute path="/signin" className="signin-container" component={SigninContainer} />
       <AuthRoute path="/signup" component={SignupContainer} />
-      <ProtectedRoute path="/welcome" component={WelcomeContainer} />
-      <Route path="/welcome/*" component={WelcomeContainer} />
-      <Route path="/welcome" component={NavbarContainer} />
+      <Route excact path="/" component={HomeContainer} />
+      {/* <ProtectedRoute path="/dashboard" component={DashboardContainer} /> */}
+      {/* <Route path="/dashboard/*" component={DashboardContainer} /> */}
+      {/* <Route path="/dashboard" component={NavbarContainer} /> */}
+      <Route path="/" component={NavbarContainer} />
       <Route path="*" component={Main} />
-      <AuthRoute expact path="/" component={Main} />
+      {/* <AuthRoute expact path="/" component={Main} /> */}
     </Switch>
   </div>
 );

@@ -279,3 +279,7 @@
     user-select: none;
 }
 
+.pioneer {
+    text-align: left;
+    line-height: 30px;
+}

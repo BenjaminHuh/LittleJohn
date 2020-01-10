@@ -28,9 +28,16 @@
     margin-top: 7px;
 }
 
-.signedin-log:hover {
+.signedin-logo:hover {
     color: #21CE99;
     
+}
+
+.signedout-logo {
+    float: left;
+    left: 0;
+    margin-left: -15px;
+    margin-top: 5px;
 }
 
 .signin-signup {
@@ -47,6 +54,10 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
+}
+
+.signin:hover {
+    color: #18563e;
 }
 
 .signup {
