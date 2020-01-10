@@ -18,12 +18,12 @@ class Main extends React.Component {
                             <br/>
 
                             <br/>                 
-                            <p className="pioneer">
+                            <div className="pioneer">
                                 LittleJohn, a pioneer of commission-free investing, gives you more ways to make your money work harder.
                             <div className=".main-signup-div">
                                 <Link className="main-signup" to="/signup">Sign Up</Link>
                             </div>
-                            </p>
+                            </div>
                         </div>                     
                         <div className="phone-cont" >
                             <Phone />
