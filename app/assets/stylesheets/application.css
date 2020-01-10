@@ -42,25 +42,25 @@
 
 .main_one {
     text-align: center;
-    height: 850px;
+    height: 750px;
 }
 
 
 
 .one-inner > h3 {
     
-    margin-top: 200px;
+    margin-top: 130px;
     text-align: left;
-    font-size: 70px;
+    font-size: 60px;
     margin-right: 0px;
     right: 0;
 }
 
 .one-inner > p {
     text-align: left;
-    font-size: 27px;
+    font-size: 23px;
     margin-right: 0px;
-    line-height: 50px;
+    line-height: 40px;
 }
 
 #one {
@@ -77,11 +77,7 @@
 }
 
 .phone-cont {
-    /* margin-top: 300px;
-    flex-shrink: 1;
-    top: 0; */
-    flex-basis: 500px;
-    margin-right: 40%;
+
 }
 .main_two {
     height: 284px;
@@ -207,11 +203,11 @@
     padding: 0px;
     top: 80px;
     bottom: 120px;
-    right: 130px;
-    max-width: 800px;
-    max-height: 800px;
-    width: 85%;
-    height: 85%;
+    right: 80px;
+    max-width: 650px;
+    max-height: 650px;
+    width: 80%;
+    height: 80%;
     position: absolute;
     display: -webkit-box;
     display: -webkit-flex;
@@ -228,6 +224,7 @@
     overflow: hidden;
     z-index: -1;
 }
+
 .phone {
     width: 100%;
     height: 100%;
