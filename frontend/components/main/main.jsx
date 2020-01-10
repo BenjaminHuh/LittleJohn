@@ -12,15 +12,15 @@ class Main extends React.Component {
                 </nav>
                 <div className="main_one">
                     <div id='one'>                       
-                        <h3>It's Time to Do Money</h3>  
+                        <h3 className="time">It's Time to Do Money</h3>  
                         <br/>
 
                         <br/>                 
-                        <p>
+                        <p className="pioneer">
                             LittleJohn, a pioneer of commission-free investing, gives you more ways to make your money work harder.
                         </p>
                         <div>
-                            <Phone />
+                            <Phone className="phone-cont" />
                         </div>
                     </div>
                 </div>
