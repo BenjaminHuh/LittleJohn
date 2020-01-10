@@ -1,6 +1,7 @@
 import React from 'react';
 import NavbarContainer from "../navbar/navbar_container";
 import Phone from "./phone/phone";
+import { Link } from 'react-router-dom'
 
 class Main extends React.Component {
 
@@ -20,6 +21,9 @@ class Main extends React.Component {
                             <p className="pioneer">
                                 LittleJohn, a pioneer of commission-free investing, gives you more ways to make your money work harder.
                             </p>
+                            <div className=".main-signup-div">
+                                <Link className="main-signup" to="/signup">Sign Up</Link>
+                            </div>
                         </div>                     
                         <div className="phone-cont" >
                             <Phone />
