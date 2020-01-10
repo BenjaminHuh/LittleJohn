@@ -187,6 +187,20 @@
     display: block; 
 }
 
+.curr-user {
+    text-decoration: none;
+    color: black;
+}
+.curr-user:hover {
+    cursor: pointer;
+}
+
+.curr-username {
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+}
+
 .logout {
     font-size: 15px;
 }

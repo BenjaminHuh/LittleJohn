@@ -16,7 +16,7 @@ import {
 const App = () => (
   <div className='app'>
     <Switch>
-      {/* <Redirect from="welcome/*" to="welcome" /> */}
+      <Redirect from="welcome/*" to="welcome" />
       <Route exact path="/" component={Main} />
       <AuthRoute path="/signin" className="signin-container" component={SigninContainer} />
       <AuthRoute path="/signup" component={SignupContainer} />
@@ -24,6 +24,7 @@ const App = () => (
       <Route path="/welcome/*" component={WelcomeContainer} />
       <Route path="/welcome" component={NavbarContainer} />
       <Route path="*" component={Main} />
+      <AuthRoute expact path="/" component={Main} />
     </Switch>
   </div>
 );
