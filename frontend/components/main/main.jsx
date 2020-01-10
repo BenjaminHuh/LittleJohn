@@ -20,7 +20,7 @@ class Main extends React.Component {
                             LittleJohn, a pioneer of commission-free investing, gives you more ways to make your money work harder.
                         </p>
                         <div>
-                            <Phone className="phone-cont" />
+                            {/* <Phone className="phone-cont" /> */}
                         </div>
                     </div>
                 </div>
