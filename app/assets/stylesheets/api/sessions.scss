@@ -245,3 +245,23 @@
     margin-top: 20px;
     font-size: 13px;
 }
+
+.main-signup-div {
+    text-align: left;
+}
+.main-signup {
+    margin-top: 70px;
+    font-size: 15px;
+    background-color: rgb(92, 92, 92);
+    color:white;
+    padding: 20px 55px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 7px;
+    left: 0;
+}
+
+.main-signup:hover {
+    background-color: black;
+}
