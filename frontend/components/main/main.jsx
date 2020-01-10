@@ -1,6 +1,6 @@
 import React from 'react';
 import NavbarContainer from "../navbar/navbar_container";
-
+import Phone from "./phone/phone";
 
 class Main extends React.Component {
 
@@ -14,12 +14,13 @@ class Main extends React.Component {
                     <div id='one'>                       
                         <h3>It's Time to Do Money</h3>  
                         <br/>
+
                         <br/>                 
                         <p>
                             LittleJohn, a pioneer of commission-free investing, gives you more ways to make your money work harder.
                         </p>
                         <div>
-
+                            <Phone />
                         </div>
                     </div>
                 </div>
