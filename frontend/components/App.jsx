@@ -17,16 +17,17 @@ import {
 const App = () => (
   <div className='app'>
     <Switch>
-      {/* <Redirect from="dashboard/*" to="dashboard" /> */}
+      {/* <Redirect from="/dashboard/*" to="/dashboard" /> */}
       {/* <Route exact path="/" component={Main} /> */}
       <AuthRoute path="/signin" className="signin-container" component={SigninContainer} />
       <AuthRoute path="/signup" component={SignupContainer} />
-      <Route excact path="/" component={HomeContainer} />
+      <Route exact path="/" component={HomeContainer} />
+      <Redirect to="/" />
       {/* <ProtectedRoute path="/dashboard" component={DashboardContainer} /> */}
       {/* <Route path="/dashboard/*" component={DashboardContainer} /> */}
       {/* <Route path="/dashboard" component={NavbarContainer} /> */}
-      <Route path="/" component={NavbarContainer} />
-      <Route path="*" component={Main} />
+      {/* <Route path="/" component={NavbarContainer} /> */}
+      {/* <Route path="*" component={Main} /> */}
       {/* <AuthRoute expact path="/" component={Main} /> */}
     </Switch>
   </div>

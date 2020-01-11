@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
-
+import Search from '../search/search'
 const Navbar = ({ currentUser, logout }) => {
 
   const sessionLinks = () => (
@@ -36,13 +36,18 @@ const Navbar = ({ currentUser, logout }) => {
       <div className="seach_container">
 
       </div>
+      <div className="search-div">
+        <Search />
+      </div>
+      <div>
+        <Link to="/portfolio" className="portfolio">Portfolio</Link>
+      </div>
       <div className="main-dropdown"> 
         <button className="drop-button">Account</button>
         <div className="drop-menu">
           <div className="curr-user">
             <Link className="curr-username" to="/" >{currentUser.username}</Link>
           </div>
-          {/* <a className="curr-user" href={`/api/users/${currentUser.id}`}>{currentUser.username}</a> */}
           <h2>balance</h2>
           <h2 className="logout" onClick={logout}>Log Out</h2>
 
