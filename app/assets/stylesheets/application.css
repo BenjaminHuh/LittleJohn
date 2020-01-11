@@ -146,6 +146,9 @@
 
 .main-dropdown {
     float: right;
+    position: fixed;  
+    right: 15px;
+      
 }
 
 .drop-button {
@@ -282,4 +285,13 @@
 .pioneer {
     text-align: left;
     line-height: 30px;
+}
+
+.portfolio {
+    text-decoration: none;
+    color: black;
+    float: right;
+    position: fixed;
+    right: 200px;
+    top: 24px;
 }

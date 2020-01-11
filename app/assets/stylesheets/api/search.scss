@@ -1,0 +1,55 @@
+.searchbar-div {
+    float: left;
+}
+
+.searchbar {
+}
+
+.searchbar {
+    float: left;
+    margin-left: 25px;
+    width: 60%;
+    margin-top: 12px;
+    box-sizing: border-box;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+    font-size: 15px;
+    background-color: white;
+    padding: 12px 17px 12px 34px;
+}
+
+.searchbar:hover {
+    box-shadow: 0 15px 20px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.08);
+
+}
+.searchbar:focus {
+    box-shadow: 0 15px 20px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.08);
+}
+
+
+
+// .searchbar {
+
+//     width: 40%
+// }
+// input[type=text] {
+//   width: 130px;
+//   box-sizing: border-box;
+//   border: 2px solid #ccc;
+//   border-radius: 4px;
+//   font-size: 16px;
+//   background-color: white;
+//   background-image: url('searchicon.png');
+//   background-position: 10px 10px; 
+//   background-repeat: no-repeat;
+//   padding: 12px 20px 12px 40px;
+//   -webkit-transition: width 0.4s ease-in-out;
+//   transition: width 0.4s ease-in-out;
+//   text-align: left;
+// }
+
+// /* When the input field gets focus, change its width to 100% */
+// input[type=text]:focus {
+//   width: 60%;
+//   background-color: lightgrey;
+// }
