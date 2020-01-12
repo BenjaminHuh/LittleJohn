@@ -152,12 +152,12 @@
 }
 
 .drop-button {
-    margin-top: 7px;
+    margin-top: 8px;
     margin-right: 20px;
     background-color: white;
     color: black;
     padding: 16px;
-    font-size: 16px;
+    font-size: 15px;
     border: none;
 }
 
@@ -177,7 +177,8 @@
 }
 
 .drop-menu > * {
-    font-size: 17px;
+    font-size: 14px;
+    font-weight: 100;
     line-height: 100px;
     margin-left: 30px;
     text-align: left;
@@ -201,11 +202,30 @@
 .curr-username {
     text-decoration: none;
     color: black;
-    font-weight: 700;
+    font-weight: 100;
+    font-size: 14px;
+}
+
+.logout-div {
+}
+
+.account-link {
+    text-decoration: none;
+    color: black;
+
+    font-size: 14px;
+}
+
+#drop-logo {
+    float: left;
+    width: 24px;
+    height: 100px;
+    margin-right: 10px;
 }
 
 .logout {
-    font-size: 15px;
+    font-size: 14px;
+    font-weight: 100;
 }
 
 .logout:hover {
@@ -288,10 +308,13 @@
 }
 
 .portfolio {
+    font-size: 15px;
     text-decoration: none;
     color: black;
     float: right;
     position: fixed;
-    right: 200px;
+    right: 300px;
     top: 24px;
+    z-index: -1;
 }
+

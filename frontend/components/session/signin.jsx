@@ -94,7 +94,7 @@ class Signin extends React.Component {
     return (
       <div className="signin-main">
         <div className="signin-form">
-          <h2>Dashboard to LittleJohn</h2>
+          <h2>Welcome to LittleJohn</h2>
           <br/>
           <form>
             <label id="signin-text">Username

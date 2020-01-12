@@ -5,14 +5,14 @@ const Dashboard = ({ currentUser }) => {
     return (
         <div>
             <NavbarContainer/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <h1>main page after signing in</h1>
+            <div className="portfolio-watchlist">
+                
+            </div>
+            <div className="info">
+                {/* either stock or total */}   
+            </div>
+            <div className="news">
+            </div>
         </div>
     );
 }
