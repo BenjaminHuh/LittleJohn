@@ -93,37 +93,41 @@ class Signin extends React.Component {
   render() {
     return (
       <div className="signin-main">
-        <div className="signin-form">
-          <h2>Welcome to LittleJohn</h2>
-          <br/>
-          <form>
-            <label id="signin-text">Username
-              <br/>
-              <input id="signin-box"
-                type="text"
-                value={this.state.username}
-                onChange={this.update('username')}
-                autoFocus
-              />
-            </label>
-            <br/>
-            <label id="signin-text">Password
-              <br/>
-              <input id="signin-box"
-                type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-              />
-              <br/>
-              {this.renderErrors()}
-              <br/>
-              <br/>
-              <button type="submit" className="signin-button" onClick={this.handleSubmit}>Sign In</button>
-              <button className="demo-signin" onClick={this.demoUserSignin}>Demo</button>
-            </label>
-          </form>
+        <div className="signin-bg-div">
+          <img className="signin-background" src={window.signinbackground} />
         </div>
-        {/* <img id="signin-background" src={window.signinbackground} /> */}
+        <div className="signin-div">
+          <div className="signin-form">
+            <h2>Welcome to LittleJohn</h2>
+            <br/>
+            <form>
+              <label id="signin-text">Username
+                <br/>
+                <input id="signin-box"
+                  type="text"
+                  value={this.state.username}
+                  onChange={this.update('username')}
+                  autoFocus
+                />
+              </label>
+              <br/>
+              <label id="signin-text">Password
+                <br/>
+                <input id="signin-box"
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                />
+                <br/>
+                {this.renderErrors()}
+                <br/>
+                <br/>
+                <button type="submit" className="signin-button" onClick={this.handleSubmit}>Sign In</button>
+                <button className="demo-signin" onClick={this.demoUserSignin}>Demo</button>
+              </label>
+            </form>
+          </div>
+        </div>
       </div>
     );
   }

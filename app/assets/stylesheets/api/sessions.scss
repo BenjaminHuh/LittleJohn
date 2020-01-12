@@ -91,34 +91,59 @@
 }
 
 .signin-main {
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: 0px;
+    padding: 0px;
     background-color: white;
-    min-height: 100%;
-    font-size: 15px;
-    width: 50%;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    min-width: 600px;
-    top: 0%;
-    align-items: center;
 }
 
-.signin-form {
-    position: fixed;
-    top: 36%;
-    left: 10%;
+
+.signin-div {
+    position: absolute;
+    padding-left: px;
+    height: 100%;
+    width: 50%;
+    min-width: 500px;
+    text-align: left;
+    z-index: 1000;
+    background-color: white;
     text-align: left;
 }
 
+.signin-form {
+    position: absolute;
+    margin-left: -50px;
+    left: 20%;
+    top: 20%;
+}
+
+.signin-form > h2  {
+    font-weight: 400;
+}
+
+.signin-bg-div {
+    position: absolute;
+    left: 0;
+    right: 50%;
+    bottom: 0;
+    top: 0;
+    width: auto;
+    height: 100%
+}
 
 .signin-background {
-    // display: block;
-    // position: fixed;
-    // top: 0;
-    // right: 0;
-    // width: 200px;
-    // height: 100%;
+    width: 100%;
+    height: 100%
 }
+
+
 
 #signin-box {
     font-size: 15px;
