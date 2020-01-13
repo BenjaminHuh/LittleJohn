@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Stock from './Stock';
+import Stock from './stock';
 import { getStock } from '../../actions/stocks_actions'
 
 const mSTP = (state, ownProps) => {
