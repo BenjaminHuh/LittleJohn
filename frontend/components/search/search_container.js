@@ -2,11 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getStocks, clearStocksErrors } from '../../actions/stocks_actions';
 import Search from './search';
+import { useHistory } from 'react-router-dom';
 
-const mSTP = state => {
+const mSTP = (state, ownProps) => {
     return ({
     stocks: state.stocks,
-    errors: state.errors.stocks
+    errors: state.errors.stocks,
+    history: ownProps.history
     })
 }
 

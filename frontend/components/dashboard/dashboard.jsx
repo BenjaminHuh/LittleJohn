@@ -2,16 +2,17 @@ import React from 'react';
 import NavbarContainer from '../navbar/navbar_container';
 import StockContainer from '../stock/stock_container';
 
-const Dashboard = ({ currentUser }) => {
+const Dashboard = ({ currentUser, history }) => {
+
     return (
         <div>
-            <NavbarContainer/>
+            <NavbarContainer history={history} />
             <div className="dashboard-inner">
                 <div className="portfolio-watchlist">
                     
                 </div>
                 <div className="stock-info">
-                    <StockContainer />   
+                    {/* <StockContainer />    */}
                 </div>
                 <div className="news">
                 </div>
