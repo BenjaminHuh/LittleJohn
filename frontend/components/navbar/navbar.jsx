@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import SearchContainer from '../search/search_container'
 
-const Navbar = ({ currentUser, logout, stock }) => {
+const Navbar = ({ history, currentUser, logout, stock }) => {
 
 
   const sessionLinks = () => (
@@ -42,7 +42,7 @@ const Navbar = ({ currentUser, logout, stock }) => {
 
         </div>
         <div className="search-div">
-          <SearchContainer />
+          <SearchContainer history={history}/>
         </div>
         <div>
           <Link to="/" className="portfolio">Portfolio</Link>

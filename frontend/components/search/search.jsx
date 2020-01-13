@@ -1,5 +1,5 @@
 import React from 'react';
-import StockContainer from '../stock/stock_container';
+import { Link } from 'react-router-dom'
 
 class Search extends React.Component {
     constructor(props) {
@@ -30,7 +30,8 @@ class Search extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.setState(() => ({ stock: this.props.getStock(this.state.query) }));
+        this.setState(() => ({ stock: this.props.getStock(this.state.query) }))
+        this.props.history.push(`/stocks/${this.state.query}`)
     }
 
     render() {
@@ -44,6 +45,8 @@ class Search extends React.Component {
                         ref={input => this.search = input} 
                         onChange={this.update()}
                     />
+
+                    {/* <button type="submit" onClick={() => history.push(`/stocks/${ticker}`)}></button> */}
                     <button type="submit" onClick={this.handleSubmit}></button>
                 </form>
             </div>

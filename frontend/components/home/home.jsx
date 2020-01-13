@@ -2,14 +2,17 @@ import React from 'react';
 import Main from '../main/main';
 import DashboardContainer from '../dashboard/dashboard_container';
 // import NavbarContainer from '../navbar/navbar_container'
-const Home = ({ currentUser }) => {
+const Home = ({ currentUser, history }) => {
     const signedOff = () => (
         <Main />
     )
 
-    const signedIn = () => (
-        <DashboardContainer className="dashboard" />
-    )
+    const signedIn = () => {
+
+        return (
+        <DashboardContainer className="dashboard" history={ history }/>
+        );
+    }
 
     return currentUser? signedIn() : signedOff();
 }
