@@ -8,7 +8,7 @@ const Home = ({ currentUser }) => {
     )
 
     const signedIn = () => (
-        <DashboardContainer />
+        <DashboardContainer className="dashboard" />
     )
 
     return currentUser? signedIn() : signedOff();

@@ -22,13 +22,12 @@
     }
 
  .main {
-     background-color: #21CE99;
      margin: 0;
  }
 
 
  body {
-     background-color: #21CE99;
+     /* background-color: #21CE99; */
      margin: 0px;
      padding: 0px;
      box-sizing: content-box;
@@ -41,12 +40,16 @@
 
 
 .main_one {
+    background-color: #21CE99;
     text-align: center;
     height: 750px;
 }
 
 
-
+.one-inner {
+    position: relative;
+    z-index: 1;
+}
 .one-inner > h3 {
     
     margin-top: 130px;
@@ -56,11 +59,12 @@
     right: 0;
 }
 
-.one-inner > p {
+.pioneer {
     text-align: left;
     font-size: 23px;
     margin-right: 0px;
-    line-height: 40px;
+    line-height: 50px;
+    font-weight: 100;
 }
 
 #one {
@@ -100,6 +104,35 @@
     font-family: 'Courier New', Courier, monospace
 }
 
+.main_two_five {
+    text-align: left;
+    background-color: #F5F8FA;
+    height: 800px;
+    line-height: 50px;
+    overflow: hidden;
+}
+
+.twofive_bg {
+
+}
+
+#twofive {
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+#twofive > h3 {
+    font-size: 30px;
+}
+
+#twofive > h4 {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+#twofive > p {
+    font-weight: 100;
+}
 .main_three {
     background-color: black;
     height: 400px;
@@ -133,10 +166,30 @@
     display: inline-block;
     text-align: left;
     width: 70%;
+    line-height: 30px;
+    margin-bottom: 100px;
+}
+
+#four > h2 {
+    position: relative;
+    font-size: 30px;
+}
+
+.product-img {
+    position: relative;
+    left: 15%;
+    width: 495px;
+    height: 429px;
 
 }
 
+.product-img > img {
+    width: 100%;
+}
 
+#four > h4 {
+    margin-top: 30px;
+}
 .app {
     text-align: center;
 }
@@ -256,7 +309,7 @@
     -ms-flex-pack: center;
     justify-content: center;
     overflow: hidden;
-    z-index: -1;
+    z-index: 0;
 }
 
 .phone {
