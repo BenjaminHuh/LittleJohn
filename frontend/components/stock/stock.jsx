@@ -11,13 +11,23 @@ class Stock extends React.Component {
     // }
     
     render() {
+        const {
+            longName, 
+            symbol, 
+            regularMarketDayRange, 
+            regularMarketPrice
+        } = this.props.stock;
         return (
             <div>
                 
                 <h1>
-                    {this.props.stock.longName}
+                    {symbol}
                     <br/>
-                    {this.props.stock.regularMarketDayRange}
+                    {longName}
+                    <br/>
+                    {regularMarketPrice}
+                    <br/>
+                    {regularMarketDayRange}
                 </h1>
             </div>
         );
