@@ -1,5 +1,5 @@
 import React from 'react';
-import ResultContainer from '../stock/result_container';
+import StockContainer from '../stock/stock_container';
 
 class Search extends React.Component {
     constructor(props) {
@@ -30,8 +30,7 @@ class Search extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.setState({ stock: this.props.getStock(this.state.query) });
-        // debugger
+        this.setState(() => ({ stock: this.props.getStock(this.state.query) }));
     }
 
     render() {
@@ -47,8 +46,6 @@ class Search extends React.Component {
                     />
                     <button type="submit" onClick={this.handleSubmit}></button>
                 </form>
-                {/* <ResultContainer stock={this.state.stock}/> */}
-
             </div>
         );
     }
