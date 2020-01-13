@@ -25,6 +25,9 @@
      margin: 0;
  }
 
+.main-div {
+    text-align: center;
+}
 
  body {
      /* background-color: #21CE99; */
@@ -105,7 +108,7 @@
 }
 
 .main_two_five {
-    text-align: left;
+    text-align: center;
     background-color: #F5F8FA;
     height: 800px;
     line-height: 50px;
@@ -117,8 +120,11 @@
 }
 
 #twofive {
+    display: inline-block;
+    text-align: left;
+    width: 60%;
     margin-top: 50px;
-    margin-left: 50px;
+    margin-left: -200px;
 }
 
 #twofive > h3 {

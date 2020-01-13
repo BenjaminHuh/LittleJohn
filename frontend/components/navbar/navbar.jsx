@@ -2,8 +2,9 @@ import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import SearchContainer from '../search/search_container'
 
-const Navbar = ({ currentUser, logout }) => {
-    
+const Navbar = ({ currentUser, logout, stock }) => {
+
+
   const sessionLinks = () => (
     <div className="navbar">
       <Link to="/" className="littlejohn">LittleJohn</Link>
