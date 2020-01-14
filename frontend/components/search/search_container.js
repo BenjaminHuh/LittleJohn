@@ -16,7 +16,7 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => ({
     getStock: ticker => dispatch(getStock(ticker)),
     getStocks: () => dispatch(getStocks()),
-    clearStocskErrors: () => dispatch(clearStocksErrors())
+    clearStocksErrors: () => dispatch(clearStocksErrors())
 })
 
 export default connect(mSTP, mDTP)(Search);

@@ -7,14 +7,17 @@ class Stock extends React.Component {
         
     }
 
-    componenetDidMount() {
-        this.setState(() => ({ stock: this.props.getStock(this.props.match.params.ticker) }));
+    componentDidMount() {
+        // this.setState(() => ({ stock: this.props.getStock(this.props.match.params.ticker) }));
+        this.props.getStock(this.props.match.params.ticker) 
+        
         // this.props.history.push(`/stocks/${this.props.match.params.ticker}`)
     }
     
     render() {
-        // debugger
-        const { stock, ticker } = this.props;
+
+        const { stock } = this.props;
+        // const ticker = this.props.match.params.ticker;
 
         const {
             longName, 
@@ -24,6 +27,7 @@ class Stock extends React.Component {
         } = stock;
 
         return (
+            
             <div className="stock-info1">
                 <h1>
                     {longName}

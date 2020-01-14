@@ -1,0 +1,1 @@
+json.merge! @stock_info
