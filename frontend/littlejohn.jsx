@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.getStocks = getStocks;
     window.getStock = getStock;
+    // window.getPortfolio = getPortfolio;
 
     window.logout = logout;
     window.getState = store.getState;

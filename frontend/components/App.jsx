@@ -18,8 +18,8 @@ const App = () => (
     <Switch>
       <AuthRoute path="/signin" className="signin-container" component={SigninContainer} />
       <AuthRoute path="/signup" component={SignupContainer} />
-      <Route exact path="/" component={HomeContainer} />
       <ProtectedRoute exact path='/stocks/:ticker' component={StockHome}/>
+      <Route exact path="/" component={HomeContainer} />
       {/* <ProtectedRoute path="/stocks" component={StockHome} /> */}
       <Redirect to="/" />
     </Switch>

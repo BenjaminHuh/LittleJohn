@@ -19,7 +19,7 @@ class User < ApplicationRecord
     has_one :account
     has_one :portfolio
     has_one :watchlist
-    has_many :stocks_orders
+    has_many :stock_orders
 
     has_many :owned_stocks,
         through: :portfolio,

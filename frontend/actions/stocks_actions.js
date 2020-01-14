@@ -4,7 +4,9 @@ export const RECEIVE_STOCKS = 'RECEIVE_STOCKS';
 export const RECEIVE_STOCK = 'RECEIVE_STOCK';
 export const RECEIVE_STOCKS_ERRORS = 'RECEIVE_STOCKS_ERRORS';
 export const CLEAR_STOCKS_ERRORS = 'CLEAR_STOCK_ERRORS';
-
+export const GET_OWNED_STOCKS = 'GET_OWNED_STOCKS';
+export const GET_WATCHED_STOCKS = 'GET_WATCHED_STOCKS';
+export const GET_PORTFOLIO_ITEM = 'GET_PORTFOLIO_ITEM';
 
 export const getStocks = () => dispatch => (
     APIUtil.receiveStocks()
@@ -14,6 +16,21 @@ export const getStocks = () => dispatch => (
 export const getStock = ticker => dispatch => (
     APIUtil.receiveStock(ticker)
         .then(stock => dispatch({ type: RECEIVE_STOCK, stock}))
+)
+
+export const getPortfolio = () => dispatch => (
+    APIUtil.getOwnedStocks()
+        .then(stocks => dispatch({ type: GET_OWNED_STOCKS, stocks}))
+)
+
+export const getWatchlist = () => dispatch => (
+    APIUtil.getWatchedStocks()
+        .then(stocks => dispatch({ type: GET_WATCHED_STOCKS, stocks}))
+)
+
+export const getPortfolioItem = stock_id => dispatch => (
+    APIUtil.getPortfolioItem(stock_id)
+        .then(stock => dispatch({ type:GET_PORTFOLIO_ITEM, stock}))
 )
 
 export const receiveErrors = errors => ({
