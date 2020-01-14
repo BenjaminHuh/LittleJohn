@@ -28,3 +28,8 @@ export const getPortfolioItem = stock_id => (
     })
 )
 
+export const getWatchlistItem = stock_id => (
+    $.ajax({
+        url: `/api/watchlists/${stock_id}`
+    })
+)

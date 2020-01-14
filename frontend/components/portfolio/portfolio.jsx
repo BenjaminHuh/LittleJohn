@@ -1,24 +1,22 @@
 import React from 'react';
 import PortfolioItemContainer from './portfolio_item_container';
+import WatchlistItemContainer from './watchlist_item_container';
 
 class Portfolio extends React.Component {
     componentDidMount() {
         this.props.getPortfolio();
-
+        // this.props.getWatchlist();
     }
 
     render() {
-        const { portfolio } = this.props;
+        const { portfolio, watchlist } = this.props;
         
         return (
             <div>
                 Portfolio
                 {
-                    Object.keys(portfolio).map((id, i) => {
-                        
+                    Object.keys(portfolio).map((id, i) => {               
                         return (
-                            
-                                
                             <div key={i}>
                                 <PortfolioItemContainer 
                                     item={portfolio[id]} 
@@ -26,19 +24,26 @@ class Portfolio extends React.Component {
                                     key={i}
                                 />
                             </div>
-                            
                         )
-                            
                     })
                 }
                 Watchlist
                 {
-
+                    // Object.keys(watchlist).map((id, j) => {
+                    //     return (
+                    //         <div key={j}>
+                    //             <WatchlistItemContainer
+                    //                 item={watchlist[id]}
+                    //                 id={id}
+                    //                 key={j}
+                    //             />
+                    //         </div>
+                    //     )
+                    // })
                 }
             </div>
         );
     }
-
 }
 
 export default Portfolio;

@@ -10,7 +10,7 @@ class PortfolioItem extends React.Component {
     }
 
     componentDidMount() {
-        const { stock } = this.props;
+        const { stock, watchStock } = this.props;
         this.props.getPortfolioItem(this.props.id)
             .then(setTimeout(() => {
                 this.setState(() => ({
