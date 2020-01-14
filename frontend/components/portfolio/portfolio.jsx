@@ -1,5 +1,5 @@
 import React from 'react';
-import PortfolioItem from './portfolio_item';
+import PortfolioItemContainer from './portfolio_item_container';
 
 class Portfolio extends React.Component {
     componentDidMount() {
@@ -20,10 +20,11 @@ class Portfolio extends React.Component {
                             
                                 
                             <div key={i}>
-                                <PortfolioItem 
+                                <PortfolioItemContainer 
                                     item={portfolio[id]} 
+                                    id={id}
                                     key={i}
-                                    getPortfolioItem={ this.props.getPortfolioItem }/>
+                                />
                             </div>
                             
                         )
@@ -32,7 +33,7 @@ class Portfolio extends React.Component {
                 }
                 Watchlist
                 {
-                    
+
                 }
             </div>
         );

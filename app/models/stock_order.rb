@@ -13,8 +13,8 @@
 #
 
 class StockOrder < ApplicationRecord
-    has_many :stocks
-    has_many :portfolios
-    has_many :watchlists
-    has_many :users
+    belongs_to :stock
+    belongs_to :portfolio
+    belongs_to :watchlist
+    belongs_to :user
 end
