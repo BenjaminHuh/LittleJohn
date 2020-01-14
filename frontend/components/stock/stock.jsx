@@ -4,14 +4,16 @@ class Stock extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            longName: 'loading',
+            regularMarketPrice: 'loading',
+            regularMarketDayRange: 'loading'
+         }
         
     }
 
     componentDidMount() {
-        // this.setState(() => ({ stock: this.props.getStock(this.props.match.params.ticker) }));
-        this.props.getStock(this.props.match.params.ticker) 
-        
-        // this.props.history.push(`/stocks/${this.props.match.params.ticker}`)
+        this.props.getStock(this.props.match.params.ticker)           
     }
     
     render() {

@@ -12,7 +12,7 @@
 class Stock < ApplicationRecord
     has_many :stock_orders
     
-    belongs_to :watchlist
+    has_many :watchlists
 
-    belongs_to :portfolio
+    has_many :portfolios
 end
