@@ -2,8 +2,7 @@ import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import SearchContainer from '../search/search_container'
 
-const Navbar = ({ history, currentUser, logout, stock }) => {
-
+const Navbar = ({ match, history, currentUser, logout, stock }) => {
 
   const sessionLinks = () => (
     <div className="navbar">
@@ -21,7 +20,7 @@ const Navbar = ({ history, currentUser, logout, stock }) => {
       </div>
     </div>
   );
-
+  
 
   const signedIn = () => {
     return (
@@ -42,7 +41,7 @@ const Navbar = ({ history, currentUser, logout, stock }) => {
 
         </div>
         <div className="search-div">
-          <SearchContainer history={history}/>
+          <SearchContainer history={history} match={match}/>
         </div>
         <div>
           <Link to="/" className="portfolio">Portfolio</Link>

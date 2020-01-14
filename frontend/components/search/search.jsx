@@ -14,6 +14,7 @@ class Search extends React.Component {
             
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.setState = this.setState.bind(this);
     }
     
     componentDidMount() {
@@ -30,25 +31,30 @@ class Search extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.setState(() => ({ stock: this.props.getStock(this.state.query) }))
-        this.props.history.push(`/stocks/${this.state.query}`)
+        this.setState(() => ({ stock: this.props.getStock(this.state.query)}))
     }
 
     render() {
+        // debugger
         return (
             <div>
-                <form className="search-form"> 
-                    <input 
-                        className="searchbar" 
-                        type="text" 
-                        placeholder="Search"
-                        ref={input => this.search = input} 
-                        onChange={this.update()}
-                    />
+                <div>
+                    <form className="search-form"> 
+                        <input 
+                            className="searchbar" 
+                            type="text" 
+                            placeholder="Search"
+                            ref={input => this.search = input} 
+                            onChange={this.update()}
+                        />
 
-                    {/* <button type="submit" onClick={() => history.push(`/stocks/${ticker}`)}></button> */}
-                    <button type="submit" onClick={this.handleSubmit}></button>
-                </form>
+                        {/* <button type="submit" onClick={() => history.push(`/stocks/${ticker}`)}></button> */}
+                        <button type="submit" onClick={this.handleSubmit}></button>
+                    </form>
+                </div>
+                <div>
+
+                </div>
             </div>
         );
     }
