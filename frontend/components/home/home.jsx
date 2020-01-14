@@ -2,7 +2,7 @@ import React from 'react';
 import Main from '../main/main';
 import DashboardContainer from '../dashboard/dashboard_container';
 // import NavbarContainer from '../navbar/navbar_container'
-const Home = ({ currentUser, history }) => {
+const Home = ({ currentUser, history, match }) => {
     const signedOff = () => (
         <Main />
     )
@@ -10,7 +10,7 @@ const Home = ({ currentUser, history }) => {
     const signedIn = () => {
 
         return (
-        <DashboardContainer className="dashboard" history={ history }/>
+        <DashboardContainer className="dashboard" match={ match } history={ history }/>
         );
     }
 

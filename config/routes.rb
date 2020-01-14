@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy, :show]
     resources :stocks, only: [:show], param: :ticker
     resources :stocks, only: [:index]
+    resources :portfolios, only: [:index, :show]
   end
 
   root 'static_pages#root'

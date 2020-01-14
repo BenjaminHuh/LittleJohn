@@ -8,35 +8,78 @@ class Stock extends React.Component {
     }
 
     componenetDidMount() {
-        this.props.getStock(this.props.ticker);
+        this.setState(() => ({ stock: this.props.getStock(this.props.match.params.ticker) }));
+        // this.props.history.push(`/stocks/${this.props.match.params.ticker}`)
     }
     
     render() {
+        // debugger
+        const { stock, ticker } = this.props;
 
         const {
             longName, 
             symbol, 
             regularMarketDayRange, 
             regularMarketPrice
-        } = this.props.stock;
+        } = stock;
 
         return (
             <div className="stock-info1">
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
                 <h1>
-                    {symbol}
-                    <br/>
                     {longName}
                     <br/>
                     {regularMarketPrice}
                     <br/>
                     {regularMarketDayRange}
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+
                 </h1>
             </div>
         );

@@ -4,10 +4,9 @@ import StockContainer from '../stock/stock_container';
 
 
 const StockHome = ({ match, history }) => {
-    
     return (
     <div>
-        <NavbarContainer history={ history }/>
+        <NavbarContainer match={ match} history={ history }/>
         <br/>
         <StockContainer match={ match } history={ history }/>
     </div>
