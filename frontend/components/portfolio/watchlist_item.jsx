@@ -4,38 +4,25 @@ import { Link } from 'react-router-dom'
 class WatchlistItem extends React.Component {
     componentDidMount() {
         this.props.getWatchlistItem(this.props.id)
+        // this.interval = setInterval(() => this.props.getWatchlistItem(this.props.id), 5000);
+
     }
 
     render() {
 
-
-        return (
-            <div>
+        if (!this.props.stock.info) {
+            return null;
+        } 
+        else {
+            const { symbol, regularMarketPrice } = this.props.stock.info;
+            return (
                 <div>
-                    {
-                        <Link to={`/stocks/${this.state.symbol}`}>
-                            {this.state.symbol}
-                        </Link>
-                    }
-                </div>  
-                <div>
-                    {
-                        this.state.regularMarketPrice
-                    }
+                    <br/>
+                    <div>{<Link to={`/stocks/${symbol}`}>{symbol}</Link>}</div>
+                    <div>{regularMarketPrice}</div>
                 </div>
-                <div>
-                    {
-                        this.props.stock.num_stocks
-                    }
-                </div>
-                <div>
-                    {
-                        
-                    }
-                </div>
-                <br/>
-            </div>
-        )
+            )
+        }
     }
 }
 

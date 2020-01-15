@@ -5,22 +5,15 @@ class Search extends React.Component {
     constructor(props) {
         super(props);
         this.state = { 
-            query: "",
-            stock: { 
-                symbol: "Stock Symbol goes here",
-                shortname: "Company name goes here",
-                regularMarketPrice: 100
-            }
-            
-        }
+            query: ""
+        }            
+        
         this.handleSubmit = this.handleSubmit.bind(this);
         this.setState = this.setState.bind(this);
     }
     
     componentDidMount() {
-        // this.props.clearStockErrors();
         this.props.getStocks();
-        // debugger
     }
     
     update() {
@@ -31,7 +24,8 @@ class Search extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.setState(() => ({ stock: this.props.getStock(this.state.query)}))
+        this.props.getStock(this.state.query)
+        // this.setState(() => ({ stock: this.props.getStock(this.state.query)}))
         this.props.history.push(`/stocks/${this.state.query}`)
     }
 
