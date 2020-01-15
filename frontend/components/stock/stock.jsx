@@ -13,82 +13,38 @@ class Stock extends React.Component {
     }
 
     componentDidMount() {
-        this.props.getStock(this.props.match.params.ticker)           
+        this.props.getStock(this.props.match.params.ticker)   
+        // this.interval = setInterval(() => this.props.getStock(this.props.match.params.ticker), 5000);
     }
+    componentWillUnmount() {
+        clearInterval(this.interval);
+    }        
+    
     
     render() {
-
         const { stock } = this.props;
-        // const ticker = this.props.match.params.ticker;
 
-        const {
-            longName, 
-            symbol, 
-            regularMarketDayRange, 
-            regularMarketPrice
-        } = stock;
-
-        return (
-            
-            <div className="stock-info1">
-                <h1>
-                    {longName}
-                    <br/>
-                    {regularMarketPrice}
-                    <br/>
-                    {regularMarketDayRange}
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
-
-                </h1>
-            </div>
-        );
+        if (!stock) {
+            return "stock component";
+        } else {
+            const {
+                longName, 
+                symbol, 
+                regularMarketDayRange, 
+                regularMarketPrice
+            } = stock;
+            return (
+                <div className="stock-info1">
+                    <h1>
+                        {longName}
+                        <br/>
+                        {regularMarketPrice}
+                        <br/>
+                        {regularMarketDayRange}   
+                    </h1>
+                </div>
+            )
+        }
     }
 }
 

@@ -16,8 +16,9 @@ const watchlistsReducer = (state = {}, action) => {
 
         case GET_WATCHLIST_ITEM:
             Object.keys(action.stock).forEach(id => {
-                debugger
-                nextState[id].info = action.stock[id]
+                let newStock = Object.assign({}, nextState[id])
+                newStock.info = action.stock[id]
+                nextState[id] = newStock
             })
             return nextState;
 

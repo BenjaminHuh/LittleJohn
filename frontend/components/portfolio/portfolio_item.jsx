@@ -2,53 +2,27 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 
 class PortfolioItem extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { symbol: "loading",
-            regularMarketPrice: "loading"
-        }
-    }
 
     componentDidMount() {
-        const { stock, watchStock } = this.props;
         this.props.getPortfolioItem(this.props.id)
-            .then(setTimeout(() => {
-                this.setState(() => ({
-                    symbol: stock.info.symbol,
-                    regularMarketPrice: stock.info.regularMarketPrice
-                })
-            )}, 1500))
     }
 
     render() {
 
-        return (
-            <div>
+        if (!this.props.stock.info) {
+            return null;
+        } 
+        else {
+            const { symbol, regularMarketPrice } = this.props.stock.info;
+            return (
                 <div>
-                    {
-                        <Link to={`/stocks/${this.state.symbol}`}>
-                            {this.state.symbol}
-                        </Link>
-                    }
-                </div>  
-                <div>
-                    {
-                        this.state.regularMarketPrice
-                    }
+                    <div>{<Link to={`/stocks/${symbol}`}>{symbol}</Link>}</div> 
+                    <div>{regularMarketPrice}</div>
+                    <div>{this.props.stock.num_stocks}</div>
+                    <br/>
                 </div>
-                <div>
-                    {
-                        this.props.stock.num_stocks
-                    }
-                </div>
-                <div>
-                    {
-                        
-                    }
-                </div>
-                <br/>
-            </div>
-        )
+            )
+        }
     }
 }
 
