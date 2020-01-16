@@ -75,4 +75,3 @@ class User < ApplicationRecord
 
 end
 
-

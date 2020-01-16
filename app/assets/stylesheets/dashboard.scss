@@ -1,20 +1,33 @@
+.dashboard-main {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    justify-content: flex-start;
 
+}
 
 .dashboard-inner {
-    display: flex;
-    justify-content: center;
+    // display: flex;
+    // justify-content: space-evenly;
+    // flex-direction: row;
+    width: 100vw;
+    margin-top: 80px;
+    height: 100%;
+
 }
 
 .portfolio-watchlist {
+    position: fixed;
+    top: 80px;
+    right: 15%;
+    display: block;
     z-index: -1;
     border-radius: 3px;
-    float: right;
-    position: fixed;
-    top: 15%;
-    right: 7%;
     width: 300px;
     background-color: white;
     min-height: 78%;
+    max-height: 78%;
     -webkit-box-shadow: -1px 0px 23px 5px rgba(0,0,0,0.22);
     -moz-box-shadow: -1px 0px 23px 5px rgba(0,0,0,0.22);
     box-shadow: -1px 0px 23px 5px rgba(0,0,0,0.22);
@@ -34,14 +47,24 @@
 }
 
 .portfolio-summary {
-    position: absolute;
+    // position: absolute;
     border-radius: 3px;
-    top: 15%;
-    left: 8%;
-    background-color: white;
-    width: 60%;
+    // top: 5%;
+    // left: 8%;
+    background-color: black;
+    max-width: 760px;
+    min-width: 760px;
     height: 300px;
     -webkit-box-shadow: -1px 0px 23px 5px rgba(0,0,0,0.22);
     -moz-box-shadow: -1px 0px 23px 5px rgba(0,0,0,0.22);
     box-shadow: -1px 0px 23px 5px rgba(0,0,0,0.22);
+}
+
+.dashboard-port-news {
+    width: 760px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    overflow: hidden;
+    margin-left: 10%;
 }

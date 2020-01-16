@@ -4,6 +4,7 @@ import configureStore from './store/store';
 import Root from './components/root';
 import { getStocks, getStock } from './actions/stocks_actions';
 import { logout } from './actions/session_actions';
+import { getNews } from './util/news_api_util';
 
 document.addEventListener("DOMContentLoaded", () => {
     let store;
@@ -20,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         store = configureStore();
     }
 
+    window.getNews = getNews;
     window.getStocks = getStocks;
     window.getStock = getStock;
     // window.getPortfolio = getPortfolio;

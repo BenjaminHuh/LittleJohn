@@ -26,6 +26,7 @@ const Navbar = ({ match, history, currentUser, logout, stock }) => {
     return (
       <div className="signedin-nav">
         {/* <Link to="/" className="littlejohn">LittleJohn</Link> */}
+        {/* <a href="/" className="littlejohn"> */}
         <Link to="/" className="littlejohn-signedin">
           <div>
             <svg width="48" height="48" className="signedin-logo">
@@ -37,6 +38,7 @@ const Navbar = ({ match, history, currentUser, logout, stock }) => {
             </svg>
           </div>
         </Link>      
+        {/* </a> */}
         <div className="seach_container">
 
         </div>
@@ -44,13 +46,13 @@ const Navbar = ({ match, history, currentUser, logout, stock }) => {
           <SearchContainer history={history} match={match}/>
         </div>
         <div>
-          <Link to="/" className="portfolio">Portfolio</Link>
+          <a href="/" className="portfolio">Portfolio</a>
         </div>
         <div className="main-dropdown"> 
           <button className="drop-button">Account</button>
           <div className="drop-menu">
             <div className="curr-user">
-              <Link className="curr-username" to="/" >{currentUser.username}</Link>
+              <a className="curr-username" href="/" >{currentUser.username}</a>
             </div>
             <div className="account-div">
               <svg id="drop-logo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.16563 7.32012H14.834V5.43065H9.16563V7.32012ZM21.4472 9.20959V11.0991H2.55249V9.20959C2.55249 8.1666 3.39803 7.32012 4.44196 7.32012H7.27616V5.43065C7.27616 4.38767 8.1217 3.54118 9.16563 3.54118H14.834C15.877 3.54118 16.7235 4.38767 16.7235 5.43065V7.32012H19.5577C20.6007 7.32012 21.4472 8.1666 21.4472 9.20959ZM13.8893 12.9885H21.4472V17.7122C21.4472 18.7561 20.6007 19.6017 19.5577 19.6017H4.44196C3.39803 19.6017 2.55249 18.7561 2.55249 17.7122V12.9885H10.1104V14.878H13.8893V12.9885Z" fill="#000"></path></svg>
