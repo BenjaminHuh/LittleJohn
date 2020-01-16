@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import SearchContainer from '../search/search_container'
 
-const Navbar = ({ match, history, currentUser, logout, stock }) => {
+
+const Navbar = ({ match, currentUser, logout, stock }) => {
 
   const sessionLinks = () => (
     <div className="navbar">
@@ -74,6 +75,6 @@ const Navbar = ({ match, history, currentUser, logout, stock }) => {
 };
 
 
-export default Navbar;
+export default withRouter(Navbar);
 
 

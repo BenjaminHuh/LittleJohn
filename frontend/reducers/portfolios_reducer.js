@@ -1,6 +1,8 @@
 import {
     GET_OWNED_STOCKS,
-    GET_PORTFOLIO_ITEM
+    GET_PORTFOLIO_ITEM,
+    CLEAR_PORTFOLIO_LIST,
+    CLEAR_WATCHLIST_LIST
 } from '../actions/stocks_actions'
 
 const portfoliosReducer = (state = {}, action) => {
@@ -21,6 +23,21 @@ const portfoliosReducer = (state = {}, action) => {
                 nextState[id] = newStock
             })
             return nextState;
+
+        case CLEAR_PORTFOLIO_LIST:
+            Object.keys(action.portfolio).forEach(key => {
+                delete nextState[key].info
+            })
+            return nextState;
+
+        case CLEAR_WATCHLIST_LIST:
+            Object.keys(action.watchlist).forEach(key => {
+                delete nextState[key]
+            })
+            return nextState;
+
+        case 'CLEAR_STOCK_ITEM':
+            return Object.assign({}, {});
 
         default:
             return state;

@@ -8,7 +8,6 @@ const Home = ({ currentUser, history, match }) => {
     )
 
     const signedIn = () => {
-
         return (
         <DashboardContainer className="dashboard" match={ match } history={ history }/>
         );

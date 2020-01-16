@@ -8,7 +8,8 @@ export const GET_OWNED_STOCKS = 'GET_OWNED_STOCKS';
 export const GET_WATCHED_STOCKS = 'GET_WATCHED_STOCKS';
 export const GET_PORTFOLIO_ITEM = 'GET_PORTFOLIO_ITEM';
 export const GET_WATCHLIST_ITEM = 'GET_WATCHLIST_ITEM';
-export const CLEAR_PORTFOLIO_LIST = 'CLEAR_PORTFOLIO_LIST'
+export const CLEAR_PORTFOLIO_LIST = 'CLEAR_PORTFOLIO_LIST';
+export const CLEAR_WATCHLIST_LIST = 'CLEAR_WATCHLIST_LIST';
 
 export const getStocks = () => dispatch => (
     APIUtil.receiveStocks()
@@ -49,6 +50,16 @@ export const clearStocksErrors = () => ({
     type: CLEAR_STOCKS_ERRORS
 })
 
-export const clearPortfolioList = () => ({
-    type: CLEAR_PORTFOLIO_LIST
+export const clearPortfolioList = (portfolio = {}) => ({
+    type: CLEAR_PORTFOLIO_LIST,
+    portfolio
+})
+
+export const clearWatchlist = (watchlist = {}) => ({
+    type: CLEAR_WATCHLIST_LIST,
+    watchlist
+})
+
+export const clearStockItem = () => ({
+    type: 'CLEAR_STOCK_ITEM'
 })

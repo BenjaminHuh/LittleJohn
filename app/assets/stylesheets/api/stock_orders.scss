@@ -1,3 +1,43 @@
 // Place all the styles related to the api/stock_orders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.stock-order {
+    position: fixed;
+    top: 100px;
+    right: 15%;
+    display: block;
+    z-index: 999;
+    border-radius: 3px;
+    width: 300px;
+    background-color: white;
+    min-height: 50%;
+    max-height: 50%;
+    -webkit-box-shadow: -1px 0px 23px 5px rgba(0,0,0,0.22);
+    -moz-box-shadow: -1px 0px 23px 5px rgba(0,0,0,0.22);
+    box-shadow: -1px 0px 23px 5px rgba(0,0,0,0.22);
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+} 
+
+.stock-order > * {
+    margin: 10px;
+}
+.order-symbol {
+    min-height: 30px;
+    text-align: left;
+}
+
+.stock-2 {
+    min-height: 120px;
+}
+
+.stock-3 {
+    min-height: 30px;
+}
+
+.stock-4 {
+    min-height: 120px;
+}

@@ -9,10 +9,10 @@ class Api::StocksController < ApplicationController
     end
     
     def show
-        # @stock = Stock.find_by_ticker(params[:ticker])
-        # ticker = @stock.ticker
-        # stock_url = "https://query1.finance.yahoo.com/v7/finance/quote?symbols=#{ticker}"
-        stock_url = "https://query1.finance.yahoo.com/v7/finance/quote?symbols=#{params[:ticker]}"
+        @stock = Stock.where(ticker: params[:ticker]).or(Stock.where("lower(name) like ?", "%#{params[:ticker]}%".downcase)).first
+        ticker = @stock.ticker
+        stock_url = "https://query1.finance.yahoo.com/v7/finance/quote?symbols=#{ticker}"
+        # stock_url = "https://query1.finance.yahoo.com/v7/finance/quote?symbols=#{params[:ticker]}"
         @stock_info = HTTParty.get(stock_url).parsed_response["quoteResponse"]["result"][0]
         if @stock_info.nil?
             render json: ['Unable to fetch stock'], status: 401

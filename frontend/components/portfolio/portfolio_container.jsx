@@ -1,5 +1,12 @@
 import React from 'react';
-import { getPortfolio, getPortfolioItem, getWatchlist, getWatchlistItem } from '../../actions/stocks_actions'
+import { 
+    getPortfolio,
+    getPortfolioItem, 
+    getWatchlist, 
+    getWatchlistItem,
+    clearPortfolioList,
+    clearWatchlist
+     } from '../../actions/stocks_actions'
 import { connect } from 'react-redux'
 import Portfolio from './portfolio'
 
@@ -19,7 +26,10 @@ const mDTP = dispatch => {
             getPortfolioItem: stock_id => dispatch(getPortfolioItem(stock_id)),
             
             getWatchlist: () => dispatch(getWatchlist()),
-            getWatchlistItem: stock_id => dispatch(getWatchlistItem(stock_id))
+            getWatchlistItem: stock_id => dispatch(getWatchlistItem(stock_id)),
+
+            clearWatchlist: () => dispatch(clearWatchlist()),
+            clearPortfolioList: () => dispatch(clearPortfolioList())
         }
     )
 }

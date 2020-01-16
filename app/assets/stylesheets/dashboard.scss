@@ -2,8 +2,10 @@
     display: flex;
     flex-direction: column;
     width: 100vw;
-    height: 100vh;
+    height: 0px;
     justify-content: flex-start;
+
+
 
 }
 
@@ -14,15 +16,16 @@
     width: 100vw;
     margin-top: 80px;
     height: 100%;
+    z-index: -1;
 
 }
 
 .portfolio-watchlist {
     position: fixed;
-    top: 80px;
+    top: 100px;
     right: 15%;
     display: block;
-    z-index: -1;
+    z-index: 999;
     border-radius: 3px;
     width: 300px;
     background-color: white;
@@ -31,6 +34,17 @@
     -webkit-box-shadow: -1px 0px 23px 5px rgba(0,0,0,0.22);
     -moz-box-shadow: -1px 0px 23px 5px rgba(0,0,0,0.22);
     box-shadow: -1px 0px 23px 5px rgba(0,0,0,0.22);
+    overflow: scroll;
+}
+
+.portfolio-watchlist-inner {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    right: -17px;
+    overflow: scroll;
 }
 
 .stock-info {
@@ -51,13 +65,13 @@
     border-radius: 3px;
     // top: 5%;
     // left: 8%;
-    background-color: black;
+    background-color: white;
     max-width: 760px;
     min-width: 760px;
-    height: 300px;
-    -webkit-box-shadow: -1px 0px 23px 5px rgba(0,0,0,0.22);
-    -moz-box-shadow: -1px 0px 23px 5px rgba(0,0,0,0.22);
-    box-shadow: -1px 0px 23px 5px rgba(0,0,0,0.22);
+    min-height: 350px;
+    // -webkit-box-shadow: -1px 0px 23px 5px rgba(0,0,0,0.22);
+    // -moz-box-shadow: -1px 0px 23px 5px rgba(0,0,0,0.22);
+    // box-shadow: -1px 0px 23px 5px rgba(0,0,0,0.22);
 }
 
 .dashboard-port-news {
