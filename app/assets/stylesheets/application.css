@@ -279,6 +279,20 @@
     margin-right: 10px;
 }
 
+.logout-div {
+    display: flex;
+    justify-content: left;
+    margin: 0px;
+    padding: 0px;
+}
+
+#drop-logo-logout {
+    float: right;
+    width: 24px;
+    height: 100px;
+    margin-right: 10px;
+    margin-left: -20px;
+}
 .logout {
     font-size: 14px;
     font-weight: 100;
