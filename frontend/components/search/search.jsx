@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
+
 
 class Search extends React.Component {
     constructor(props) {
@@ -9,7 +10,6 @@ class Search extends React.Component {
         }            
         
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.setState = this.setState.bind(this);
     }
     
     componentDidMount() {
@@ -56,4 +56,4 @@ class Search extends React.Component {
 
 }
 
-export default Search;
+export default withRouter(Search);

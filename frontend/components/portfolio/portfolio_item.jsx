@@ -1,33 +1,45 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 
 class PortfolioItem extends React.Component {
 
     componentDidMount() {
-        this.props.getPortfolioItem(this.props.id).then(() => {
-            let total = this.props.info.regularMarketPrice * this.props.stock.num_stocks;
-            this.setState({ total: { [this.props.id]: total }})
-        })
+        this.props.clearStockItem()
+        this.props.getPortfolioItem(this.props.id)
+        this.interval = setInterval(() => this.props.getPortfolioItem(this.props.id), 10000);
     }
 
+    componentWillUnmount() {
+        clearInterval(this.interval);
+    }        
+    
+
     render() {
-
-        
-        
-
         if (!this.props.stock.info) {
             return null;
         } 
         else {
             const { symbol, regularMarketPrice } = this.props.stock.info;
             return (
-                <div>
-                    <div>{<Link to={`/stocks/${symbol}`}>{symbol}</Link>}</div> 
-                    <div>{regularMarketPrice}</div>
-                    <div>{this.props.stock.num_stocks}</div>
-                    <div>{(regularMarketPrice * this.props.stock.num_stocks).toFixed(2)}</div>
-                    <br/>
-                </div>
+                <Link className="port-item-link" to={`/stocks/${symbol}`}>
+                    <div className="port-item-symbol">
+                        <div></div>
+                        <div>
+                            {symbol}
+                        </div>
+                        <div></div>
+                    </div>
+
+                    <div className="port-item-chart">
+                    </div>
+
+                    <div className="port-item-price">
+                        <div>${regularMarketPrice.toFixed(2)}</div>
+                        <div>${(regularMarketPrice * this.props.stock.num_stocks).toFixed(2)}</div>                        
+                    </div>
+                </Link>
+
+            
             )
         }
     }

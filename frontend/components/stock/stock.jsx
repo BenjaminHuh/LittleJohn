@@ -1,6 +1,6 @@
 import React from 'react';
 import NewsContainer from '../news/news_container';
-
+import StockorderContainer from '../stockorder/stockorder_container';
 
 class Stock extends React.Component {
 
@@ -16,12 +16,19 @@ class Stock extends React.Component {
 
     componentDidMount() {
         this.props.getStock(this.props.match.params.ticker)   
-        // this.interval = setInterval(() => this.props.getStock(this.props.match.params.ticker), 5000);
+        this.interval = setInterval(() => this.props.getStock(this.props.match.params.ticker), 5000);
     }
     componentWillUnmount() {
         clearInterval(this.interval);
     }        
     
+    componentDidUpdate(prevProps) {
+        const { match: { params: { ticker } } } = this.props
+        if (prevProps.match.params.ticker !== ticker){
+        this.props.getStock(this.props.match.params.ticker)
+        }
+    }
+
     
     render() {
         
@@ -37,16 +44,27 @@ class Stock extends React.Component {
                 regularMarketPrice
             } = stock;
             return (
-                <div className="stock-info1">
-                    <h1>
-                        {longName}
-                        <br/>
-                        {regularMarketPrice}
-                        <br/>
-                        {regularMarketDayRange}   
-                    </h1>
+                <div className="dashboard-main">
+                    <div className="dashboard-inner">
+                        <div className="stock-info1">
+                            <div className="dashboard-port-news">
+                                <div>
+                                    {longName}
+                                    <br/>
+                                    {regularMarketPrice}
+                                    <br/>
+                                    {regularMarketDayRange}   
+                                </div>
+                                <div className="news">
+                                    <NewsContainer />
+                                </div>
+                            </div>
 
-                    <NewsContainer/>
+                        </div>
+                    </div>
+                    <div>
+                        <StockorderContainer/>
+                    </div>
                 </div>
             )
         }

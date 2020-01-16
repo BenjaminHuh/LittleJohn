@@ -3,7 +3,10 @@ import NavbarContainer from '../navbar/navbar_container';
 import StockContainer from '../stock/stock_container';
 import PortfolioContainer from '../portfolio/portfolio_container';
 import NewsContainer from '../news/news_container';
-const Dashboard = ({ match, currentUser, history }) => {
+import SummaryContainer from '../summary/summary_container';
+import StockorderContainer from '../stockorder/stockorder_container';
+import { withRouter } from 'react-router-dom';
+const Dashboard = ({ match, currentUser }) => {
 
 
     const showPortfolio = () => {
@@ -14,41 +17,40 @@ const Dashboard = ({ match, currentUser, history }) => {
                     <div className="dashboard-port-news">
                         <div className="portfolio-summary">
                             portfolio summary goes here
+                            <SummaryContainer/>
                         </div>
                         <div className="news">
                             <NewsContainer/>
                         </div>
                     </div>     
                     <div className="portfolio-watchlist">
-                        <PortfolioContainer />
-                    </div>
-        
-
-                </div>
-            </div>
-        )
-        
-    }
-
-    const showStock = () => {
-        return (
-            <div>
-                <NavbarContainer match={ match } history={history} />
-                <div className="dashboard-inner">
-                    <div className="portfolio-watchlist">
-                        
-                    </div>
-                    <div className="stock-info">
-                        <StockContainer match={ match } history={history} />   
-                    </div>
-                    <div className="news">
+                        <PortfolioContainer className="portfolio-watchlist-inner"/>
                     </div>
                 </div>
             </div>
         )
     }
+
+    // const showStock = () => {
+    //     debugger
+    //     return (
+    //         <div>
+    //             <NavbarContainer match={ match } history={history} />
+    //             <div className="dashboard-inner">
+    //                 <div className="portfolio-watchlist">
+    //                     <StockorderContainer/>
+    //                 </div>
+    //                 <div className="stock-info">
+    //                     <StockContainer match={ match } history={history} />   
+    //                 </div>
+    //                 <div className="news">
+    //                 </div>
+    //             </div>
+    //         </div>
+    //     )
+    // }
 
     return match.url === "/" ? showPortfolio() : showStock()
 }
 
-export default Dashboard;
+export default withRouter(Dashboard);

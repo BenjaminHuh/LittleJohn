@@ -14,25 +14,35 @@ class News extends React.Component {
 
     }
 
+    componentDidUpdate(prevProps) {
+        const { match: { params: { ticker } } } = this.props
+        if (prevProps.match.params.ticker !== ticker){
+            this.props.getNews(this.props.match.params.ticker)
+        }
+    }
+
     render() {
         // debugger
         return (
             <div className="news-div">
+                <h2 className="news-heading">
+                {this.props.match.params.ticker === undefined ? ""  : this.props.match.params.ticker.toUpperCase()} News
+                </h2>
                 {
                     Object.keys(this.props.news).map(id => {
                         return (
-                            <a href={this.props.news[id].url} className="news-article">
+                            <a key={id} href={this.props.news[id].url} className="news-article">
                                
-                                <div key={id}>
+                                <div>
                                     <div className="news-story">
-                                        <div className="news-source">
-                                            {this.props.news[id].source.name}    
+                                       <div className="news-source">
+                                            {this.props.news[id].source.name ? this.props.news[id].source.name : "Unknown Source"}    
                                         </div>
-                                        <div className="news-title">
-                                            {this.props.news[id].title}
+                                     <div className="news-title">
+                                            {this.props.news[id].title ? this.props.news[id].title : "Untitled" }
                                         </div>
                                         <div className="news-description">
-                                            {this.props.news[id].description.slice(0, 48)}...
+                                            {this.props.news[id].description ? this.props.news[id].description.slice(0, 48) + "..." : "No Description" }
                                         </div>
                                     </div>
                                     <div className="news-img">
