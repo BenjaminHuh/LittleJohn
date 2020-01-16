@@ -369,7 +369,6 @@
     color: black;
     float: right;
     position: fixed;
-    right: 300px;
     top: 24px;
     z-index: -1;
 }

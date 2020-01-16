@@ -1,4 +1,6 @@
 import React from 'react';
+import NewsContainer from '../news/news_container';
+
 
 class Stock extends React.Component {
 
@@ -22,6 +24,7 @@ class Stock extends React.Component {
     
     
     render() {
+        
         const { stock } = this.props;
 
         if (!stock) {
@@ -42,6 +45,8 @@ class Stock extends React.Component {
                         <br/>
                         {regularMarketDayRange}   
                     </h1>
+
+                    <NewsContainer/>
                 </div>
             )
         }
