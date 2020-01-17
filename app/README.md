@@ -6,15 +6,19 @@ LittleJohn is a clone of Robinhood, which is  a commission-free investment platf
 ## Technology
 * Frontend: React, Redux
 * Backend: Ruby on Rails, PostgreSQL, ActiveRecord
-* API: News API, Yahoo Finance
+* APIs: News API, Yahoo Finance
 * Charts: ReCharts
+
+### Features
+* Real-time stock prices, and today's gains/losses
+* General market news on dashboard, and related news on stock show page
 
 ### User
 * Allows users to sign up, sign in, and log out
 * User dashboard shows market news and a list of stocks in the user's portfolio and watchlist
 
 ### Portfolio
-* Lists real-time market value of the stocks the signed in user owns
+* Provides a list of real-time market value of the stocks the signed in user owns
 
 ### Watchlist
 * Lists real-time market value of the stocks the signed in user is watching
@@ -26,7 +30,11 @@ LittleJohn is a clone of Robinhood, which is  a commission-free investment platf
 * Allows users to search by either ticker name or company name, and opens the stock's show page
 
 ### Next Steps
-* Implement Buy/Sell functionality
-* Provide account summary/history on the dashboard
+* API to query and access Company info and historical data
+* Account summary/history on the dashboard
+* Buy/Sell functionality
+* Search suggestions
+
+
 
 
