@@ -10,5 +10,8 @@
 #
 
 class Account < ApplicationRecord
-    belongs_to :users
+    validates :balance, presence: true
+    validates :user_id, uniqueness: true
+
+    belongs_to :user
 end

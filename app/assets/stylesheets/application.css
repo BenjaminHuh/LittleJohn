@@ -280,10 +280,10 @@
 }
 
 .logout-div {
-    display: flex;
+    /* display: flex;
     justify-content: left;
     margin: 0px;
-    padding: 0px;
+    padding: 0px; */
 }
 
 #drop-logo-logout {

@@ -26,8 +26,8 @@ end
 # Demo user
 
 User.delete_all
-user1 = User.create!( username: 'ladymarian', email: 'ladymarian@littlejohn.com', password: 'password' )
-user2 = User.create!( username: 'jamie', email: 'jamie@littlejohn.com', password: 'password')
+user1 = User.create!( username: 'ladymarian', email: 'ladymarian@littlejohn.com', password: 'password', balance: 1923874.00 )
+user2 = User.create!( username: 'jamie', email: 'jamie@littlejohn.com', password: 'password', balance: 239875297.00)
 
 
 apple = Stock.find_by_ticker('AAPL')
@@ -40,6 +40,10 @@ amzn = Stock.find_by_ticker('AMZN')
 krtx = Stock.find_by_ticker('KRTX')
 kzr = Stock.find_by_ticker('KZR')
 lazy = Stock.find_by_ticker('LAZY')
+antm = Stock.find_by_ticker('ANTM')
+cmcsa = Stock.find_by_ticker('CMCSA')
+dell = Stock.find_by_ticker('DELL')
+pfe = Stock.find_by_ticker('PFE')
 
 
 
@@ -57,10 +61,15 @@ StockOrder.create!( user_id: user1.id, portfolio_id: portfolio1.id, watchlist_id
 StockOrder.create!( user_id: user1.id, portfolio_id: portfolio1.id, watchlist_id: watchlist1.id, stock_id: microsoft.id, num_stocks: 300)
 StockOrder.create!( user_id: user1.id, portfolio_id: portfolio1.id, watchlist_id: watchlist1.id, stock_id: tesla.id, num_stocks: 500)
 StockOrder.create!( user_id: user1.id, portfolio_id: portfolio1.id, watchlist_id: watchlist1.id, stock_id: jpm.id, num_stocks: 700)
+StockOrder.create!( user_id: user1.id, portfolio_id: portfolio1.id, watchlist_id: watchlist1.id, stock_id: antm.id, num_stocks: 300)
+StockOrder.create!( user_id: user1.id, portfolio_id: portfolio1.id, watchlist_id: watchlist1.id, stock_id: cmcsa.id, num_stocks: 700)
+StockOrder.create!( user_id: user1.id, portfolio_id: portfolio1.id, watchlist_id: watchlist1.id, stock_id: jpm.id, num_stocks: 200)
 
 
 StockOrder.create!( user_id: user1.id, portfolio_id: portfolio1.id, watchlist_id: watchlist1.id, stock_id: fb.id, num_stocks: 0 )
 StockOrder.create!( user_id: user1.id, portfolio_id: portfolio1.id, watchlist_id: watchlist1.id, stock_id: nflx.id, num_stocks: 0 )
+StockOrder.create!( user_id: user1.id, portfolio_id: portfolio1.id, watchlist_id: watchlist1.id, stock_id: dell.id, num_stocks: 0 )
+StockOrder.create!( user_id: user1.id, portfolio_id: portfolio1.id, watchlist_id: watchlist1.id, stock_id: pfe.id, num_stocks: 0 )
 
 
 StockOrder.create( user_id: user2.id, portfolio_id: portfolio2.id, watchlist_id: watchlist2.id, stock_id: amzn.id, num_stocks: 200 )
