@@ -21,10 +21,16 @@
     text-shadow: darken;
 }
 
+.port-item-link:hover {
+    background-color: rgb(156, 231, 209);
+}
+
 .port-item-symbol {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 47px;
+    text-align: left;
 }
 
 .port-item-price {
@@ -33,6 +39,7 @@
     justify-content: center;
     margin-right: 15px;
     text-align: right;
+    width: 55px;
 }
 
 .port-header {
@@ -48,3 +55,20 @@
 .price-green {
     color: green;
 }
+
+.port-item-chart {
+    width: 80px;
+    height: 60px;
+}
+
+.mini-chart {
+    max-width: 80px;
+    max-height:60px;
+}
+
+.chart-render {
+    max-width: 80px;
+    max-height: 60px;
+
+}
+

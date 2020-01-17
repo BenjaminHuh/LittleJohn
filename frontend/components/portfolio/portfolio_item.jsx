@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom'
+import Minichart from '../chart/minichart';
 
 class PortfolioItem extends React.Component {
     constructor(props) {
@@ -21,7 +22,7 @@ class PortfolioItem extends React.Component {
 
     componentDidUpdate(prevState) {
         if (prevState.stock.info !== undefined && this.props.stock.info !== undefined) {
-            let prevPrice = prevState.stock.info.regularMarketPrice;
+            let prevPrice = this.props.stock.info.regularMarketPreviousClose;
             let newPrice = this.props.stock.info.regularMarketPrice;
             let change = (prevPrice - newPrice) / prevPrice * 100;
             if (change > 0) {
@@ -39,6 +40,7 @@ class PortfolioItem extends React.Component {
     }    
 
     render() {
+
         if (!this.props.stock.info) {
             return null;
         } 
@@ -47,16 +49,16 @@ class PortfolioItem extends React.Component {
             let ticker_change = this.ticker.change;
             const { symbol, regularMarketPrice } = this.props.stock.info;
             return (
-                <Link className="port-item-link" to={`/stocks/${symbol}`}>
+                <Link className='port-item-link' to={`/stocks/${symbol}`}>
                     <div className="port-item-symbol">
                         <div></div>
                         <div className={ticker_color}>
                             {symbol}
                         </div>
-                        <div></div>
                     </div>
 
                     <div className="port-item-chart">
+                        <Minichart change={ticker_change} ticker={this.props.stock.info.symbol} className="mini-chart"/>
                     </div>
 
                     <div className="port-item-price">
