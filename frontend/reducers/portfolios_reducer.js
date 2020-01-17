@@ -25,9 +25,10 @@ const portfoliosReducer = (state = {}, action) => {
             return nextState;
 
         case CLEAR_PORTFOLIO_LIST:
-            Object.keys(action.portfolio).forEach(key => {
-                delete nextState[key].info
-            })
+            nextState = [];
+            // Object.keys(action.portfolio).forEach(key => {
+            //     delete nextState[key].info
+            // })
             return nextState;
 
         case CLEAR_WATCHLIST_LIST:

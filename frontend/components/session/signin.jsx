@@ -101,9 +101,9 @@ class Signin extends React.Component {
             <h2>Welcome to LittleJohn</h2>
             <br/>
             <form>
-              <label id="signin-text">Username
+              <label className="signin-text">Username
                 <br/>
-                <input id="signin-box"
+                <input className="signin-box"
                   type="text"
                   value={this.state.username}
                   onChange={this.update('username')}
@@ -111,9 +111,9 @@ class Signin extends React.Component {
                 />
               </label>
               <br/>
-              <label id="signin-text">Password
+              <label className="signin-text">Password
                 <br/>
-                <input id="signin-box"
+                <input className="signin-box"
                   type="password"
                   value={this.state.password}
                   onChange={this.update('password')}

@@ -11,6 +11,7 @@ class Stockorder extends React.Component {
                     <div className="stock-2"></div>
                     <div className="stock-3"></div>
                     <div className="stock-4"></div>
+                    
                 </div>
             </div>
         )
