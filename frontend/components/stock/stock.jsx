@@ -1,7 +1,7 @@
 import React from 'react';
 import NewsContainer from '../news/news_container';
 import StockorderContainer from '../stockorder/stockorder_container';
-
+import StockChart from '../chart/stock_chart';
 class Stock extends React.Component {
 
     constructor(props) {
@@ -48,12 +48,15 @@ class Stock extends React.Component {
                     <div className="dashboard-inner">
                         <div className="stock-info1">
                             <div className="dashboard-port-news">
-                                <div>
+                                <div className="stock-info2">
                                     {longName}
                                     <br/>
                                     {regularMarketPrice}
                                     <br/>
-                                    {regularMarketDayRange}   
+                                    {regularMarketDayRange}
+                                </div>
+                                <div className="stock-info-chart">
+                                    <StockChart ticker={ symbol } />
                                 </div>
                                 <div className="news">
                                     <NewsContainer />

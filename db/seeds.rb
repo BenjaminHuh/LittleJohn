@@ -30,20 +30,21 @@ user1 = User.create!( username: 'ladymarian', email: 'ladymarian@littlejohn.com'
 user2 = User.create!( username: 'jamie', email: 'jamie@littlejohn.com', password: 'password', balance: 239875297.00)
 
 
-apple = Stock.find_by_ticker('AAPL')
-microsoft = Stock.find_by_ticker('MSFT')
-tesla = Stock.find_by_ticker('TSLA')
-fb = Stock.find_by_ticker('FB')
-nflx = Stock.find_by_ticker('NFLX')
-jpm = Stock.find_by_ticker('JPM')
+aapl = Stock.find_by_ticker('AAPL')
+amd = Stock.find_by_ticker('AMD')
 amzn = Stock.find_by_ticker('AMZN')
-krtx = Stock.find_by_ticker('KRTX')
-kzr = Stock.find_by_ticker('KZR')
-lazy = Stock.find_by_ticker('LAZY')
-antm = Stock.find_by_ticker('ANTM')
-cmcsa = Stock.find_by_ticker('CMCSA')
-dell = Stock.find_by_ticker('DELL')
-pfe = Stock.find_by_ticker('PFE')
+ba = Stock.find_by_ticker('BA')
+baba = Stock.find_by_ticker('BABA')
+coke = Stock.find_by_ticker('COKE')
+dis = Stock.find_by_ticker('DIS')
+fb = Stock.find_by_ticker('FB')
+msft = Stock.find_by_ticker('MSFT')
+nflx = Stock.find_by_ticker('NFLX')
+nvda = Stock.find_by_ticker('NVDA')
+sq = Stock.find_by_ticker('SQ')
+tsla = Stock.find_by_ticker('TSLA')
+wf = Stock.find_by_ticker('WF')
+
 
 
 
@@ -57,22 +58,18 @@ watchlist2 = Watchlist.create!( user_id: user2.id )
 
 
 StockOrder.delete_all
-StockOrder.create!( user_id: user1.id, portfolio_id: portfolio1.id, watchlist_id: watchlist1.id, stock_id: apple.id, num_stocks: 800)
-StockOrder.create!( user_id: user1.id, portfolio_id: portfolio1.id, watchlist_id: watchlist1.id, stock_id: microsoft.id, num_stocks: 300)
-StockOrder.create!( user_id: user1.id, portfolio_id: portfolio1.id, watchlist_id: watchlist1.id, stock_id: tesla.id, num_stocks: 500)
-StockOrder.create!( user_id: user1.id, portfolio_id: portfolio1.id, watchlist_id: watchlist1.id, stock_id: jpm.id, num_stocks: 700)
-StockOrder.create!( user_id: user1.id, portfolio_id: portfolio1.id, watchlist_id: watchlist1.id, stock_id: antm.id, num_stocks: 300)
-StockOrder.create!( user_id: user1.id, portfolio_id: portfolio1.id, watchlist_id: watchlist1.id, stock_id: cmcsa.id, num_stocks: 700)
-StockOrder.create!( user_id: user1.id, portfolio_id: portfolio1.id, watchlist_id: watchlist1.id, stock_id: jpm.id, num_stocks: 200)
+StockOrder.create!( user_id: user1.id, portfolio_id: portfolio1.id, watchlist_id: watchlist1.id, stock_id: aapl.id, num_stocks: 800)
+StockOrder.create!( user_id: user1.id, portfolio_id: portfolio1.id, watchlist_id: watchlist1.id, stock_id: msft.id, num_stocks: 300)
+StockOrder.create!( user_id: user1.id, portfolio_id: portfolio1.id, watchlist_id: watchlist1.id, stock_id: tsla.id, num_stocks: 500)
+StockOrder.create!( user_id: user1.id, portfolio_id: portfolio1.id, watchlist_id: watchlist1.id, stock_id: wf.id, num_stocks: 700)
+StockOrder.create!( user_id: user1.id, portfolio_id: portfolio1.id, watchlist_id: watchlist1.id, stock_id: amzn.id, num_stocks: 300)
+StockOrder.create!( user_id: user1.id, portfolio_id: portfolio1.id, watchlist_id: watchlist1.id, stock_id: coke.id, num_stocks: 700)
+StockOrder.create!( user_id: user1.id, portfolio_id: portfolio1.id, watchlist_id: watchlist1.id, stock_id: dis.id, num_stocks: 200)
 
 
 StockOrder.create!( user_id: user1.id, portfolio_id: portfolio1.id, watchlist_id: watchlist1.id, stock_id: fb.id, num_stocks: 0 )
 StockOrder.create!( user_id: user1.id, portfolio_id: portfolio1.id, watchlist_id: watchlist1.id, stock_id: nflx.id, num_stocks: 0 )
-StockOrder.create!( user_id: user1.id, portfolio_id: portfolio1.id, watchlist_id: watchlist1.id, stock_id: dell.id, num_stocks: 0 )
-StockOrder.create!( user_id: user1.id, portfolio_id: portfolio1.id, watchlist_id: watchlist1.id, stock_id: pfe.id, num_stocks: 0 )
+StockOrder.create!( user_id: user1.id, portfolio_id: portfolio1.id, watchlist_id: watchlist1.id, stock_id: sq.id, num_stocks: 0 )
+StockOrder.create!( user_id: user1.id, portfolio_id: portfolio1.id, watchlist_id: watchlist1.id, stock_id: nvda.id, num_stocks: 0 )
 
 
-StockOrder.create( user_id: user2.id, portfolio_id: portfolio2.id, watchlist_id: watchlist2.id, stock_id: amzn.id, num_stocks: 200 )
-StockOrder.create( user_id: user2.id, portfolio_id: portfolio2.id, watchlist_id: watchlist2.id, stock_id: krtx.id, num_stocks: 300 )
-StockOrder.create( user_id: user2.id, portfolio_id: portfolio2.id, watchlist_id: watchlist2.id, stock_id: kzr.id, num_stocks: 0 )
-StockOrder.create( user_id: user2.id, portfolio_id: portfolio2.id, watchlist_id: watchlist2.id, stock_id: lazy.id, num_stocks: 0 )

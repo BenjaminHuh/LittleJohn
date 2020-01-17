@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import Minichart from '../chart/minichart';
 
 class WatchlistItem extends React.Component {
     constructor(props) {
@@ -20,7 +21,7 @@ class WatchlistItem extends React.Component {
 
     componentDidUpdate(prevState) {
         if (prevState.stock.info !== undefined && this.props.stock.info !== undefined) {
-            let prevPrice = prevState.stock.info.regularMarketPrice;
+            let prevPrice = this.props.stock.info.regularMarketPreviousClose;
             let newPrice = this.props.stock.info.regularMarketPrice;
             let change = (prevPrice - newPrice) / prevPrice * 100;
             if (change > 0) {
@@ -53,7 +54,9 @@ class WatchlistItem extends React.Component {
                         <div className={ticker_color}>{symbol}</div>
                         <div></div>
                     </div>
-                    <div className="port-item-chart"></div>
+                    <div className="port-item-chart">
+                        <Minichart change={ticker_change} ticker={this.props.stock.info.symbol} className="mini-chart"/>
+                    </div>
                     <div className="port-item-price">
                         <div className={ticker_color}>${regularMarketPrice.toFixed(2)}</div>
                         <div className={ticker_color}>{(ticker_change).toFixed(2)}%</div>

@@ -21,6 +21,8 @@
 }
 .searchbar:focus {
     box-shadow: 0px -1px 8px 4px rgba(0,0,0,0.1);
+    outline: none;
+
 }
 
 .search-form {
