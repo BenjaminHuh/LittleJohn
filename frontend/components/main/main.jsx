@@ -98,6 +98,11 @@ class Main extends React.Component {
                         </div>
                     </div>
                     <div className="main_five">
+                        <p>© 2020 Robinhood. All rights reserved.</p>
+                        <br/>
+                        <p>Robinhood means Robinhood Markets and its in-application and web experiences with its family of wholly owned subsidiaries which includes Robinhood Financial, Robinhood Securities, Robinhood Crypto, and Robinhood International.</p>
+                        <p>Check the background of Robinhood Financial LLC and Robinhood Securities, LLC on FINRA’s BrokerCheck.</p>
+                        <p>Securities trading is offered to self-directed customers by Robinhood Financial. Robinhood Financial is a member of the Financial Industry Regulatory Authority (FINRA).</p>
                     </div>
                 </div>
             </div>

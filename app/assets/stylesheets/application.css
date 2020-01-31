@@ -181,6 +181,20 @@
     font-size: 30px;
 }
 
+.main_five {
+    margin-top: 120px;
+    background-color: black;
+    height: 400px;
+    text-align: left;
+    color: gray;
+    padding-left:  10%;
+    padding-right: 10%;
+    padding-top: 50px;
+}
+
+.main_five p {
+    margin-top: 40px;
+}
 .product-img {
     position: relative;
     left: 15%;
