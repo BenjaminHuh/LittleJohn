@@ -98,11 +98,11 @@ class Main extends React.Component {
                         </div>
                     </div>
                     <div className="main_five">
-                        <p>© 2020 Robinhood. All rights reserved.</p>
+                        <p>© 2020 LittleJohn. All rights reserved.</p>
                         <br/>
-                        <p>Robinhood means Robinhood Markets and its in-application and web experiences with its family of wholly owned subsidiaries which includes Robinhood Financial, Robinhood Securities, Robinhood Crypto, and Robinhood International.</p>
-                        <p>Check the background of Robinhood Financial LLC and Robinhood Securities, LLC on FINRA’s BrokerCheck.</p>
-                        <p>Securities trading is offered to self-directed customers by Robinhood Financial. Robinhood Financial is a member of the Financial Industry Regulatory Authority (FINRA).</p>
+                        <p>LittleJohn means LittleJohn Markets and its in-application and web experiences with its family of wholly owned subsidiaries which includes LittleJohn Financial, LittleJohn Securities, LittleJohn Crypto, and LittleJohn International.</p>
+                        <p>Do Not Check the background of LittleJohn Financial LLC and LittleJohn Securities, LLC on FINRA’s BrokerCheck.</p>
+                        <p>Securities trading is not offered to self-directed customers by LittleJohn Financial. LittleJohn Financial is not a member of the Financial Industry Regulatory Authority (FINRA).</p>
                     </div>
                 </div>
             </div>
