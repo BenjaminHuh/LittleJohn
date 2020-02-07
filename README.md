@@ -44,6 +44,25 @@ if (prevState.stock.info !== undefined && this.props.stock.info !== undefined) {
 
 ### Stock 
 * Show page provides a chart of the stock's 5 years of historical trade data, and its related news
+* Listen to address changes, then fetch correct stock and news data by making api calls to newsapi
+
+``` javascript
+componentDidMount() {
+    this.props.clearNews();
+    this.topic = this.props.match.params.ticker;
+    this.topic === undefined ? this.topic = "STOCK MARKET" : this.topic;
+    this.props.getNews(this.topic)
+
+}
+
+componentDidUpdate(prevProps) {
+    const { match: { params: { ticker } } } = this.props
+    if (prevProps.match.params.ticker !== ticker){
+        this.props.getNews(this.props.match.params.ticker)
+    }
+}
+```
+<br>
 
 ![show](./readme/show.gif)
 
