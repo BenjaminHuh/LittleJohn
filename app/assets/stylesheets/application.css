@@ -73,7 +73,7 @@
 #one {
     display: flex;
     width: 50%;
-    justify-content: baseline;
+    justify-content: space-around;
     align-items: left;
     flex-wrap: wrap;
 }
