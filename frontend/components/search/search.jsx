@@ -25,7 +25,6 @@ class Search extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.getStock(this.state.query)
-        // this.setState(() => ({ stock: this.props.getStock(this.state.query)}))
         this.props.history.push(`/stocks/${this.state.query}`)
     }
 
