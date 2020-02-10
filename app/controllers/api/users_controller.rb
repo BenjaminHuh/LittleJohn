@@ -1,6 +1,7 @@
 class Api::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
+    @user.balance = 0;
 
     if @user.save
       signin(@user)
