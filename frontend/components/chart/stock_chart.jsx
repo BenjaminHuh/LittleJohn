@@ -35,20 +35,28 @@ class Chart extends React.Component {
         // let stroke = change > 0 ? "#72ca9d" : "#FB6E6E"
         // debugger
         return (
-            <div className="chart-render">
-                {/* <div className="chart-title">
-                    {stock.toUpperCase()}
-                </div> */}
-                <LineChart
-                    width={800}
-                    height={350}
-                    data={stocks[ticker.toLowerCase()]}
-                    margin={{ top: 1, right: 25, left: 15, bottom: 23 }}
-                    >
-                    <XAxis dataKey="Date" tick={false} stroke="#fff"/>
-                    <Tooltip />
-                    <Line type="monotone" dataKey="Price" stroke="#72ca9d" strokeWidth={3} dot={false}/>
-                </LineChart>
+            <div className="chart-render-outer">
+                <div className="chart-render">
+                    {/* <div className="chart-title">
+                        {stock.toUpperCase()}
+                    </div> */}
+                    <LineChart
+                        width={800}
+                        height={350}
+                        data={stocks[ticker.toLowerCase()]}
+                        margin={{ top: 1, right: 25, left: 15, bottom: 23 }}
+                        >
+                        <XAxis dataKey="Date" tick={false} stroke="#fff"/>
+                        <Tooltip />
+                        <Line type="monotone" dataKey="Price" stroke="#72ca9d" strokeWidth={3} dot={false}/>
+                    </LineChart>
+                    <ul className="options">
+                        <li>D</li>
+                        <li>M</li>
+                        <li>Y</li>
+                        <li>5Y</li>
+                </ul>
+                </div>
             </div>
 
         )

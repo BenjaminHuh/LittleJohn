@@ -1,15 +1,21 @@
 import React from 'react';
 import Main from '../main/main';
 import DashboardContainer from '../dashboard/dashboard_container';
-// import NavbarContainer from '../navbar/navbar_container'
+import NavbarContainer from '../navbar/navbar_container'
 const Home = ({ currentUser, history, match }) => {
     const signedOff = () => (
-        <Main />
+        <div>
+            <NavbarContainer/>
+            <Main />
+        </div>
     )
 
     const signedIn = () => {
         return (
-        <DashboardContainer className="dashboard" match={ match } history={ history }/>
+            <div>
+                <NavbarContainer/>
+                <DashboardContainer className="dashboard" match={ match } history={ history }/>
+            </div>
         );
     }
 
