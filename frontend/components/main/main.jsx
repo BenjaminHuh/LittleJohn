@@ -1,5 +1,4 @@
 import React from 'react';
-import NavbarContainer from "../navbar/navbar_container";
 import Phone from "./phone/phone";
 import { Link } from 'react-router-dom'
 
@@ -8,9 +7,6 @@ class Main extends React.Component {
     render() {
         return (
             <div>
-                <nav>
-                    <NavbarContainer/>
-                </nav>
                 <div className="main-div">
 
                     <div className="main_one">
@@ -94,7 +90,6 @@ class Main extends React.Component {
                             <p>
                                 Get mobile access to the markets. Invest commission-free in individual companies or bundles of investments (ETFs).
                             </p>
-
                         </div>
                     </div>
                     <div className="main_five">

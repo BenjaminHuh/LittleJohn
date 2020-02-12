@@ -21,9 +21,27 @@
     width: 720px;
     margin-left: 50px;
     font-size: 35px;
+    color: black;
 }
 
 .stock-info-chart {
     position: absolute;
-    // margin-top: -200px;
+    margin-top: 200px;
+}
+
+.chart-render-outer {
+    display: flex;
+    flex-direction: column;
+}
+
+.options {
+    // border-top: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.options li {
+    margin: 20px;
+    list-style: none;
 }

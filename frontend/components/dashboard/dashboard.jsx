@@ -1,9 +1,7 @@
 import React from 'react';
-import NavbarContainer from '../navbar/navbar_container';
 import StockContainer from '../stock/stock_container';
 import PortfolioContainer from '../portfolio/portfolio_container';
 import NewsContainer from '../news/news_container';
-import SummaryContainer from '../summary/summary_container';
 import StockorderContainer from '../stockorder/stockorder_container';
 import Chart from '../chart/chart';
 import { withRouter } from 'react-router-dom';
@@ -13,14 +11,11 @@ const Dashboard = ({ match, currentUser }) => {
     const showPortfolio = () => {
         return (
             <div className="dashboard-main">
-                <NavbarContainer match={ match } history={history} />
                 <div className="dashboard-inner">
                     <div className="dashboard-port-news">
                         <div className="portfolio-summary">
                             <div>
                             </div>
-                            <Chart/>
-                            {/* <SummaryContainer/> */}
                         </div>
                         <div className="news">
                             <NewsContainer/>
