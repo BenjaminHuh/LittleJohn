@@ -44,6 +44,7 @@ export const getIexStock = (ticker, option = 'intra') => {
     //         break;
     // }
     return $.ajax({
+        // url: `https://cloud.iexapis.com/stable/stock/aapl/intraday-prices/?token=${window.iexAPIKey}`
         url: `https://cloud.iexapis.com/stable/stock/aapl/intraday-prices/?token=${window.iexAPIKey}`
     })
 }
