@@ -39,7 +39,6 @@ class WatchlistItem extends React.Component {
     }    
 
     render() {
-        
         if (!this.props.stock.info) {
             return null;
         } 
@@ -55,7 +54,7 @@ class WatchlistItem extends React.Component {
                         <div></div>
                     </div>
                     <div className="port-item-chart">
-                        <Minichart change={ticker_change} ticker={this.props.stock.info.symbol} className="mini-chart"/>
+                        <Minichart change={ticker_change} ticker={this.props.stock.info.symbol} data={this.props.stock.info.data} className="mini-chart"/>
                     </div>
                     <div className="port-item-price">
                         <div className={ticker_color}>${regularMarketPrice.toFixed(2)}</div>

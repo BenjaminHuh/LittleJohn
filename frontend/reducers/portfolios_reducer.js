@@ -17,6 +17,7 @@ const portfoliosReducer = (state = {}, action) => {
             return nextState;
 
         case GET_PORTFOLIO_ITEM:
+            // debugger
             Object.keys(action.stock).forEach(id => {
                 let newStock = Object.assign({}, nextState[id])
                 newStock.info = action.stock[id]

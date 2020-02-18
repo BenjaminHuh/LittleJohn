@@ -47,10 +47,10 @@ class StockChart extends React.Component {
                         data={data}
                         margin={{ top: 1, right: 70, left: -10, bottom: 100 }}
                         >
-                        <XAxis dataKey="date" tick={false} stroke="#fff"/>
+                        <XAxis dataKey="label" tick={false} stroke="#fff"/>
                         <YAxis type="number" tick={false} stroke="#fff" domain={['auto', 'auto']} />
                         <Tooltip />
-                        <Line type="monotone" dataKey="close" stroke="#72ca9d" strokeWidth={3} dot={false}/>
+                        <Line type="monotone" dataKey="average" stroke="#72ca9d" strokeWidth={3} dot={false}/>
                     </LineChart>
                     <ul className="options">
                         <li>D</li>

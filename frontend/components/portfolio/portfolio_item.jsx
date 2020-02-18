@@ -45,6 +45,7 @@ class PortfolioItem extends React.Component {
             return null;
         } 
         else {
+            debugger
             let ticker_color = this.ticker.color;
             let ticker_change = this.ticker.change;
             const { symbol, regularMarketPrice } = this.props.stock.info;
@@ -58,7 +59,7 @@ class PortfolioItem extends React.Component {
                     </div>
 
                     <div className="port-item-chart">
-                        <Minichart change={ticker_change} ticker={this.props.stock.info.symbol} className="mini-chart"/>
+                        <Minichart change={ticker_change} ticker={this.props.stock.info.symbol} data={this.props.stock.info.data} className="mini-chart"/>
                     </div>
 
                     <div className="port-item-price">

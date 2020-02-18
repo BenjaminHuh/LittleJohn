@@ -39,10 +39,12 @@ class Minichart extends React.Component {
                <LineChart
                     width={90}
                     height={60}
-                    data={stocks[ticker.toLowerCase()]}
-                    margin={{ top: 10, right: 5, left: 2, bottom: 3 }}
+                    // data={stocks[ticker.toLowerCase()]}
+                    data={this.props.data}
+                    margin={{ top: 10, right: 5, left: -60, bottom: 3 }}
                     >
-                    <Line type="monotone" dataKey="Price" stroke={stroke} strokeWidth={2} dot={false}/>
+                    <YAxis type="number" tick={false} stroke="#fff" domain={['auto', 'auto']} />
+                    <Line type="monotone" dataKey="average" stroke={stroke} strokeWidth={2} dot={false}/>
                 </LineChart>
             </div>
         )
