@@ -31,7 +31,7 @@ class StockChart extends React.Component {
     
     render() {
 
-        const stocks = {aapl: aapl, amzn: amzn, ba: ba, baba: baba, coke: coke, dis: dis, fb: fb, msft: msft, nflx: nflx, nvda: nvda, sq: sq, tsla: tsla, wf: wf}
+        // const stocks = {aapl: aapl, amzn: amzn, ba: ba, baba: baba, coke: coke, dis: dis, fb: fb, msft: msft, nflx: nflx, nvda: nvda, sq: sq, tsla: tsla, wf: wf}
         const { ticker, data } = this.props
         // let stroke = change > 0 ? "#72ca9d" : "#FB6E6E"
         return (
@@ -43,14 +43,14 @@ class StockChart extends React.Component {
                     <LineChart
                         width={800}
                         height={350}
-                        data={stocks[ticker.toLowerCase()]}
-                        // data={data}
-                        margin={{ top: 1, right: 25, left: 15, bottom: 23 }}
+                        // data={stocks[ticker.toLowerCase()]}
+                        data={data}
+                        margin={{ top: 1, right: 70, left: -10, bottom: 100 }}
                         >
-                        <XAxis dataKey="Date" tick={false} stroke="#fff"/>
-                        {/* <YAxis type="number" domain={['auto', 'auto']} /> */}
+                        <XAxis dataKey="date" tick={false} stroke="#fff"/>
+                        <YAxis type="number" tick={false} stroke="#fff" domain={['auto', 'auto']} />
                         <Tooltip />
-                        <Line type="monotone" dataKey="Price" stroke="#72ca9d" strokeWidth={3} dot={false}/>
+                        <Line type="monotone" dataKey="close" stroke="#72ca9d" strokeWidth={3} dot={false}/>
                     </LineChart>
                     <ul className="options">
                         <li>D</li>
