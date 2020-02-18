@@ -27,13 +27,13 @@ import tsla from './tsla.json'
 import wf from './wf.json'
 
 
-class Chart extends React.Component {
+class StockChart extends React.Component {
     
     render() {
-        // const stocks = {aapl: aapl, amzn: amzn, ba: ba, baba: baba, coke: coke, dis: dis, fb: fb, msft: msft, nflx: nflx, nvda: nvda, sq: sq, tsla: tsla, wf: wf}
+
+        const stocks = {aapl: aapl, amzn: amzn, ba: ba, baba: baba, coke: coke, dis: dis, fb: fb, msft: msft, nflx: nflx, nvda: nvda, sq: sq, tsla: tsla, wf: wf}
         const { ticker, data } = this.props
         // let stroke = change > 0 ? "#72ca9d" : "#FB6E6E"
-        debugger
         return (
             <div className="chart-render-outer">
                 <div className="chart-render">
@@ -43,11 +43,12 @@ class Chart extends React.Component {
                     <LineChart
                         width={800}
                         height={350}
-                        // data={stocks[ticker.toLowerCase()]}
-                        data={data}
+                        data={stocks[ticker.toLowerCase()]}
+                        // data={data}
                         margin={{ top: 1, right: 25, left: 15, bottom: 23 }}
                         >
                         <XAxis dataKey="Date" tick={false} stroke="#fff"/>
+                        {/* <YAxis type="number" domain={['auto', 'auto']} /> */}
                         <Tooltip />
                         <Line type="monotone" dataKey="Price" stroke="#72ca9d" strokeWidth={3} dot={false}/>
                     </LineChart>
@@ -64,4 +65,4 @@ class Chart extends React.Component {
     }
 }
 
-export default Chart;
+export default StockChart;

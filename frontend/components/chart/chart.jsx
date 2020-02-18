@@ -30,7 +30,7 @@ import wf from './wf.json'
 class Chart extends React.Component {
     
     render() {
-        const stocks = [{aapl: aapl}, {amzn: amzn}, {ba: ba}, {baba: baba}, {coke: coke}, {dis: dis}, {fb: fb}, {msft: msft}, {nflx: nflx}, {nvda: nvda}, {sq: sq}, {tsla: tsla}, {wf: wf}]
+        // const stocks = [{aapl: aapl}, {amzn: amzn}, {ba: ba}, {baba: baba}, {coke: coke}, {dis: dis}, {fb: fb}, {msft: msft}, {nflx: nflx}, {nvda: nvda}, {sq: sq}, {tsla: tsla}, {wf: wf}]
         let randNum = Math.round(Math.random() * 10)
         let stock = Object.keys(stocks[randNum])[0]
         // debugger
@@ -47,6 +47,7 @@ class Chart extends React.Component {
                 >
                 {/* <CartesianGrid strokeDasharray="3 3" /> */}
                 <XAxis dataKey="Date" tick={false} stroke="#fff"/>
+                <YAxis type="number" domain={['auto', 'auto']} />
                 {/* <YAxis dateKey="Price" tick={false} stroke="#fff"/> */}
                 <Tooltip />
                 <Line type="monotone" dataKey="Price" stroke="#82ca9d" strokeWidth={3} dot={false}/>

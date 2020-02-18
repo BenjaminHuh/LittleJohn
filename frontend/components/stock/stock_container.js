@@ -7,11 +7,10 @@ const mSTP = (state, ownProps) => {
     // let temp = ownProps.match.params.ticker;
     // const ticker = Object.keys(state.entities.stock)[0]
     let ticker = ownProps.match.params.ticker
-    // debugger
+
     return ({
         stock: state.entities.stock[ticker],
-        ticker,
-        data: state.entities.stock[ticker].data
+        ticker
     })
 }
 
