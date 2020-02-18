@@ -4,15 +4,14 @@ import Stock from './stock';
 import { getStock } from '../../actions/stocks_actions'
 
 const mSTP = (state, ownProps) => {
-    // debugger
     // let temp = ownProps.match.params.ticker;
-
-    const ticker = Object.keys(state.entities.stock)[0]
-    // let ticker = ownProps.match.params.ticker
+    // const ticker = Object.keys(state.entities.stock)[0]
+    let ticker = ownProps.match.params.ticker
+    // debugger
     return ({
         stock: state.entities.stock[ticker],
-        // ticker: Object.keys(state.entities.stock)[0]
-        ticker
+        ticker,
+        data: state.entities.stock[ticker].data
     })
 }
 
