@@ -16,6 +16,7 @@ class Api::StocksController < ApplicationController
         stock_url = "https://cloud.iexapis.com/stable/stock/#{ticker}/intraday-prices/?token=#{api_key}"
         # stock_url = "https://query1.finance.yahoo.com/v7/finance/quote?symbols=#{ticker}"
         @stock_info = HTTParty.get(stock_url).parsed_response #["quoteResponse"]["result"][0]
+        @ticker = ticker
         if @stock_info.nil?
             render json: ['Unable to fetch stock'], status: 401
         else

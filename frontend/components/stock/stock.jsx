@@ -16,7 +16,7 @@ class Stock extends React.Component {
 
     componentDidMount() {
         this.props.getStock(this.props.match.params.ticker)   
-        this.interval = setInterval(() => this.props.getStock(this.props.match.params.ticker), 5000);
+        this.interval = setInterval(() => this.props.getStock(this.props.match.params.ticker), 60000);
     }
     componentWillUnmount() {
         clearInterval(this.interval);
@@ -31,17 +31,18 @@ class Stock extends React.Component {
 
     
     render() {
-        
+        debugger
         const { stock } = this.props;
 
         if (!stock) {
             return "stock component";
         } else {
             const {
-                longName, 
+                // longName, 
                 symbol, 
-                regularMarketDayRange, 
-                regularMarketPrice
+                // regularMarketDayRange, 
+                // regularMarketPrice
+                data
             } = stock;
             return (
                 <div className="dashboard-main">
@@ -56,7 +57,7 @@ class Stock extends React.Component {
                                     {regularMarketDayRange}
                                 </div>
                                 <div className="stock-info-chart">
-                                    <StockChart ticker={ symbol } />
+                                    <StockChart ticker={ symbol } data={ data } />
                                 </div>
                                 <div className="news">
                                     <NewsContainer />

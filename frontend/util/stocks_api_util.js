@@ -35,16 +35,8 @@ export const getWatchlistItem = stock_id => (
 )
 
 export const getIexStock = (ticker, option = 'intra') => {
-    // switch (option) {
-    //     case 'intra':
-            
-    //         break;
-    
-    //     default:
-    //         break;
-    // }
     return $.ajax({
-        // url: `https://cloud.iexapis.com/stable/stock/aapl/intraday-prices/?token=${window.iexAPIKey}`
-        url: `https://cloud.iexapis.com/stable/stock/aapl/intraday-prices/?token=${window.iexAPIKey}`
+        url: `/api/stocks/${ticker.toUpperCase()}`,
+        data: { option }
     })
 }
