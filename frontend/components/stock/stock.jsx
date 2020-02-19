@@ -38,10 +38,10 @@ class Stock extends React.Component {
             return "stock component";
         } else {
             const {
-                // longName, 
+                longName, 
                 symbol, 
-                // regularMarketDayRange, 
-                // regularMarketPrice
+                regularMarketDayRange, 
+                regularMarketPrice,
                 data
             } = stock;
             return (
@@ -50,11 +50,11 @@ class Stock extends React.Component {
                         <div className="stock-info1">
                             <div className="dashboard-port-news">
                                 <div className="stock-info2">
-                                    {/* {longName} */}
+                                    <h3>{longName}</h3>
                                     <br/>
-                                    {/* {regularMarketPrice} */}
+                                    {regularMarketPrice}
                                     <br/>
-                                    {/* {regularMarketDayRange} */}
+                                    {regularMarketDayRange}
                                 </div>
                                 <div className="stock-info-chart">
                                     <StockChart ticker={ symbol } data={ data } />

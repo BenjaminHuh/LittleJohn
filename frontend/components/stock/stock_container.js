@@ -10,7 +10,7 @@ const mSTP = (state, ownProps) => {
     // let ticker = ownProps.match.params.ticker
 
     return ({
-        stock: state.entities.stock[ticker],
+        stock: state.entities.stock[ticker].info,
         ticker
     })
 }

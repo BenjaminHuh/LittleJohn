@@ -12,7 +12,22 @@ class PortfolioItem extends React.Component {
 
     componentDidMount() {
         this.props.clearStockItem()
-        this.props.getPortfolioItem(this.props.id)
+        this.props.getPortfolioItem(this.props.id).then(() => {
+            let prevPrice = this.props.stock.info.regularMarketPreviousClose;
+            let newPrice = this.props.stock.info.regularMarketPrice;
+            let change = (newPrice - prevPrice) / prevPrice * 100;
+            if (change > 0) {
+                this.ticker = { 
+                    color: "price-green",
+                    change: change
+                 }
+            } else {
+                this.ticker = { 
+                    color: "price-red",
+                    change: change
+                }                
+            }
+        })
         this.interval = setInterval(() => this.props.getPortfolioItem(this.props.id), 2000);
     }
 
@@ -24,7 +39,7 @@ class PortfolioItem extends React.Component {
         if (prevState.stock.info !== undefined && this.props.stock.info !== undefined) {
             let prevPrice = this.props.stock.info.regularMarketPreviousClose;
             let newPrice = this.props.stock.info.regularMarketPrice;
-            let change = (prevPrice - newPrice) / prevPrice * 100;
+            let change = (newPrice - prevPrice) / prevPrice * 100;
             if (change > 0) {
                 this.ticker = { 
                     color: "price-green",
@@ -45,7 +60,6 @@ class PortfolioItem extends React.Component {
             return null;
         } 
         else {
-            debugger
             let ticker_color = this.ticker.color;
             let ticker_change = this.ticker.change;
             const { symbol, regularMarketPrice } = this.props.stock.info;

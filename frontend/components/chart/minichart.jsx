@@ -44,7 +44,7 @@ class Minichart extends React.Component {
                     margin={{ top: 10, right: 5, left: -60, bottom: 3 }}
                     >
                     <YAxis type="number" tick={false} stroke="#fff" domain={['auto', 'auto']} />
-                    <Line type="monotone" dataKey="average" stroke={stroke} strokeWidth={2} dot={false}/>
+                    <Line type="monotone" dataKey="average" stroke={stroke} strokeWidth={2} dot={false} connectNulls={true}/>
                 </LineChart>
             </div>
         )

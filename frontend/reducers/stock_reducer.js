@@ -4,11 +4,21 @@ import {
 
 const stockReducer = (state = { NASDAQ: { symbol: "NASDAQ", data: [] } }, action) => {
     Object.freeze(state);
+    let nextState = {};
+
     switch (action.type) {
         case RECEIVE_STOCK:
-            const newStock = { [action.stock.symbol]: action.stock, data: action.stock.data }
-            // debugger
-            return Object.assign({}, newStock);
+            // const newStock = { [action.stock.symbol]: action.stock, data: action.stock.data }
+            // // debugger
+            // return Object.assign({}, newStock);
+
+
+            Object.keys(action.stock).forEach(id => {
+                let newStock = Object.assign({}, nextState[id])
+                newStock.info = action.stock[id]
+                nextState[id] = newStock
+            })
+            return nextState;
 
         default:
             return state;

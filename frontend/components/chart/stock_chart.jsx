@@ -36,6 +36,9 @@ class StockChart extends React.Component {
         // let stroke = change > 0 ? "#72ca9d" : "#FB6E6E"
         return (
             <div className="chart-render-outer">
+                <div className="chart-info">
+
+                </div>
                 <div className="chart-render">
                     {/* <div className="chart-title">
                         {stock.toUpperCase()}
@@ -49,16 +52,17 @@ class StockChart extends React.Component {
                         >
                         <XAxis dataKey="label" tick={false} stroke="#fff"/>
                         <YAxis type="number" tick={false} stroke="#fff" domain={['auto', 'auto']} />
+
                         <Tooltip />
-                        <Line type="monotone" dataKey="average" stroke="#72ca9d" strokeWidth={3} dot={false}/>
+                        <Line type="monotone" dataKey="average" stroke="#72ca9d" strokeWidth={3} dot={false} connectNulls={true}/>
                     </LineChart>
-                    <ul className="options">
-                        <li>D</li>
-                        <li>M</li>
-                        <li>Y</li>
-                        <li>5Y</li>
-                </ul>
                 </div>
+                <ul className="options">
+                    <li>D</li>
+                    <li>M</li>
+                    <li>Y</li>
+                    <li>5Y</li>
+                </ul>
             </div>
 
         )

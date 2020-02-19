@@ -1,7 +1,7 @@
 .news-div {
     z-index: -1;
     padding: 30px;
-    top: 400px;
+    top: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
