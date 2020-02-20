@@ -2,6 +2,7 @@ import React from 'react';
 import NewsContainer from '../news/news_container';
 import StockorderContainer from '../stockorder/stockorder_container';
 import StockChart from '../chart/stock_chart';
+import Company from './company';
 
 class Stock extends React.Component {
 
@@ -62,7 +63,7 @@ class Stock extends React.Component {
             return (
                 <div className="dashboard-main">
                     <div className="dashboard-inner">
-                        <div className="stock-info1">
+                        {/* <div className="stock-info1"> */}
                             <div className="dashboard-port-news">
                                 <div className="stock-info2">
                                     <h2>{longName}</h2>
@@ -75,17 +76,23 @@ class Stock extends React.Component {
                                     <StockChart ticker={ symbol } data={ data } stroke={ stroke } regularMarketPreviousClose={ regularMarketPreviousClose }/>
                                 </div>
                                 <ul className="options">
-                                    <li>D</li>
-                                    <li>M</li>
-                                    <li>Y</li>
+                                    <li>1D</li>
+                                    <li>1W</li>
+                                    <li>1M</li>
+                                    <li>3M</li>
+                                    <li>1Y</li>
                                     <li>5Y</li>
                                 </ul>
+                                <div className="company">
+
+                                </div>
+                                    <Company />
                                 <div className="news">
                                     <NewsContainer />
                                 </div>
                             </div>
 
-                        </div>
+                        {/* </div> */}
                     </div>
                     <div>
                         <StockorderContainer/>

@@ -36,9 +36,9 @@ class StockChart extends React.Component {
         const { ticker, data, stroke, regularMarketPreviousClose } = this.props
         return (
             <div className="chart-render-outer">
-                <div className="chart-info">
+                {/* <div className="chart-info">
 
-                </div>
+                </div> */}
                 <div className="chart-render">
                     {/* <div className="chart-title">
                         {stock.toUpperCase()}
@@ -51,7 +51,7 @@ class StockChart extends React.Component {
                         // data={stocks[ticker.toLowerCase()]}
                         data={data}
                         // margin={{ top: 0, right: 0, left: 0, bottom: 0 }}
-                        margin={{ top: 100, right: 70, left: -10, bottom: 50 }}
+                        margin={{ top: 0, right: 70, left: -10, bottom: 0 }}
                         >
                         <XAxis dataKey="label" tick={false} stroke="#fff" domain={['auto', 'auto']}/>
                         <YAxis interval={300} type="number" tick={false} stroke="#fff" domain={['auto', 'auto']} />
@@ -64,7 +64,7 @@ class StockChart extends React.Component {
                             strokeWidth={3} 
                             dot={false} 
                             connectNulls={true}
-                            animationEasing={"ease-in-out"}
+                            // animationEasing={"ease-in-out"}
                         />
                         <ReferenceLine y={regularMarketPreviousClose}
                             type="monotone"

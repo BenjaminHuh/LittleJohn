@@ -24,30 +24,40 @@ class Search extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.getStock(this.state.query)
-        this.props.history.push(`/stocks/${this.state.query}`)
+        if (this.state.query === "") {
+
+        } else {
+            try {
+                this.props.getStock(this.state.query).then(() => {
+                    this.props.history.push(`/stocks/${this.state.query}`)
+                })
+            }
+            catch(error) {
+                alert(error);
+            }
+        }
     }
 
     render() {
 
         return (
             <div>
-                <div>
+                <div> 
                     <form className="search-form"> 
                         <input 
                             className="searchbar" 
-                            required
                             type="text" 
-                            placeholder="Search"
+                            placeholder="Search by ticker.. try aapl or TSLA"
                             ref={input => this.search = input} 
                             onChange={this.update()}
+                            required
                         />
 
                         {/* <button type="submit" onClick={() => this.props.history.push(`/stocks/${this.state.query}`)}></button> */}
                         <button type="submit" onClick={this.handleSubmit}></button>
                     </form>
                 </div>
-                <div>
+                <div id="searchbar">
 
                 </div>
             </div>

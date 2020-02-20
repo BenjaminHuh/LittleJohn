@@ -7,7 +7,7 @@ export default (state = [], action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_STOCKS_ERRORS:
-            return action.errorsl
+            return action.errors;
             
         case CLEAR_STOCKS_ERRORS:
             return [];

@@ -1,11 +1,11 @@
 .news-div {
     z-index: -1;
     padding: 30px;
-    top: 500px;
+    /* top: 1000px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: absolute;
+    /* position: absolute; */
     border-radius: 3px;
     /* left: 10%; */
     background-color: white;
