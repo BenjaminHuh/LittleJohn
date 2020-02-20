@@ -5,30 +5,46 @@ import Minichart from '../chart/minichart';
 class PortfolioItem extends React.Component {
     constructor(props) {
         super(props);
-        this.ticker = { 
-            color: "black",
-            change: 0 }
+        // this.ticker = { 
+        //     color: "black",
+        //     change: 0 }
+    }
+    update() {
+        let prevPrice = this.props.stock.info.regularMarketPreviousClose;
+        let newPrice = this.props.stock.info.regularMarketPrice;
+        let change = (newPrice - prevPrice) / prevPrice * 100;
+        if (change > 0) {
+            this.ticker = { 
+                color: "price-green",
+                change: change
+                }
+        } else {
+            this.ticker = { 
+                color: "price-red",
+                change: change
+            }                
+        }
     }
 
     componentDidMount() {
-        // this.props.clearStockItem()
         this.props.getPortfolioItem(this.props.id).then(() => {
-            let prevPrice = this.props.stock.info.regularMarketPreviousClose;
-            let newPrice = this.props.stock.info.regularMarketPrice;
-            let change = (newPrice - prevPrice) / prevPrice * 100;
-            if (change > 0) {
-                this.ticker = { 
-                    color: "price-green",
-                    change: change
-                 }
-            } else {
-                this.ticker = { 
-                    color: "price-red",
-                    change: change
-                }                
-            }
+            this.update();
+            // let prevPrice = this.props.stock.info.regularMarketPreviousClose;
+            // let newPrice = this.props.stock.info.regularMarketPrice;
+            // let change = (newPrice - prevPrice) / prevPrice * 100;
+            // if (change > 0) {
+            //     this.ticker = { 
+            //         color: "price-green",
+            //         change: change
+            //      }
+            // } else {
+            //     this.ticker = { 
+            //         color: "price-red",
+            //         change: change
+            //     }                
+            // }
         })
-        this.interval = setInterval(() => this.props.getPortfolioItem(this.props.id), 5000);
+        this.interval = setInterval(() => this.props.getPortfolioItem(this.props.id), 3000);
     }
 
     componentWillUnmount() {
@@ -37,27 +53,30 @@ class PortfolioItem extends React.Component {
 
     componentDidUpdate(prevState) {
         if (prevState.stock.info !== undefined && this.props.stock.info !== undefined) {
-            let prevPrice = this.props.stock.info.regularMarketPreviousClose;
-            let newPrice = this.props.stock.info.regularMarketPrice;
-            let change = (newPrice - prevPrice) / prevPrice * 100;
-            if (change > 0) {
-                this.ticker = { 
-                    color: "price-green",
-                    change: change
-                 }
-            } else {
-                this.ticker = { 
-                    color: "price-red",
-                    change: change
-                    }
-            }
+            this.update();
+            // let prevPrice = this.props.stock.info.regularMarketPreviousClose;
+            // let newPrice = this.props.stock.info.regularMarketPrice;
+            // let change = (newPrice - prevPrice) / prevPrice * 100;
+            // if (change > 0) {
+            //     this.ticker = { 
+            //         color: "price-green",
+            //         change: change
+            //      }
+            // } else {
+            //     this.ticker = { 
+            //         color: "price-red",
+            //         change: change
+            //         }
+            // }
         }
     }    
 
     render() {
 
-        if (!this.props.stock.info) {
-            return null;
+        if (!this.props.stock.info || !this.ticker) {
+            return (
+                <div className='port-item-link'></div>
+            )
         } 
         else {
             let ticker_color = this.ticker.color;

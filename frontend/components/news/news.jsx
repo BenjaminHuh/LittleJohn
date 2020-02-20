@@ -37,7 +37,7 @@ class News extends React.Component {
                 {
                     Object.keys(this.props.news).map(id => {
                         return (
-                            <a key={id} href={this.props.news[id].url} className="news-article">
+                            <a key={id} href={this.props.news[id].url} className="news-article" target="_blank">
                                
                                 <div>
                                     <div className="news-story">

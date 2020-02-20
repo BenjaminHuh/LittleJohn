@@ -5,10 +5,10 @@ import Minichart from '../chart/minichart';
 class WatchlistItem extends React.Component {
     constructor(props) {
         super(props);
-        this.ticker = {
-            color: "black",
-            change: 0 
-        }
+        // this.ticker = {
+        //     color: "black",
+        //     change: 0 
+        // }
     }
     componentDidMount() {
         this.props.getWatchlistItem(this.props.id).then(() => {
@@ -27,7 +27,7 @@ class WatchlistItem extends React.Component {
                 }                
             }
         })
-        this.interval = setInterval(() => this.props.getWatchlistItem(this.props.id), 5000);
+        this.interval = setInterval(() => this.props.getWatchlistItem(this.props.id), 3000);
     }
 
     componentWillUnmount() {
@@ -54,8 +54,10 @@ class WatchlistItem extends React.Component {
     }    
 
     render() {
-        if (!this.props.stock.info) {
-            return null;
+        if (!this.props.stock.info || !this.ticker) {
+            return (
+                <div className='port-item-link'></div>
+            )
         } 
         else {
             let ticker_color = this.ticker.color;

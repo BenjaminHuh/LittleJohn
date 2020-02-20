@@ -13,45 +13,45 @@ class Portfolio extends React.Component {
     render() {
         const { portfolio, watchlist } = this.props;
 
-            return (
+        return (
 
-                <div>
-                    <br/>
-                    <div className="port-header">Portfolio</div>
-                    <br/>
-                    {
-                        Object.keys(portfolio).map((id, i) => {               
-                            return (
-                                <div key={i}>
-                                    <PortfolioItemContainer 
-                                        item={portfolio[id]} 
-                                        id={id}
-                                        key={i}
-                                    />
-                                </div>
-                            )
-                        })
-                    }
-                    <br/>
-                    <div className="port-header">Watchlist</div>
-                    <br/>
-                    {
-                        Object.keys(watchlist).map((id, j) => {
-                            return (
-                                <div key={j}>
-                                    <WatchlistItemContainer
-                                        item={watchlist[id]}
-                                        id={id}
-                                        key={j}
-                                    />
-                                </div>
-                            )
-                        })
-                    }
-                </div>
-            )        
+            <div>
+                <br/>
+                <div className="port-header">Portfolio</div>
+                <br/>
+                {
+                    Object.keys(portfolio).map((id, i) => {               
+                        return (
+                            <div key={i}>
+                                <PortfolioItemContainer 
+                                    item={portfolio[id]} 
+                                    id={id}
+                                    key={i}
+                                />
+                            </div>
+                        )
+                    })
+                }
+                <br/>
+                <div className="port-header">Watchlist</div>
+                <br/>
+                {
+                    Object.keys(watchlist).map((id, j) => {
+                        return (
+                            <div key={j}>
+                                <WatchlistItemContainer
+                                    item={watchlist[id]}
+                                    id={id}
+                                    key={j}
+                                />
+                            </div>
+                        )
+                    })
+                }
+            </div>
+        )        
         
-        }
-    // }
+        
+    }
 }
 export default Portfolio;
