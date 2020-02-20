@@ -11,7 +11,7 @@ class PortfolioItem extends React.Component {
     }
 
     componentDidMount() {
-        this.props.clearStockItem()
+        // this.props.clearStockItem()
         this.props.getPortfolioItem(this.props.id).then(() => {
             let prevPrice = this.props.stock.info.regularMarketPreviousClose;
             let newPrice = this.props.stock.info.regularMarketPrice;
@@ -28,7 +28,7 @@ class PortfolioItem extends React.Component {
                 }                
             }
         })
-        this.interval = setInterval(() => this.props.getPortfolioItem(this.props.id), 2000);
+        this.interval = setInterval(() => this.props.getPortfolioItem(this.props.id), 5000);
     }
 
     componentWillUnmount() {

@@ -27,7 +27,7 @@ class WatchlistItem extends React.Component {
                 }                
             }
         })
-        this.interval = setInterval(() => this.props.getWatchlistItem(this.props.id), 2000);
+        this.interval = setInterval(() => this.props.getWatchlistItem(this.props.id), 5000);
     }
 
     componentWillUnmount() {
