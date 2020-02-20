@@ -4,22 +4,15 @@ import WatchlistItemContainer from './watchlist_item_container';
 
 class Portfolio extends React.Component {
     componentDidMount() {
-
         this.props.clearPortfolioList(this.props.portfolio);
         this.props.clearWatchlist(this.props.watchlist);
         this.props.getPortfolio();
         this.props.getWatchlist();
     }
 
-    // componenetDidUpdate(prevProps) {
-    //     if (prevProps.portfolio)
-    // }
-
     render() {
         const { portfolio, watchlist } = this.props;
-        // if (Object.keys(portfolio) === 0) {
-        //     return null;
-        // } else {
+
             return (
 
                 <div>

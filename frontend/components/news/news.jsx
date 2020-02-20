@@ -9,9 +9,14 @@ class News extends React.Component {
     componentDidMount() {
         this.props.clearNews();
         this.topic = this.props.match.params.ticker;
-        this.topic === undefined ? this.topic = "STOCK MARKET" : this.topic;
-        this.props.getNews(this.topic)
-
+        // this.topic === undefined ? this.topic = "STOCK MARKET" : this.topic;
+        if (this.topic === undefined) {
+            this.topic = "STOCK MARKET" 
+        } else {
+             this.topic;
+             this.props.getStock(this.props.match.params.ticker);
+        }
+        this.props.getNews(this.topic);
     }
 
     componentDidUpdate(prevProps) {
@@ -26,7 +31,8 @@ class News extends React.Component {
         return (
             <div className="news-div">
                 <h2 className="news-heading">
-                {this.props.match.params.ticker === undefined ? ""  : this.props.match.params.ticker.toUpperCase()} News
+                {this.props.match.params.ticker === undefined ? ""  : this.props.stock.longName} News
+                {/* {this.props.match.params.ticker === undefined ? ""  : this.props.stock.info.longName} News */}
                 </h2>
                 {
                     Object.keys(this.props.news).map(id => {

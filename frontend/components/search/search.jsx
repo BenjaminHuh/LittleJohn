@@ -36,6 +36,7 @@ class Search extends React.Component {
                     <form className="search-form"> 
                         <input 
                             className="searchbar" 
+                            required
                             type="text" 
                             placeholder="Search"
                             ref={input => this.search = input} 

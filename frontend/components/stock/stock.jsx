@@ -17,7 +17,7 @@ class Stock extends React.Component {
 
     componentDidMount() {
         this.props.getStock(this.props.match.params.ticker)   
-        this.interval = setInterval(() => this.props.getStock(this.props.match.params.ticker), 60000);
+        this.interval = setInterval(() => this.props.getStock(this.props.match.params.ticker), 5000);
     }
     componentWillUnmount() {
         clearInterval(this.interval);
@@ -40,25 +40,46 @@ class Stock extends React.Component {
             const {
                 longName, 
                 symbol, 
-                regularMarketDayRange, 
+                regularMarketChangePercent,
+                regularMarketChange,
                 regularMarketPrice,
+                postMarketPrice,
+                regularMarketPreviousClose,
                 data
             } = stock;
+            
+            let dSign = "";
+            let stroke = "";
+            if (regularMarketChange < 0) {
+                dSign = "-$"; 
+                stroke = "#FB6E6E"
+            } else {
+                dSign = "+$"; 
+                stroke = "#72ca9d"
+            };
+            
+
             return (
                 <div className="dashboard-main">
                     <div className="dashboard-inner">
                         <div className="stock-info1">
                             <div className="dashboard-port-news">
                                 <div className="stock-info2">
-                                    <h3>{longName}</h3>
+                                    <h2>{longName}</h2>
                                     <br/>
-                                    {regularMarketPrice}
+                                    <h2>{postMarketPrice ? "$" + postMarketPrice.toFixed(2) : "$" + regularMarketPrice.toFixed(2)}</h2>
+                                    <div>{dSign}{Math.abs(regularMarketChange).toFixed(2)} ({dSign}{Math.abs(regularMarketChangePercent).toFixed(2)}%) Today</div>
                                     <br/>
-                                    {regularMarketDayRange}
                                 </div>
                                 <div className="stock-info-chart">
-                                    <StockChart ticker={ symbol } data={ data } />
+                                    <StockChart ticker={ symbol } data={ data } stroke={ stroke } regularMarketPreviousClose={ regularMarketPreviousClose }/>
                                 </div>
+                                <ul className="options">
+                                    <li>D</li>
+                                    <li>M</li>
+                                    <li>Y</li>
+                                    <li>5Y</li>
+                                </ul>
                                 <div className="news">
                                     <NewsContainer />
                                 </div>

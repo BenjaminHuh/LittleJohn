@@ -4,13 +4,20 @@ import News from './news';
 import { getNews, clearNews } from '../../actions/news_actions';
 
 
-const mSTP = state => ({
-    news: state.entities.news
-})
+const mSTP = state => {
+    const ticker = Object.keys(state.entities.stock)[0]
+    return ({
+        news: state.entities.news,
+        stock: state.entities.stock[ticker].info,
+        ticker
+    })
+}
 
 const mDTP = dispatch => ({
     getNews: topic => dispatch(getNews(topic)),
-    clearNews: () => dispatch(clearNews())
+    clearNews: () => dispatch(clearNews()),
+    getStock: ticker => dispatch(getStock(ticker))
+
 })
 
 export default connect(mSTP, mDTP)(News);
