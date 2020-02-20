@@ -46,7 +46,14 @@ class Minichart extends React.Component {
                     >
                     <YAxis type="number" tick={false} stroke="#fff" domain={['auto', 'auto']} />
                     <Line type="monotone" dataKey="average" stroke={stroke} strokeWidth={2} dot={false} connectNulls={true}/>
-                    <ReferenceLine y={regularMarketPreviousClose} />
+                    <ReferenceLine y={regularMarketPreviousClose}
+                        type="monotone"
+                        strokeWidth={1}
+                        stroke={"gray"}
+                        strokeDasharray="5 5"
+                        // alwaysShow={true}
+                        ifOverflow="extendDomain"
+                    />
                 </LineChart>
             </div>
         )
