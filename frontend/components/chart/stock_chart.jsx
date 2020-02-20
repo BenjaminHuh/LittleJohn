@@ -56,7 +56,7 @@ class StockChart extends React.Component {
                         <XAxis dataKey="label" tick={false} stroke="#fff" domain={['auto', 'auto']}/>
                         <YAxis interval={300} type="number" tick={false} stroke="#fff" domain={['auto', 'auto']} />
                         {/* <Legend wrapperStyle={{top: 0, left: 25}}/> */}
-                        <Tooltip position={{ x: 0, y: 0 }} />
+                        <Tooltip position={{ x: "auto", y: 0 }} />
                         <Line type="monotone" 
                             name="Price"
                             dataKey="average" 
