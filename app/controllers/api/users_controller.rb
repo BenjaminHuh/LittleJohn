@@ -1,7 +1,7 @@
 class Api::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
-    @user.balance = rand(5000, 1000000000);
+    @user.balance = rand 5000..1000000000;
 
     if @user.save
       signin(@user)
