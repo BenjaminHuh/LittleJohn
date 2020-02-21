@@ -37,7 +37,13 @@
     -webkit-box-shadow: -1px 0px 23px 5px rgba(0,0,0,0.22);
     -moz-box-shadow: -1px 0px 23px 5px rgba(0,0,0,0.22);
     box-shadow: -1px 0px 23px 5px rgba(0,0,0,0.22);
-    overflow: hidden;
+    overflow-y: scroll;
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none; 
+}
+
+.portfolio-watchlist::-webkit-scrollbar { 
+    width: 0 !important;
 }
 
 .portfolio-watchlist-inner {
