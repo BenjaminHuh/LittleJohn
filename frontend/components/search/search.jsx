@@ -40,7 +40,12 @@ class Search extends React.Component {
                                             <div class="search-name">${stock.name}</div></div>`; 
                 // console.log(stock.ticker + ' ' + stock.name);
             });
-            if (e.target.value === "") searchResults.outerHTML = `<div id="search-empty"></div>`;
+            if (searchResults.children[1]) searchResults.children[1].id = "first-result";
+            if (e.target.value === "") {
+                searchResults.outerHTML = `<div id="search-empty"></div>`;
+                searchResults.innerHTML = "";
+            }
+            
         }
     }
 
