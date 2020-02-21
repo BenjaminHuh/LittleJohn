@@ -44,7 +44,7 @@ class PortfolioItem extends React.Component {
             //     }                
             // }
         })
-        this.interval = setInterval(() => this.props.getPortfolioItem(this.props.id), 3000);
+        this.interval = setInterval(() => this.props.getPortfolioItem(this.props.id), 63000);
     }
 
     componentWillUnmount() {

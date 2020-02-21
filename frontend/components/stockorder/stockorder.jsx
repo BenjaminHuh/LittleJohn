@@ -5,17 +5,31 @@ class Stockorder extends React.Component {
     constructor(props) {
         super(props);
         this.state = { cost: 0, 
-                    buyingPower: this.props.currentUser.balance }
+                    buyingPower: this.props.currentUser.balance,
+                    ticker: this.props.ticker
+                    }
         this.updateCost = this.updateCost.bind(this);
+        this.handleUpdate = this.handleUpdate.bind(this);
     }
 
-    updateCost(e) {
+    updateCost(val) {   
         let currPrice = parseFloat(document.getElementById("currPrice").innerHTML.slice(1));
-        // debugger
-        let val = e.target.value;    
         this.setState({ cost: (parseFloat(val === "" ? 0 : val) * currPrice)}, () => {
             this.setState({ buyingPower: this.props.currentUser.balance - this.state.cost });
         });
+    }
+
+    handleUpdate(e) {
+        // debugger
+        this.updateCost(e.target.value);
+
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        // debugger
+        if (prevProps.ticker !== this.props.ticker) {
+            this.updateCost(document.getElementById("howmany").value);
+        }
     }
 
     render() {
@@ -28,7 +42,7 @@ class Stockorder extends React.Component {
                     <div className="order-symbol">Buy {symbol.toUpperCase()}</div>
                     <div className="stock-2">
                     <form>
-                        <input className="howmany" onChange={this.updateCost} type="number" placeholder="0"/><br/>
+                        <input id="howmany" className="howmany" onChange={this.handleUpdate} type="number" placeholder="0"/><br/>
                         <div className="cost">${this.state.cost.toFixed(2)}</div>
                         <button className="buy">Buy</button>
                     </form>
