@@ -5,11 +5,12 @@ import { getStock } from '../../actions/stocks_actions'
 
 const mSTP = (state, ownProps) => {
     // debugger
-    // let temp = ownProps.match.params.ticker;
+    // let temp = ownProps.match.params.ticker
     const ticker = Object.keys(state.entities.stock)[0]
     // let ticker = ownProps.match.params.ticker
 
     return ({
+        currentUser: state.entities.users[state.session.id],
         stock: state.entities.stock[ticker].info,
         ticker
     })

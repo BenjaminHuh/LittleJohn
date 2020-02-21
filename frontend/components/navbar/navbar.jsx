@@ -39,10 +39,7 @@ const Navbar = ({ match, currentUser, logout, stock }) => {
             </svg>
           </div>
         </Link>      
-        {/* </a> */}
-        <div className="seach_container">
 
-        </div>
         <div className="search-div">
           <SearchContainer history={history} match={match}/>
         </div>

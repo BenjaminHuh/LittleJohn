@@ -33,9 +33,9 @@ class Stock extends React.Component {
 
     
     render() {
-        const { stock } = this.props;
+        const { stock, currentUser } = this.props;
 
-        if (!stock) {
+        if (!stock || !currentUser) {
             return "stock component";
         } else {
             const {
@@ -72,7 +72,7 @@ class Stock extends React.Component {
                                 <div className="stock-info2">
                                     <h2>{longName}</h2>
                                     <br/>
-                                    <h2>{postMarketPrice ? "$" + postMarketPrice.toFixed(2) : "$" + regularMarketPrice.toFixed(2)}</h2>
+                                    <h2 id="currPrice">{postMarketPrice ? "$" + postMarketPrice.toFixed(2) : "$" + regularMarketPrice.toFixed(2)}</h2>
                                     <div>{dSign}{Math.abs(regularMarketChange).toFixed(2)} ({dSign}{Math.abs(regularMarketChangePercent).toFixed(2)}%) Today</div>
                                     <br/>
                                 </div>
@@ -108,7 +108,7 @@ class Stock extends React.Component {
                         {/* </div> */}
                     </div>
                     <div>
-                        <StockorderContainer/>
+                        <StockorderContainer currentUser = { currentUser } />
                     </div>
                 </div>
             )
