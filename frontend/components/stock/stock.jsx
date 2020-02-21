@@ -46,6 +46,10 @@ class Stock extends React.Component {
                 regularMarketPrice,
                 postMarketPrice,
                 regularMarketPreviousClose,
+                regularMarketVolume,
+                trailingAnnualDividendRate,
+                marketCap,
+                priceToBook,
                 data
             } = stock;
             
@@ -73,20 +77,29 @@ class Stock extends React.Component {
                                     <br/>
                                 </div>
                                 <div className="stock-info-chart">
-                                    <StockChart ticker={ symbol } data={ data } stroke={ stroke } regularMarketPreviousClose={ regularMarketPreviousClose }/>
+                                    <StockChart ticker={ symbol } 
+                                        data={ data } 
+                                        stroke={ stroke } 
+                                        regularMarketPreviousClose={ regularMarketPreviousClose }
+                                        />
                                 </div>
                                 <ul className="options">
-                                    <li>1D</li>
-                                    <li>1W</li>
-                                    <li>1M</li>
-                                    <li>3M</li>
-                                    <li>1Y</li>
-                                    <li>5Y</li>
+                                    <li className="option">1D</li>
+                                    <li className="option">1W</li>
+                                    <li className="option">1M</li>
+                                    <li className="option">3M</li>
+                                    <li className="option">1Y</li>
+                                    <li className="option">5Y</li>
                                 </ul>
                                 <div className="company">
 
                                 </div>
-                                    <Company />
+                                    <Company 
+                                        marketVolume = { regularMarketVolume }
+                                        dividendRate = { trailingAnnualDividendRate }
+                                        marketCap = { marketCap }
+                                        priceToBook = { priceToBook }
+                                    />
                                 <div className="news">
                                     <NewsContainer />
                                 </div>

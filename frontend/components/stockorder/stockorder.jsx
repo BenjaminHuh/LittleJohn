@@ -8,10 +8,17 @@ class Stockorder extends React.Component {
             <div>
                 <div className="stock-order">
                     <div className="order-symbol">Buy {symbol.toUpperCase()}</div>
-                    <div className="stock-2"></div>
-                    <div className="stock-3"></div>
-                    <div className="stock-4"></div>
-                    
+                    <div className="stock-2">
+                    <form>
+                        <input className="howmany" type="number" placeholder="0"/><br/>
+                        <div className="cost">$0.00</div>
+                        <button className="buy">Buy</button>
+                    </form>
+                    </div>
+                    <div className="stock-3">${`1.60`} Buying Power Available</div>
+                    <div className="stock-4">
+                    </div>
+                    <button className="addToWatchlist">Add to Watchlist</button>
                 </div>
             </div>
         )

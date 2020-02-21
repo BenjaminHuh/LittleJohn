@@ -25,13 +25,13 @@
 
 .stock-order {
     position: fixed;
-    top: 200px;
-    left: calc(45% + 400px);
+    top: 100px;
+    left: calc(45% + 330px);
 
     display: block;
-    z-index: -999;
+    z-index: 0;
     border-radius: 3px;
-    width: 300px;
+    width: 280px;
     background-color: white;
     min-height: 450px;
     max-height: 450px;
@@ -42,21 +42,88 @@
 }
 
 .stock-order > * {
-    margin: 10px;
+    margin: 15px;
+    text-align: left;
+    border-bottom: lightgrey 1px solid;
+
 }
 .order-symbol {
     min-height: 30px;
-    text-align: center;
 }
 
 .stock-2 {
-    min-height: 120px;
+    min-height: 150px;
+    text-align: center;
 }
 
 .stock-3 {
     min-height: 30px;
+    text-align: center;
+    color: #72ca9d;
+    font-size: 13px;
 }
 
 .stock-4 {
-    min-height: 120px;
+    min-height: 90px;
+}
+
+.howmany {
+    text-align: center;
+    font-size: 15px;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 0px 0px;
+    box-sizing: border-box;
+    border: 1px solid white;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    outline: none;
+    background-color: rgb(240, 240, 240);    
+}
+
+.howmany:hover {
+    border: 1px solid rgb(199, 199, 199);
+    background: white;
+}
+
+.howmany:focus {
+    border: 1px solid #21CE99;
+    background: white;
+    outline: none;    
+}
+
+.buy {
+    margin-top: 5px;
+    font-size: 12px;
+    background-color: #21CE99;
+    color:white;
+    padding: 15px 83px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 7px;
+}
+
+.buy:hover {
+    background-color: rgb(86, 240, 181);
+}
+
+.cost {
+    margin: 15px;
+}
+
+.addToWatchlist {
+    margin-top: 5px;
+    font-size: 12px;
+    background-color: #21CE99;
+    color:white;
+    padding: 15px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 7px;
+}
+
+.addToWatchlist:hover {
+    background-color: rgb(86, 240, 181);
 }

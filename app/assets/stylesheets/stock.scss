@@ -54,6 +54,10 @@
     list-style: none;
 }
 
+.options li:hover { 
+    color: #72ca9d;
+    cursor: pointer;
+}
 // .chart-info {
 //     position: relative;
 //     height: 100px;
