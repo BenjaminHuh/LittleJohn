@@ -10,9 +10,10 @@
 #
 
 class Stock < ApplicationRecord
-    has_many :stock_orders
-    
-    has_many :watchlists
 
-    has_many :portfolios
+    has_many :stock_owners,
+        through: :portfolios,
+        source: :user
+
+    has_many :stock_orders
 end

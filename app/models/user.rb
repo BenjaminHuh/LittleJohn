@@ -9,6 +9,8 @@
 #  session_token   :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  balance         :float            not null
+#  watchlist       :string           default([]), is an Array
 #
 
 class User < ApplicationRecord
@@ -18,18 +20,11 @@ class User < ApplicationRecord
 
     has_one :account
     has_one :portfolio
-    has_one :watchlist
     has_many :stock_orders
 
     has_many :owned_stocks,
         through: :portfolio,
         source: :stocks
-    
-    has_many :watched_stocks,
-        through: :watchlist,
-        source: :stocks
-    
-
         
     attr_reader :password
     

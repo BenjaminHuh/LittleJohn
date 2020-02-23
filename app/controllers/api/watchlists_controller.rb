@@ -1,6 +1,15 @@
 class Api::WatchlistsController < ApplicationController
     def index
-        @watchlist = current_user.stock_orders.where("num_stocks = 0")
+        @watchlist = Stock.where(:id=>User.find(1).watchlist).map do |stock|
+            stock = {id: stock.id, ticker: stock.ticker, name: stock.name}
+            api_key = Rails.application.credentials.iex_api_key
+            # @stock = Stock.where(ticker: params[:ticker]).or(Stock.where("lower(name) like ?", "%#{params[:ticker]}%".downcase)).first
+            stock_url2 = "https://cloud.iexapis.com/stable/stock/#{stock[:ticker]}/intraday-prices/?token=#{api_key}"
+            stock[:stock_info2] = HTTParty.get(stock_url2).parsed_response #["quoteResponse"]["result"][0]
+            stock_url = "https://query1.finance.yahoo.com/v7/finance/quote?symbols=#{stock[:ticker]}"
+            stock[:stock_info] = HTTParty.get(stock_url).parsed_response["quoteResponse"]["result"][0]   
+            stock   
+        end
     end
 
     # def show

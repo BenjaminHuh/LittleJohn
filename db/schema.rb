@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_17_004457) do
+ActiveRecord::Schema.define(version: 2020_02_23_113229) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,16 +27,15 @@ ActiveRecord::Schema.define(version: 2020_01_17_004457) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "stock_order_id"
   end
 
   create_table "stock_orders", force: :cascade do |t|
-    t.integer "stock_id", null: false
-    t.integer "portfolio_id"
-    t.integer "watchlist_id"
     t.integer "user_id", null: false
     t.integer "num_stocks"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "stock_id"
   end
 
   create_table "stocks", force: :cascade do |t|
@@ -54,12 +53,14 @@ ActiveRecord::Schema.define(version: 2020_01_17_004457) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.float "balance", null: false
+    t.string "watchlist", default: [], array: true
   end
 
   create_table "watchlists", force: :cascade do |t|
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "stock_order_id"
   end
 
 end

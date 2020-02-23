@@ -15,7 +15,7 @@ class Search extends React.Component {
     }
     
     componentDidMount() {
-        this.props.getStocks();
+        // this.props.getStocks();
     }
     
     update() {

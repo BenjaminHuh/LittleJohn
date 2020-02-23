@@ -6,7 +6,7 @@ import PortfolioItem from './portfolio_item'
 const mSTP = (state, ownProps) => {
     return (
         {   
-            stock: state.entities.portfolio[ownProps.id],
+            stock: ownProps.stock,
             id: ownProps.id
         }
     )
