@@ -101,7 +101,7 @@ class Stock extends React.Component {
                                         priceToBook = { priceToBook }
                                     />
                                 <div className="news">
-                                    <NewsContainer />
+                                    <NewsContainer stock={ stock }/>
                                 </div>
                             </div>
 

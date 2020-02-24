@@ -46,6 +46,8 @@
 
 
 .main_one {
+    display: flex;
+    justify-content: center;
     background-color: #21CE99;
     text-align: center;
     height: 750px;
@@ -74,21 +76,24 @@
 }
 
 #one {
+    position: relative;
     display: flex;
-    width: 50%;
-    justify-content: space-around;
+    width: 100%;
+    justify-content: center;
     align-items: left;
-    flex-wrap: wrap;
+    margin-top: 100px;
+    margin-left: 10%;
+    margin-right: 7%;
+    min-width: 1000px;
+    overflow-x: hidden;
 }
 
 .one-inner {
-    margin-left: 20%;
-    display: absolute;
+    /* margin-left: 20%; */
+    /* display: absolute; */
 }
 
-/* .phone-cont {
 
-} */
 .main_two {
     height: 284px;
     background-color: white;
@@ -323,16 +328,27 @@
     position: absolute;
 }
 
-.phone-container {
-    padding: 0px;
-    top: 80px;
-    bottom: 120px;
-    right: 80px;
+.phone-cont {
+    margin-top: 50px;
+    display: relative;
     max-width: 650px;
     max-height: 650px;
-    width: 80%;
-    height: 80%;
-    position: absolute;
+    width:90%;
+    height: 90%;
+
+}
+
+.phone-container {
+    /* padding: 0px; */
+    /* top: 80px; */
+    /* bottom: 120px; */
+    /* right: 80px; */
+    max-width: 100%;
+    max-height: 100%;
+    width: 90%;
+    height: 90%;
+    position: relative;
+    /* position: absolute; */
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

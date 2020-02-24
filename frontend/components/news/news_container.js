@@ -4,11 +4,11 @@ import News from './news';
 import { getNews, clearNews } from '../../actions/news_actions';
 
 
-const mSTP = state => {
+const mSTP = (state, ownProps) => {
     const ticker = Object.keys(state.entities.stock)[0]
     return ({
         news: state.entities.news,
-        stock: state.entities.stock[ticker].info,
+        stock: ownProps.stock || state.entities.stock[ticker].info,
         ticker
     })
 }

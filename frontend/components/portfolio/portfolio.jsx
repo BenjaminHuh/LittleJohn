@@ -3,12 +3,25 @@ import PortfolioItemContainer from './portfolio_item_container';
 import WatchlistItemContainer from './watchlist_item_container';
 
 class Portfolio extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            portfolio: {}
+        }
+    }
+
     componentDidMount() {
-        this.props.clearPortfolioList(this.props.portfolio);
-        this.props.clearWatchlist(this.props.watchlist);
+        // this.props.clearPortfolioList(this.props.portfolio);
+        // this.props.clearWatchlist(this.props.watchlist);
         this.props.getPortfolio();
         this.props.getWatchlist();
     }
+
+    // componentDidUpdate(prevProps, prevState) {
+    //     if (Object.keys(prevProps.portfolio).length !== Object.keys(this.props.portfolio).length) {
+    //         this.setState({portfolio: this.props.portfolio});
+    //     }
+    // }
 
     render() {
         const { portfolio, watchlist } = this.props;

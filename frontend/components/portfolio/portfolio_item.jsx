@@ -7,11 +7,15 @@ class PortfolioItem extends React.Component {
         super(props);
         this.ticker = { 
             color: "black",
-            change: 0 }
+            change: 0 };
+        this.state = {
+            stock: this.props.stock
+        }
     }
+
     update() {
-        let prevPrice = this.props.stock.info.regularMarketPreviousClose;
-        let newPrice = this.props.stock.info.regularMarketPrice;
+        let prevPrice = this.props.stock.regularMarketPreviousClose;
+        let newPrice = this.props.stock.regularMarketPrice;
         let change = (newPrice - prevPrice) / prevPrice * 100;
         if (change > 0) {
             this.ticker = { 
@@ -27,6 +31,9 @@ class PortfolioItem extends React.Component {
     }
 
     componentDidMount() {
+        // this.setState({stock: this.props.stock}).then(console.log("hello"));
+
+
         // this.props.getPortfolioItem(this.props.id).then(() => {
             // this.update();
         //     // let prevPrice = this.props.stock.info.regularMarketPreviousClose;
@@ -44,16 +51,20 @@ class PortfolioItem extends React.Component {
         //     //     }                
         //     // }
         // })
-        // this.interval = setInterval(() => this.props.getPortfolioItem(this.props.id), 3000);
+        this.interval = setInterval(() => this.props.getPortfolioItem(this.props.id), 63000);
     }
 
     componentWillUnmount() {
-        // clearInterval(this.interval);
+        clearInterval(this.interval);
     }        
 
-    componentDidUpdate(prevState) {
-        if (prevState.stock.info !== undefined && this.props.stock.info !== undefined) {
-            this.update();
+    componentDidUpdate(prevProps, prevState) {
+        // if (prevProps.stock !== this.props.stock) {
+        //     this.setState({stock: this.props.stock});
+
+        //     this.update();
+
+            
             // let prevPrice = this.props.stock.info.regularMarketPreviousClose;
             // let newPrice = this.props.stock.info.regularMarketPrice;
             // let change = (newPrice - prevPrice) / prevPrice * 100;
@@ -68,12 +79,11 @@ class PortfolioItem extends React.Component {
             //         change: change
             //         }
             // }
-        }
+
     }    
 
     render() {
-        // debugger;
-        if (!this.props.stock.info || !this.ticker) {
+        if (!this.props.stock || !this.ticker) {
             return (
                 <div className='port-item-link'></div>
             )
@@ -81,10 +91,9 @@ class PortfolioItem extends React.Component {
         else {
             let ticker_color = this.ticker.color;
             let ticker_change = this.ticker.change;
-            const { symbol, regularMarketPrice } = this.props.stock.info;
-            debugger
+            const { symbol, regularMarketPrice } = this.props.stock;
             return (
-                <Link className='port-item-link' to={`/stocks/${symbol}`}>
+                <Link className='port-item-link' to={{ pathname: `/stocks/${symbol}`, state: {stock: this.props.stock}}}>
                     <div className="port-item-symbol">
                         <div></div>
                         <div className={ticker_color}>
@@ -93,7 +102,7 @@ class PortfolioItem extends React.Component {
                     </div>
 
                     <div className="port-item-chart">
-                        <Minichart regularMarketPreviousClose={ this.props.stock.info.regularMarketPreviousClose } change={ticker_change} ticker={this.props.stock.info.symbol} data={this.props.stock.info.data} className="mini-chart"/>
+                        <Minichart regularMarketPreviousClose={ this.props.stock.regularMarketPreviousClose } change={ticker_change} ticker={this.props.stock.symbol} data={this.props.stock.data} className="mini-chart"/>
                     </div>
 
                     <div className="port-item-price">
