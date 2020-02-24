@@ -36,7 +36,7 @@ class Search extends React.Component {
             searchResults.innerHTML = `<div class="search-item" style="color:darkgray;">Stock</div>`;
             if (e.target.value === undefined) searchResults.outerHTML = `<div class="search-empty"></div>`;
             result.splice(0,6).forEach(stock => {
-                searchResults.innerHTML += `<a class="search-link" onclick="function close() {document.getElementById("searchbar").value = '';}" href="#/stocks/${stock.ticker}">
+                searchResults.innerHTML += `<a class="search-link" href="#/stocks/${stock.ticker}">
                                                 <div class="search-item">
                                                     <div class="search-ticker">${stock.ticker}</div> 
                                                     <div class="search-space"></div>
@@ -45,13 +45,22 @@ class Search extends React.Component {
                                             </a>`;
                 // console.log(stock.ticker + ' ' + stock.name);
             });
-            if (searchResults.children[1]) searchResults.children[1].id = "first-result";
+            // if (searchResults.children[1]) searchResults.children[1].id = "first-result";
             if (e.target.value === "") {
                 searchResults.outerHTML = `<div id="search-empty"></div>`;
                 searchResults.innerHTML = "";
-            }            
+            }    
+
+            let items = document.getElementsByClassName("search-item")
+            for (let i = 0; i < items.length; i++) {
+                items[i].addEventListener("click", () => {
+                    searchResults.outerHTML = `<div id="search-empty"></div>`;
+                    searchResults.innerHTML = "";
+                })
+            }      
         }
     }
+
 
 
     handleSubmit(e) {
