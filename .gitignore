@@ -12,3 +12,4 @@ config/master.key
 !/tmp/.keep
 
 log/
+/log/development.log
