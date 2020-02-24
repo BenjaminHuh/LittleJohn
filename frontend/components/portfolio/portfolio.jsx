@@ -6,29 +6,34 @@ class Portfolio extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            portfolio: {}
+            portfolio: {},
+            watchlist: {},
+            loading: false
         }
     }
 
     componentDidMount() {
+        // this.setState({loading: true})
         // this.props.clearPortfolioList(this.props.portfolio);
         // this.props.clearWatchlist(this.props.watchlist);
+
+        // this.props.getPortfolio().then(() => this.setState({loading: false}));        
+        // this.setState({loading: true}, () => this.props.getPortfolio()).then(() => this.setState({loading: false}));
         this.props.getPortfolio();
         this.props.getWatchlist();
     }
 
     // componentDidUpdate(prevProps, prevState) {
     //     if (Object.keys(prevProps.portfolio).length !== Object.keys(this.props.portfolio).length) {
-    //         this.setState({portfolio: this.props.portfolio});
+    //         this.setState({loading: true});
     //     }
     // }
 
     render() {
         const { portfolio, watchlist } = this.props;
-        // debugger
 
-        if (Object.keys(portfolio) === 0) {
-            return "";
+        if (this.state.loading === true) {
+            return "loading..";
         } else {
             
             return (
@@ -57,7 +62,7 @@ class Portfolio extends React.Component {
                             return (
                                 <div key={j}>
                                     <WatchlistItemContainer
-                                        item={watchlist[id]}
+                                        stock={watchlist[id]}
                                         id={id}
                                         key={j}
                                     />
@@ -66,9 +71,7 @@ class Portfolio extends React.Component {
                         })
                     }
                 </div>
-            )        
-        
-        
+            )               
         }
     }
 }

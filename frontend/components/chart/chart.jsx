@@ -12,19 +12,19 @@ import {
   Bar
 } from "recharts";
 
-import aapl from './aapl.json'
-import amzn from './amzn.json'
-import ba from './ba.json'
-import baba from './baba.json'
-import coke from './coke.json'
-import dis from './dis.json'
-import fb from './fb.json'
-import msft from './msft.json'
-import nflx from './nflx.json'
-import nvda from './nvda.json'
-import sq from './sq.json'
-import tsla from './tsla.json'
-import wf from './wf.json'
+// import aapl from './aapl.json'
+// import amzn from './amzn.json'
+// import ba from './ba.json'
+// import baba from './baba.json'
+// import coke from './coke.json'
+// import dis from './dis.json'
+// import fb from './fb.json'
+// import msft from './msft.json'
+// import nflx from './nflx.json'
+// import nvda from './nvda.json'
+// import sq from './sq.json'
+// import tsla from './tsla.json'
+// import wf from './wf.json'
 
 
 class Chart extends React.Component {

@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link, withRouter, Route } from 'react-router-dom';
 import stocks from './stocks.json';
+import StockHome from '../stock/stock_home';
 
 
 class Search extends React.Component {
@@ -66,12 +67,18 @@ class Search extends React.Component {
         // }
 
         let searchResults = document.getElementById("search-results");
-        let firstResult = searchResults.children[1].firstChild.innerHTML;
+        let result = searchResults.children[1].firstChild.innerHTML;
         document.getElementById("searchbar").value = "";
         searchResults.outerHTML = `<div id="search-empty"></div>`;
 
-        this.props.getStock(firstResult).then(() => {
-            this.props.history.push(`/stocks/${firstResult}`)
+        this.props.getStock(result).then(() => {
+            this.props.history.push(`/stocks/${result}`)
+            // return (
+            //     <Route
+            //         path={`/stocks/${result}`}
+            //         render={props => <StockHome {...props} stock={stock} />}
+            //     />
+            // )
         });
     }
 

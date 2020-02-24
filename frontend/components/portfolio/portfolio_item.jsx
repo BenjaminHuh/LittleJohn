@@ -5,9 +5,24 @@ import Minichart from '../chart/minichart';
 class PortfolioItem extends React.Component {
     constructor(props) {
         super(props);
-        this.ticker = { 
-            color: "black",
-            change: 0 };
+
+        let prevPrice = this.props.stock.regularMarketPreviousClose;
+        let newPrice = this.props.stock.regularMarketPrice;
+        let change = (newPrice - prevPrice) / prevPrice * 100;
+        if (change > 0) {
+            this.ticker = { 
+                color: "price-green",
+                change: change
+                }
+        } else {
+            this.ticker = { 
+                color: "price-red",
+                change: change
+            }                
+        }
+        // this.ticker = { 
+        //     color: "black",
+        //     change: 0 };
         this.state = {
             stock: this.props.stock
         }
@@ -31,6 +46,9 @@ class PortfolioItem extends React.Component {
     }
 
     componentDidMount() {
+        this.update();
+        this.props.getPortfolioItem(this.props.id).then(this.update());
+        this.interval = setInterval(() => this.props.getPortfolioItem(this.props.id), 15000);
         // this.setState({stock: this.props.stock}).then(console.log("hello"));
 
 
@@ -51,7 +69,6 @@ class PortfolioItem extends React.Component {
         //     //     }                
         //     // }
         // })
-        this.interval = setInterval(() => this.props.getPortfolioItem(this.props.id), 63000);
     }
 
     componentWillUnmount() {
@@ -59,11 +76,10 @@ class PortfolioItem extends React.Component {
     }        
 
     componentDidUpdate(prevProps, prevState) {
-        // if (prevProps.stock !== this.props.stock) {
-        //     this.setState({stock: this.props.stock});
-
-        //     this.update();
-
+        if (prevProps.stock !== this.props.stock) {
+            this.setState({stock: this.props.stock});
+            this.update();
+        }
             
             // let prevPrice = this.props.stock.info.regularMarketPreviousClose;
             // let newPrice = this.props.stock.info.regularMarketPrice;

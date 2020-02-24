@@ -5,6 +5,7 @@ import Search from './search';
 import { useHistory } from 'react-router-dom';
 
 const mSTP = (state, ownProps) => {
+    // debugger
     return ({
     stocks: state.stocks,
     errors: state.errors.stocks,

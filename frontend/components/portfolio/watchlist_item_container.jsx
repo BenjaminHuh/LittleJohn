@@ -6,7 +6,8 @@ import WatchlistItem from './watchlist_item'
 const mSTP = (state, ownProps) => {
     return (
         {
-            stock: state.entities.watchlist[ownProps.id],
+            // stock: state.entities.watchlist[ownProps.id],
+            stock: ownProps.stock,
             id: ownProps.id
         }
     )

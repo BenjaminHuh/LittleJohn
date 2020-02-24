@@ -18,7 +18,7 @@ class Stock extends React.Component {
 
     componentDidMount() {
         this.props.getStock(this.props.match.params.ticker)   
-        this.interval = setInterval(() => this.props.getStock(this.props.match.params.ticker), 10000);
+        this.interval = setInterval(() => this.props.getStock(this.props.match.params.ticker), 15000);
     }
     componentWillUnmount() {
         clearInterval(this.interval);

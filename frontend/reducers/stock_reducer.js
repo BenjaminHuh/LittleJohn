@@ -12,12 +12,13 @@ const stockReducer = (state = { NASDAQ: { symbol: "NASDAQ", data: [] } }, action
             // // debugger
             // return Object.assign({}, newStock);
 
-
+            // debugger;
             Object.keys(action.stock).forEach(id => {
                 let newStock = Object.assign({}, nextState[id])
                 newStock.info = action.stock[id]
                 nextState[id] = newStock
             })
+            // debugger
             return nextState;
 
         default:

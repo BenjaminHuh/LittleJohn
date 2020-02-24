@@ -7,7 +7,7 @@ const mSTP = state => {
     })
 }
 
-const mDTP = dispatcy => {
+const mDTP = dispatch => {
     return ({
 
     })
