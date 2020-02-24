@@ -15,9 +15,9 @@ class Search extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     
-    componentDidMount() {
-        // this.props.getStocks();
-    }
+    // componentDidMount() {
+    //     // this.props.getStocks();
+    // }
     
     update() {
         return (e) => {
@@ -36,17 +36,20 @@ class Search extends React.Component {
             searchResults.innerHTML = `<div class="search-item" style="color:darkgray;">Stock</div>`;
             if (e.target.value === undefined) searchResults.outerHTML = `<div class="search-empty"></div>`;
             result.splice(0,6).forEach(stock => {
-                searchResults.innerHTML += `<div class="search-item"><div class="search-ticker">${stock.ticker}</div> 
-                                            <div class="search-space"></div>
-                                            <div class="search-name">${stock.name}</div></div>`; 
+                searchResults.innerHTML += `<a class="search-link" onclick="function close() {document.getElementById("searchbar").value = '';}" href="#/stocks/${stock.ticker}">
+                                                <div class="search-item">
+                                                    <div class="search-ticker">${stock.ticker}</div> 
+                                                    <div class="search-space"></div>
+                                                    <div class="search-name">${stock.name}</div>
+                                                </div>
+                                            </a>`;
                 // console.log(stock.ticker + ' ' + stock.name);
             });
             if (searchResults.children[1]) searchResults.children[1].id = "first-result";
             if (e.target.value === "") {
                 searchResults.outerHTML = `<div id="search-empty"></div>`;
                 searchResults.innerHTML = "";
-            }
-            
+            }            
         }
     }
 
@@ -67,10 +70,10 @@ class Search extends React.Component {
         // }
 
         let searchResults = document.getElementById("search-results");
-        let result = searchResults.children[1].firstChild.innerHTML;
+        let result = searchResults.children[1].children[0].children[0].innerHTML;
         document.getElementById("searchbar").value = "";
         searchResults.outerHTML = `<div id="search-empty"></div>`;
-
+        // debugger
         this.props.getStock(result).then(() => {
             this.props.history.push(`/stocks/${result}`)
             // return (
