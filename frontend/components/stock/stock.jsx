@@ -62,18 +62,20 @@ class Stock extends React.Component {
                 dSign = "+$"; 
                 stroke = "#72ca9d"
             };
-            
 
+            let currChange = `${dSign}${Math.abs(regularMarketChange).toFixed(2)} (${dSign}${Math.abs(regularMarketChangePercent).toFixed(2)}%) Today`
+            
+            // let currPrice = postMarketPrice ? postMarketPrice.toFixed(2) : regularMarketPrice.toFixed(2)
+            let currPrice = regularMarketPrice.toFixed(2);
             return (
                 <div className="dashboard-main">
                     <div className="dashboard-inner">
                         {/* <div className="stock-info1"> */}
                             <div className="dashboard-port-news">
                                 <div className="stock-info2">
-                                    <h2>{longName}</h2>
-                                    <br/>
-                                    <h2 id="currPrice">{postMarketPrice ? "$" + postMarketPrice.toFixed(2) : "$" + regularMarketPrice.toFixed(2)}</h2>
-                                    <div>{dSign}{Math.abs(regularMarketChange).toFixed(2)} ({dSign}{Math.abs(regularMarketChangePercent).toFixed(2)}%) Today</div>
+                                    <div id="longName">{longName}</div>
+                                    <div id="currPrice">{"$" + currPrice}</div>
+                                    <div id="currChange">{currChange}</div>
                                     <br/>
                                 </div>
                                 <div className="stock-info-chart">
@@ -81,6 +83,8 @@ class Stock extends React.Component {
                                         data={ data } 
                                         stroke={ stroke } 
                                         regularMarketPreviousClose={ regularMarketPreviousClose }
+                                        currPrice={ currPrice }
+                                        currChange={ currChange }
                                         />
                                 </div>
                                 <ul className="options">

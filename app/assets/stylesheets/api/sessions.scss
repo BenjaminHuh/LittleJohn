@@ -211,6 +211,8 @@
     position: fixed;
     width: 100%; 
     min-width: 1000px;
+    -webkit-box-shadow: 2px -1px 8px 5px rgba(0,0,0,0.1); 
+    box-shadow: 2px -1px 8px 5px rgba(0,0,0,0.1);
 }
 
 

@@ -25,6 +25,25 @@
     color: black;
 }
 
+#longName {
+    font-family: 'Source Sans Pro';
+    font-weight: 500;
+    font-size: 37px;
+
+}
+
+#currPrice {
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 35px;
+}
+
+#currChange {
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 14px;
+}
+
 .stock-info-chart {
     // position: absolute;
     // margin-top: 200px;

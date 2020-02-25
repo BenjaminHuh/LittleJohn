@@ -28,10 +28,36 @@ import {
 // import wf from './wf.json'
 
 
-class StockChart extends React.Component {
+class StockChart extends React.Component { 
+
+    constructor(props) {
+        super(props);
+        this.priceUpdate = this.priceUpdate.bind(this);
+    }
+
+    priceUpdate({ payload, label, active }) {
+        const { regularMarketPreviousClose, currPrice, currChange } = this.props;
+        if (active && payload[0]) {
+            document.getElementById("currPrice").innerHTML = `$${payload[0].value.toFixed(2)}`;
+            let dSign;
+            if ( regularMarketPreviousClose > payload[0].value) {
+                dSign = "-$"; 
+            } else {
+                dSign = "+$";
+            }
+            // debugger;
+            document.getElementById("currChange").innerHTML = `${dSign}${Math.abs(regularMarketPreviousClose - payload[0].value).toFixed(2)} (${dSign}${Math.abs((regularMarketPreviousClose - payload[0].value)/regularMarketPreviousClose * 100).toFixed(2)}%)`
+        }
+        else if (!active && document.getElementById("currPrice")){
+            document.getElementById("currPrice").innerHTML = `$${currPrice}`;
+            document.getElementById("currChange").innerHTML = currChange;
+        }
+    }
     
     render() {
-
+        // debugger
+        // let value = document.getElementsByClassName("recharts-tooltip-item-value")[0].innerHTML;
+        // value.onchange(document.getElementById("currPrice").innerHTML = value)
         // const stocks = {aapl: aapl, amzn: amzn, ba: ba, baba: baba, coke: coke, dis: dis, fb: fb, msft: msft, nflx: nflx, nvda: nvda, sq: sq, tsla: tsla, wf: wf}
         const { ticker, data, stroke, regularMarketPreviousClose } = this.props
         return (
@@ -56,7 +82,7 @@ class StockChart extends React.Component {
                         <XAxis dataKey="label" tick={false} stroke="#fff" domain={['auto', 'auto']}/>
                         <YAxis interval={300} type="number" tick={false} stroke="#fff" domain={['auto', 'auto']} />
                         {/* <Legend wrapperStyle={{top: 0, left: 25}}/> */}
-                        <Tooltip position={{ x: "auto", y: 0 }} />
+                        <Tooltip position={{ x: "auto", y: 0 }} content={this.priceUpdate} />
                         <Line type="monotone" 
                             name="Price"
                             dataKey="average" 
@@ -64,6 +90,9 @@ class StockChart extends React.Component {
                             strokeWidth={3} 
                             dot={false} 
                             connectNulls={true}
+                            // onMouseEnter={this.mouseEnter}
+                            // onMouseLeave={() => this.mouseExit}
+                            // onMouseMove={this.mouseMove}
                             // animationEasing={"ease-in-out"}
                         />
                         <ReferenceLine y={regularMarketPreviousClose}
