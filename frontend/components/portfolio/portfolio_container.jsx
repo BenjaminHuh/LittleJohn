@@ -11,10 +11,14 @@ import { connect } from 'react-redux'
 import Portfolio from './portfolio'
 
 const mSTP = state => {
+    // debugger
     return (
-        {
+        {   
+            currentUser: state.entities.users[state.session.id],
             portfolio: state.entities.portfolio,
-            watchlist: state.entities.watchlist
+            watchlist: state.entities.watchlist,
+            portfolioLoading: state.status.portfolioLoading,
+            watchlistLoading: state.status.watchlistLoading
         }
     )
 }
@@ -22,10 +26,10 @@ const mSTP = state => {
 const mDTP = dispatch => {
     return (
         {
-            getPortfolio: () => dispatch(getPortfolio()),
+            getPortfolio: (user_id) => dispatch(getPortfolio(user_id)),
             getPortfolioItem: stock_id => dispatch(getPortfolioItem(stock_id)),
             
-            getWatchlist: () => dispatch(getWatchlist()),
+            getWatchlist: (user_id) => dispatch(getWatchlist(user_id)),
             getWatchlistItem: stock_id => dispatch(getWatchlistItem(stock_id)),
 
             clearWatchlist: () => dispatch(clearWatchlist()),

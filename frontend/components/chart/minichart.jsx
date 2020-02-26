@@ -51,7 +51,7 @@ class Minichart extends React.Component {
                         strokeWidth={2} 
                         dot={false} 
                         connectNulls={true}
-                        isAnimationActive={false}
+                        isAnimationActive={true}
                         />
                     <ReferenceLine y={regularMarketPreviousClose}
                         type="monotone"

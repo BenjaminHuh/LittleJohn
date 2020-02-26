@@ -65,18 +65,7 @@ class Search extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // if (this.state.query === "") {
-
-        // } else {
-        //     try {
-        //         this.props.getStock(this.state.query).then(() => {
-        //             this.props.history.push(`/stocks/${this.state.query}`)
-        //         })
-        //     }
-        //     catch(error) {
-        //         alert(error);
-        //     }
-        // }
+ 
 
         let searchResults = document.getElementById("search-results");
         let result = searchResults.children[1].children[0].children[0].innerHTML;
@@ -104,7 +93,7 @@ class Search extends React.Component {
                             id="searchbar"
                             className="searchbar" 
                             type="text" 
-                            placeholder="Search"
+                            placeholder="Search by Ticker or Company Name.. "
                             ref={input => this.search = input} 
                             onChange={this.update()}
                             required

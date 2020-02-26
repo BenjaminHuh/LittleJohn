@@ -48,25 +48,10 @@ class WatchlistItem extends React.Component {
     }
 
     componentDidMount() {
-        this.props.getWatchlistItem(this.props.id).then(this.update());
-        // this.update();
-        this.interval = setInterval(() => this.props.getWatchlistItem(this.props.id), 15000);
-        // this.props.getWatchlistItem(this.props.id).then(() => {
-        //     let prevPrice = this.props.stock.regularMarketPreviousClose;
-        //     let newPrice = this.props.stock.regularMarketPrice;
-        //     let change = (newPrice - prevPrice) / prevPrice * 100;
-        //     if (change > 0) {
-        //         this.ticker = { 
-        //             color: "price-green",
-        //             change: change
-        //          }
-        //     } else {
-        //         this.ticker = { 
-        //             color: "price-red",
-        //             change: change
-        //         }                
-        //     }
-        // })
+        this.update();
+        // this.props.getWatchlistItem(this.props.id).then(this.update());
+        // this.interval = setInterval(() => this.props.getWatchlistItem(this.props.id), 60000);
+
     }
 
     componentWillUnmount() {
@@ -107,7 +92,8 @@ class WatchlistItem extends React.Component {
             let ticker_change = this.ticker.change;
             const { symbol, regularMarketPrice } = this.props.stock;
             return (
-                <Link className="port-item-link" to={{ pathname: `/stocks/${symbol}`, state: {stock: this.props.stock}}}>
+                <Link className="port-item-link" to={`/stocks/${symbol}`}>
+                {/* <Link className="port-item-link" to={{ pathname: `/stocks/${symbol}`, state: {stock: this.props.stock}}}> */}
                     <div className="port-item-symbol"> 
                         <div></div>
                         <div className={ticker_color}>{symbol}</div>
@@ -118,7 +104,7 @@ class WatchlistItem extends React.Component {
                     </div>
                     <div className="port-item-price">
                         <div className={ticker_color}>${regularMarketPrice.toFixed(2)}</div>
-                        <div className={ticker_color}>{(ticker_change).toFixed(2)}%</div>
+                        <div className={ticker_color} id='ticker_change'>{(ticker_change).toFixed(2)}%</div>
                     </div>
                     
                 </Link> 

@@ -6,9 +6,9 @@ class Portfolio extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            portfolio: {},
-            watchlist: {},
-            loading: false
+            // portfolio: {},
+            // watchlist: {},
+            loading: true
         }
     }
 
@@ -19,21 +19,30 @@ class Portfolio extends React.Component {
 
         // this.props.getPortfolio().then(() => this.setState({loading: false}));        
         // this.setState({loading: true}, () => this.props.getPortfolio()).then(() => this.setState({loading: false}));
-        this.props.getPortfolio();
-        this.props.getWatchlist();
+
+        // this.props.clearPortfolioList();
+        this.props.getPortfolio(this.props.currentUser.id).then(() => this.setState({loading: false}));
+        // this.props.clearWatchlist();
+        this.props.getWatchlist(this.props.currentUser.id);
     }
 
-    // componentDidUpdate(prevProps, prevState) {
-    //     if (Object.keys(prevProps.portfolio).length !== Object.keys(this.props.portfolio).length) {
-    //         this.setState({loading: true});
-    //     }
-    // }
+    componentDidUpdate(prevProps, prevState) {
+        // if (Object.keys(prevProps.portfolio).length !== Object.keys(this.props.portfolio).length) {
+        //     this.setState({loading: true});
+        // }
+        if (prevProps.currentUser.watchlist.length !== this.props.currentUser.watchlist.length) {
+            this.props.getWatchlist(this.props.currentUser.id)
+        }
+    }
 
     render() {
         const { portfolio, watchlist } = this.props;
-
-        if (this.state.loading === true) {
-            return "loading..";
+        // debugger
+        if (this.state.loading) {
+        // if (this.props.portfolioLoading || this.props.watchlistLoading) {
+            return (
+                <img className="loading" src={window.loading} />
+            )
         } else {
             
             return (

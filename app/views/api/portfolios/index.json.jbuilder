@@ -14,6 +14,7 @@
 @portfolio_stocks.each do |stock|
   json.set! stock[:id] do
     json.merge! stock[:stock_info]
+    json.merge! stock[:num_stock]
     json.set! "data" do
       json.merge! stock[:stock_info2]
     end

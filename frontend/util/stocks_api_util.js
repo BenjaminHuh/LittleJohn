@@ -10,21 +10,21 @@ export const receiveStock = ticker => (
     })
 )
 
-export const getOwnedStocks = () => (
+export const getOwnedStocks = (user_id) => (
     $.ajax({
-        url: '/api/portfolios'
+        url: `/api/users/${user_id}/portfolios`
     })
 )
 
-export const getWatchedStocks = () => (
+export const getWatchedStocks = (user_id) => (
     $.ajax({
-        url: '/api/watchlists'
+        url: `/api/users/${user_id}/watchlists`
     })
 )
 
-export const getPortfolioItem = stock_id => (
+export const getPortfolioItem = (user, stock_id) => (
     $.ajax({
-        url: `/api/portfolios/${stock_id}`
+        url: `/api/users/${user.id}/portfolios/${stock_id}`
     })
 )
 

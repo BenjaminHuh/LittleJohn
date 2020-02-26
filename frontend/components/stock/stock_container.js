@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Stock from './stock';
-import { getStock } from '../../actions/stocks_actions'
+import { getStock, getWatchlist, getPortfolio, getPortfolioItem } from '../../actions/stocks_actions'
 
 const mSTP = (state, ownProps) => {
 
@@ -14,7 +14,7 @@ const mSTP = (state, ownProps) => {
     } else {
         stock = ownProps.history.location.state.stock;
     }
-    // debugger;
+    
     return ({
         currentUser: state.entities.users[state.session.id],
         stock,
@@ -26,7 +26,10 @@ const mSTP = (state, ownProps) => {
 }
 
 const mDTP = dispatch => ({
-    getStock: ticker => dispatch(getStock(ticker))
+    getStock: ticker => dispatch(getStock(ticker)),
+    getWatchlist: userId => dispatch(getWatchlist(userId)),
+    getPortfolio: userId => dispatch(getPortfolio(userId)),
+    getPortfolioItem: (user, stockId) => dispatch(getPortfolioItem(user, stockId))
 })  
 
 export default connect(mSTP, mDTP)(Stock);

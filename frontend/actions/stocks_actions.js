@@ -10,6 +10,10 @@ export const GET_PORTFOLIO_ITEM = 'GET_PORTFOLIO_ITEM';
 export const GET_WATCHLIST_ITEM = 'GET_WATCHLIST_ITEM';
 export const CLEAR_PORTFOLIO_LIST = 'CLEAR_PORTFOLIO_LIST';
 export const CLEAR_WATCHLIST_LIST = 'CLEAR_WATCHLIST_LIST';
+export const GETTING_OWNED_STOCKS = 'GETTING_OWNED_STOCKS';
+export const DONE_GETTING_OWNED_STOCKS = 'DONE_GETTING_OWNED_STOCKS';
+export const GETTING_WATCHED_STOCKS = 'GETTING_WATCHED_STOCKS';
+export const DONE_GETTING_WATCHED_STOCKS = 'DONE_GETTING_WATCHED_STOCKS';
 
 export const getStocks = () => dispatch => (
     APIUtil.receiveStocks()
@@ -21,18 +25,26 @@ export const getStock = ticker => dispatch => (
         .then(stock => dispatch({ type: RECEIVE_STOCK, stock }))
 )
 
-export const getPortfolio = () => dispatch => (
-    APIUtil.getOwnedStocks()
-        .then(stocks => dispatch({ type: GET_OWNED_STOCKS, stocks }))
-)
+export const getPortfolio = (user_id) => dispatch => {
+    dispatch({ type: GETTING_OWNED_STOCKS });
+    return (
+        APIUtil.getOwnedStocks(user_id)
+            .then(stocks => dispatch({ type: GET_OWNED_STOCKS, stocks }))
+            .then(() => dispatch({ type: DONE_GETTING_OWNED_STOCKS }))
+    )
+}
 
-export const getWatchlist = () => dispatch => (
-    APIUtil.getWatchedStocks()
-        .then(stocks => dispatch({ type: GET_WATCHED_STOCKS, stocks }))
-)
+export const getWatchlist = (user_id) => dispatch => {
+    dispatch({ type: GETTING_WATCHED_STOCKS })
+    return (
+        APIUtil.getWatchedStocks(user_id)
+            .then(stocks => dispatch({ type: GET_WATCHED_STOCKS, stocks }))
+            .then(() => dispatch({ type: DONE_GETTING_WATCHED_STOCKS }))
+    )
+}
 
-export const getPortfolioItem = stock_id => dispatch => (
-    APIUtil.getPortfolioItem(stock_id)
+export const getPortfolioItem = (user, stock_id) => dispatch => (
+    APIUtil.getPortfolioItem(user, stock_id)
         .then(stock => dispatch({ type: GET_PORTFOLIO_ITEM, stock }))
 )
 
@@ -55,10 +67,10 @@ export const clearPortfolioList = (portfolio = {}) => ({
     portfolio
 })
 
-export const clearWatchlist = (watchlist = {}) => ({
+export const clearWatchlist = () => dispatch => (
+    dispatch({
     type: CLEAR_WATCHLIST_LIST,
-    watchlist
-})
+}))
 
 export const clearStockItem = () => ({
     type: 'CLEAR_STOCK_ITEM'

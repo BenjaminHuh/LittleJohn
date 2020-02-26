@@ -68,3 +68,7 @@
 .company-information > div > div > p {
     font-weight: 500;
 }
+
+.company-ceo > p {
+    color: #21CE99;
+}

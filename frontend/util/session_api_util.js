@@ -20,4 +20,14 @@ export const signin = user => (
       url: '/api/session'
     })
   );
+
+  export const updateUser = (user) => {
+    // debugger
+    return (
+      $.ajax({
+        method: 'PUT',
+        url: `/api/users/${user.id}`,
+        data: { user: { username: user.username, watchlist: user.watchlist } }
+      })
+  )}
   

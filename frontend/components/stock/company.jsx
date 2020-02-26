@@ -1,7 +1,7 @@
 import React from 'react';
-import company from './company.json';
+// import company from './company.json';
 
-const Company = ({ marketVolume, dividendRate, marketCap, priceToBook }) => {
+const Company = ({ marketVolume, dividendRate, marketCap, priceToBook, company }) => {
     return (
         <div className="company-div">
             <h2 className="company-heading">
@@ -14,7 +14,7 @@ const Company = ({ marketVolume, dividendRate, marketCap, priceToBook }) => {
                 </div>
                 <div className="company-information">
                     <div>
-                        <div>CEO <p>{company.CEO}</p></div>
+                        <div className="company-ceo">CEO <p>{company.CEO}</p></div>
                         <div>Market Cap <p>{marketCap}</p></div>
                     </div>
                     <div>

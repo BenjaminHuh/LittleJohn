@@ -32,11 +32,11 @@ const portfoliosReducer = (state = {}, action) => {
             // })
             return nextState;
 
-        case CLEAR_WATCHLIST_LIST:
-            Object.keys(action.watchlist).forEach(key => {
-                delete nextState[key]
-            })
-            return nextState;
+        // case CLEAR_WATCHLIST_LIST:
+        //     Object.keys(action.watchlist).forEach(key => {
+        //         delete nextState[key]
+        //     })
+        //     return nextState;
 
         case 'CLEAR_STOCK_ITEM':
             return Object.assign({}, {});

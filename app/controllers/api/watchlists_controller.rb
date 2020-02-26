@@ -1,6 +1,6 @@
 class Api::WatchlistsController < ApplicationController
     def index
-        @watchlist = Stock.where(:id=>User.find(1).watchlist).map do |stock|
+        @watchlist = Stock.where(:id=>User.find(params[:user_id]).watchlist).map do |stock|
             stock = {id: stock.id, ticker: stock.ticker, name: stock.name}
             api_key = Rails.application.credentials.iex_api_key
             # @stock = Stock.where(ticker: params[:ticker]).or(Stock.where("lower(name) like ?", "%#{params[:ticker]}%".downcase)).first

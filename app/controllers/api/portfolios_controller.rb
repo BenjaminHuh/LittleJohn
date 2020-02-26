@@ -1,7 +1,9 @@
 class Api::PortfoliosController < ApplicationController
     def index
-        @portfolio_stocks = current_user.owned_stocks.select(:id, :ticker, :name).map do |stock|
-            stock = {id: stock.id, ticker: stock.ticker, name: stock.name}
+        user = User.find(params[:user_id])
+        @portfolio_stocks = user.owned_stocks.select(:id, :ticker, :name).map do |stock|
+            num_stocks = { num_stocks: user.stock_orders.where(stock_id: stock.id).sum(:num_stocks) }
+            stock = {id: stock.id, ticker: stock.ticker, name: stock.name, num_stock: num_stocks}
             api_key = Rails.application.credentials.iex_api_key
             # @stock = Stock.where(ticker: params[:ticker]).or(Stock.where("lower(name) like ?", "%#{params[:ticker]}%".downcase)).first
             stock_url2 = "https://cloud.iexapis.com/stable/stock/#{stock[:ticker]}/intraday-prices/?token=#{api_key}"
@@ -32,9 +34,14 @@ class Api::PortfoliosController < ApplicationController
     # end
 
     def show
+        user = User.find(params[:user_id])
         api_key = Rails.application.credentials.iex_api_key
         @stock_id = params[:stock_id]
-        ticker = Stock.find(params[:stock_id]).ticker
+        stock = Stock.find(params[:stock_id])
+        ticker = stock.ticker
+        @num_stocks = { num_stocks: user.stock_orders.where(stock_id: @stock_id).sum(:num_stocks) }
+
+        # @num_stocks = User.find(.stock_orders.where(stock_id: 196).sum(:num_stocks)
         # @stock = Stock.where(ticker: params[:ticker]).or(Stock.where("lower(name) like ?", "%#{params[:ticker]}%".downcase)).first
         stock_url2 = "https://cloud.iexapis.com/stable/stock/#{ticker}/intraday-prices/?token=#{api_key}"
         @stock_info2 = HTTParty.get(stock_url2).parsed_response #["quoteResponse"]["result"][0]
@@ -47,8 +54,6 @@ class Api::PortfoliosController < ApplicationController
             render 'api/portfolios/show';
         end
     end
-
-
 end
 
 

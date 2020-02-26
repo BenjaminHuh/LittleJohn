@@ -18,8 +18,9 @@ class Stock extends React.Component {
 
     componentDidMount() {
         this.props.getStock(this.props.match.params.ticker)   
-        this.interval = setInterval(() => this.props.getStock(this.props.match.params.ticker), 15000);
+        this.interval = setInterval(() => this.props.getStock(this.props.match.params.ticker), 60000);
     }
+
     componentWillUnmount() {
         clearInterval(this.interval);
     }        
@@ -34,8 +35,8 @@ class Stock extends React.Component {
     
     render() {
         const { stock, currentUser } = this.props;
-
-        if (!stock || !currentUser) {
+        // debugger
+        if (!stock || !currentUser || !stock.company) {
             return "stock component";
         } else {
             const {
@@ -50,7 +51,10 @@ class Stock extends React.Component {
                 trailingAnnualDividendRate,
                 marketCap,
                 priceToBook,
-                data
+                data,
+                company,
+                id,
+                num_stocks
             } = stock;
             
             let dSign = "";
@@ -74,7 +78,7 @@ class Stock extends React.Component {
                             <div className="dashboard-port-news">
                                 <div className="stock-info2">
                                     <div id="longName">{longName}</div>
-                                    <div id="currPrice">{"$" + currPrice}</div>
+                                    <div id="currPrice" className="odometer">{"$" + currPrice}</div>
                                     <div id="currChange">{currChange}</div>
                                     <br/>
                                 </div>
@@ -103,6 +107,7 @@ class Stock extends React.Component {
                                         dividendRate = { trailingAnnualDividendRate }
                                         marketCap = { marketCap }
                                         priceToBook = { priceToBook }
+                                        company = { company }
                                     />
                                 <div className="news">
                                     <NewsContainer stock={ stock }/>
@@ -112,7 +117,7 @@ class Stock extends React.Component {
                         {/* </div> */}
                     </div>
                     <div>
-                        <StockorderContainer currentUser = { currentUser } ticker = { symbol } />
+                        <StockorderContainer num_stocks = { num_stocks } stockId = { id } currentUser = { currentUser } ticker = { symbol } />
                     </div>
                 </div>
             )

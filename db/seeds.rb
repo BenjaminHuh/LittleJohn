@@ -63,6 +63,7 @@ StockOrder.create!( user_id: user1.id, stock_id: msft.id, num_stocks: 300)
 StockOrder.create!( user_id: user1.id, stock_id: tsla.id, num_stocks: 500)
 StockOrder.create!( user_id: user1.id, stock_id: wfc.id, num_stocks: 700)
 StockOrder.create!( user_id: user1.id, stock_id: amzn.id, num_stocks: 300)
+StockOrder.create!( user_id: user1.id, stock_id: amzn.id, num_stocks: 450)
 StockOrder.create!( user_id: user1.id, stock_id: jpm.id, num_stocks: 700)
 StockOrder.create!( user_id: user1.id, stock_id: dis.id, num_stocks: 200)
 

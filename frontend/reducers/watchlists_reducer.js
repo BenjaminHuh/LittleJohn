@@ -1,6 +1,7 @@
 import {
     GET_WATCHED_STOCKS,
-    GET_WATCHLIST_ITEM
+    GET_WATCHLIST_ITEM,
+    CLEAR_WATCHLIST_LIST
 } from '../actions/stocks_actions'
 
 const watchlistsReducer = (state = {}, action) => {
@@ -21,6 +22,9 @@ const watchlistsReducer = (state = {}, action) => {
                 nextState[id] = newStock
             })
             return nextState;
+        
+        case CLEAR_WATCHLIST_LIST:
+            return Object.assign({});
 
         default:
             return state;
