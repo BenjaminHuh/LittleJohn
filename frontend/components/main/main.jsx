@@ -35,38 +35,48 @@ class Main extends React.Component {
                             <p>
                                 Make unlimited commission-free trades in stocks, funds, and options with LittleJohn Financial. The same goes for buying and selling cryptocurrencies with LittleJohn Crypto. Zero commission fees.
                             </p>
+                            <div> <img src={window.infoicon} alt="infoicon" height="20" width="20"/>Commissions Disclosure</div>
                         </div>
                     </div>
                     <div className="main_two_five">
                         <img className="twofive_bg" src={window.partybg} />
-                        <div id="twofive">
-                            <h3>
-                                Introducing Fractional Shares
-                            </h3>
-                            <p>
-                                Invest in thousands of stocks with as little as $1.
-                            </p>
-                            <br/>
-                            <h4>
-                                Invest Any Amount
-                            </h4>
-                            <p>
-                                Choose how much you want to invest, and we’ll convert from dollars to parts of a whole share.
-                            </p>
-                            <br/>
-                            <h4>
-                                Build a Balanced Portfolio  
-                            </h4>
-                            <p>
-                                Customize your portfolio with pieces of different companies and funds to help reduce risk.
-                            </p>
-                            <br/>
-                            <h4>
-                                Trade in Real Time
-                            </h4>
-                            <p>
-                                Investing in fractional shares is real-time and, as always, commission-free.
-                            </p>
+                        <div id="twothree">
+                            <div id="twofive">
+                                <div>
+                                    <h3>
+                                        Introducing Fractional Shares
+                                    </h3>
+                                    <p>
+                                        Invest in thousands of stocks with as little as $1.
+                                    </p>
+                                </div>
+                                <div id="twofivefive">
+                                    <div>
+                                        <h4>
+                                            Invest Any Amount
+                                        </h4>
+                                        <p>
+                                            Choose how much you want to invest, and we’ll convert from dollars to parts of a whole share.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h4>
+                                            Build a Balanced Portfolio  
+                                        </h4>
+                                        <p>
+                                            Customize your portfolio with pieces of different companies and funds to help reduce risk.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <h4>
+                                            Trade in Real Time
+                                        </h4>
+                                        <p>
+                                            Investing in fractional shares is real-time and, as always, commission-free.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
