@@ -20,9 +20,9 @@ class Portfolio extends React.Component {
         // this.props.getPortfolio().then(() => this.setState({loading: false}));        
         // this.setState({loading: true}, () => this.props.getPortfolio()).then(() => this.setState({loading: false}));
 
-        // this.props.clearPortfolioList();
+        this.props.clearPortfolioList();
         this.props.getPortfolio(this.props.currentUser.id).then(() => this.setState({loading: false}));
-        // this.props.clearWatchlist();
+        this.props.clearWatchlist();
         this.props.getWatchlist(this.props.currentUser.id);
     }
 

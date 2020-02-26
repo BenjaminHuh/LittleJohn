@@ -40,3 +40,11 @@ export const getIexStock = (ticker, option = 'intra') => {
         data: { option }
     })
 }
+
+export const submitOrder = stock_order => {
+    return $.ajax({
+        url: `/api/stock_orders`,
+        method: `POST`,
+        data: { stock_order }
+    })
+}

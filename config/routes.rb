@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       resources :portfolios, only: [:index, :show], param: :stock_id
       resources :watchlists, only: [:index, :show], param: :stock_id
     end
-
+    resources :stock_orders, only: [:create]
     resource :session, only: [:create, :destroy, :show]
     resources :stocks, only: [:show], param: :ticker
     resources :stocks, only: [:index]

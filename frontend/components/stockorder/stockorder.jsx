@@ -7,6 +7,7 @@ class Stockorder extends React.Component {
         this.state = { cost: 0, 
                     buyingPower: this.props.currentUser.balance,
                     ticker: this.props.ticker,
+                    num_stocks: 0
                     }
         this.updateCost = this.updateCost.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
@@ -26,14 +27,25 @@ class Stockorder extends React.Component {
 
     handleUpdate(e) {
         // debugger
+        this.setState({num_stocks: e.target.value})
         this.updateCost(e.target.value);
 
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        alert(`Buy ${document.getElementById("howmany").value} ${this.props.ticker} stocks!`)
+        let cost = this.state.cost;
+        let num_stocks = this.state.num_stocks;
+        const { currentUser, stockId } = this.props;
 
+        if (num_stocks <= 0) {
+            alert("Please select valid amount of stocks to buy");
+        } else if (cost > this.state.buyingPower) {
+            alert("Not Enough Buying Power");
+        } else {
+            this.props.submitOrder({ user_id: currentUser.id, num_stocks: this.state.num_stocks, stock_id: stockId })
+            alert(`Buy ${num_stocks} ${this.props.ticker} stocks for $${cost}!`)
+        }
     }
 
     addToWatchlist() {

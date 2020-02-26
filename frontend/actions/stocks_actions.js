@@ -53,6 +53,11 @@ export const getWatchlistItem = stock_id => dispatch => (
         .then(stock => dispatch({ type: GET_WATCHLIST_ITEM, stock }))
 )
 
+export const submitOrder = order => dispatch => (
+    APIUtil.submitOrder(order)
+        .then(stock => dispatch({ type: RECEIVE_STOCK, stock}))
+)
+
 export const receiveErrors = errors => ({
     type: RECEIVE_STOCKS_ERRORS,
     errors
