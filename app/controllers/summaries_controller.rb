@@ -1,6 +1,5 @@
 class SummariesController < ApplicationController
-    def create
-        
+    def create        
         User.all.each do |user|
             summary = Summary.new(:user_id => user.id, 
                 :balance => user.balance, 
