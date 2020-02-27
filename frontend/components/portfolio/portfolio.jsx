@@ -35,7 +35,12 @@ class Portfolio extends React.Component {
         }
     }
 
+    componenetWillUnmount() {
+        
+    }
+
     render() {
+        document.getElementById("title").innerHTML = "LittleJohn";
         const { portfolio, watchlist } = this.props;
         // debugger
         if (this.state.loading) {

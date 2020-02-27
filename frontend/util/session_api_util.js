@@ -27,7 +27,7 @@ export const signin = user => (
       $.ajax({
         method: 'PUT',
         url: `/api/users/${user.id}`,
-        data: { user: { username: user.username, watchlist: user.watchlist } }
+        data: { user: { username: user.username, balance: user.balance, watchlist: user.watchlist } }
       })
   )}
   

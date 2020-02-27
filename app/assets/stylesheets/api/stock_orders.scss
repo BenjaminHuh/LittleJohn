@@ -45,10 +45,29 @@
     margin: 15px;
     text-align: left;
     border-bottom: lightgrey 1px solid;
-
 }
+
 .order-symbol {
+    display: flex;
+    justify-content: space-between;
     min-height: 30px;
+}
+
+#buy:hover,#buy-selected {
+    color: #21CE99;
+    border-bottom: #21CE99 3px solid;
+    cursor: pointer;
+}
+
+// #buy-selected {
+//     color: #21CE99;
+//     border-bottom: #21CE99 2px solid;
+// }
+
+#sell:hover,#sell-selected {
+    color: lightcoral;
+    border-bottom: lightcoral 3px solid;
+    cursor: pointer;
 }
 
 .stock-2 {
@@ -67,7 +86,7 @@
     min-height: 85px;
 }
 
-.howmany {
+.howmany, .howmany-sell {
     text-align: center;
     font-size: 15px;
     width: 100%;
@@ -81,7 +100,7 @@
     background-color: rgb(240, 240, 240);    
 }
 
-.howmany:hover {
+.howmany:hover, .howmany-sell {
     border: 1px solid rgb(199, 199, 199);
     background: white;
 }
@@ -92,10 +111,26 @@
     outline: none;    
 }
 
+.howmany-sell:focus {
+    border: 1px solid lightcoral;
+}
+
 .buy {
-    margin-top: 5px;
+    margin-top: 20px;
     font-size: 12px;
     background-color: #21CE99;
+    color:white;
+    padding: 15px 83px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 7px;
+}
+
+.sell {
+    margin-top: 20px;
+    font-size: 12px;
+    background-color: lightcoral;
     color:white;
     padding: 15px 83px;
     text-align: center;
@@ -108,9 +143,16 @@
     background-color: rgb(86, 240, 181);
 }
 
-.cost {
-    margin: 15px;
+.cost, .cost-sell, #cost {
+    display: relative;
+    margin: 13px;
 }
+
+#no-cost {
+    display: none;
+    margin: 13px;
+}
+
 
 .addToWatchlist {
     margin-top: 5px;

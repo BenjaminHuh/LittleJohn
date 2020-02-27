@@ -320,8 +320,9 @@
     text-decoration: none;
     color: black;
 }
+
 .curr-user:hover {
-    cursor: pointer;
+    cursor: default;
 }
 
 .curr-username {

@@ -46,7 +46,7 @@ class StockChart extends React.Component {
                 dSign = "+$";
             }
             // debugger;
-            document.getElementById("currChange").innerHTML = `${dSign}${Math.abs(regularMarketPreviousClose - payload[0].value).toFixed(2)} (${dSign}${Math.abs((regularMarketPreviousClose - payload[0].value)/regularMarketPreviousClose * 100).toFixed(2)}%) at ${payload[0].payload.label}`
+            document.getElementById("currChange").innerHTML = `${dSign}${Math.abs(regularMarketPreviousClose - payload[0].value).toFixed(2)} (${dSign}${Math.abs((regularMarketPreviousClose - payload[0].value)/regularMarketPreviousClose * 100).toFixed(2)}%) at ${payload[0].payload.label} EST`
         }
         else if (!active && document.getElementById("currPrice")){
             document.getElementById("currPrice").innerHTML = `$${currPrice}`;

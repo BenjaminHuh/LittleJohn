@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 class Main extends React.Component {
 
     render() {
+        document.getElementById("title").innerHTML = "LittleJohn";
         return (
             <div>
                 <div className="main-div">

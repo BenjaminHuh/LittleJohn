@@ -43,8 +43,8 @@
     width: 700px;
     text-align: left;
     /* justify-content: flex-start;   */
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 300;
     text-align: left;
     padding-bottom: 20px;
 }
@@ -57,8 +57,8 @@
 }
 
 .company-information > div > div {
-    font-size: 12px;
-    font-weight: 700;
+    font-size: 13px;
+    font-weight: 500;
     margin-bottom: 10px;
 }
 .company-information > div {
@@ -66,9 +66,10 @@
 }
 
 .company-information > div > div > p {
-    font-weight: 500;
+    font-weight: 300;
 }
 
 .company-ceo > p {
     color: #21CE99;
+    font-weight: 500;
 }

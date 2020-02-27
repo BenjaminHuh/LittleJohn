@@ -57,6 +57,7 @@ class Stock extends React.Component {
                 num_stocks
             } = stock;
             
+            document.getElementById("title").innerHTML = `${symbol} - $${regularMarketPrice.toFixed(2)} | LittleJohn`
             let dSign = "";
             let stroke = "";
             if (regularMarketChange < 0) {
@@ -92,12 +93,12 @@ class Stock extends React.Component {
                                         />
                                 </div>
                                 <ul className="options">
-                                    <li className="option">1D</li>
-                                    <li className="option">1W</li>
-                                    <li className="option">1M</li>
-                                    <li className="option">3M</li>
-                                    <li className="option">1Y</li>
-                                    <li className="option">5Y</li>
+                                    <li id="1d" className="option">1D</li>
+                                    <li className="noption">1W</li>
+                                    <li className="noption">1M</li>
+                                    <li className="noption">3M</li>
+                                    <li className="noption">1Y</li>
+                                    <li className="noption">5Y</li>
                                 </ul>
                                 <div className="company">
 
@@ -117,7 +118,7 @@ class Stock extends React.Component {
                         {/* </div> */}
                     </div>
                     <div>
-                        <StockorderContainer num_stocks = { num_stocks } stockId = { id } currentUser = { currentUser } ticker = { symbol } />
+                        <StockorderContainer currPrice = {currPrice} num_stocks = { num_stocks } stockId = { id } currentUser = { currentUser } ticker = { symbol } />
                     </div>
                 </div>
             )
