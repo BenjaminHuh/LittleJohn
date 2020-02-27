@@ -145,23 +145,44 @@ class Stockorder extends React.Component {
             <div>
                 <div className="stock-order">
                     <div className="order-symbol">
-                        <a id={position === "buy" ? "buy-selected" : "buy"} onClick={this.updatePosition}>Buy {symbol.toUpperCase()}</a> 
-                        <a id={position === "sell" ? "sell-selected" : "sell"} onClick={this.updatePosition}>Sell {symbol.toUpperCase()}</a>
+                        <a id={position === "buy" ? "buy-selected" : "buy"} 
+                            onClick={this.updatePosition}>
+                            Buy {symbol.toUpperCase()}
+                        </a> 
+                        <a id={position === "sell" ? 
+                            "sell-selected" : 
+                            "sell"} 
+                            onClick={this.updatePosition}>
+                            Sell {symbol.toUpperCase()}
+                        </a>
                     </div>
                     
                     <div className="stock-2">
                     <form>
-                        <input id="howmany" className={position === "buy" ? "howmany" : "howmany-sell"} onChange={this.handleUpdate} type="number" placeholder="0" min="0"/><br/>
+                        <input id="howmany" 
+                            className={position === "buy" ? 
+                            "howmany" : "howmany-sell"} 
+                            onChange={this.handleUpdate} 
+                            type="number" placeholder="0" 
+                            min="0"
+                        />
+                        <br/>
                         <button className={position === "buy" ? "buy" : "sell"} onClick={this.handleSubmit}>{position === "buy" ? "Buy" : "Sell"}</button>
                         <div id={this.state.cost !== 0 ? "cost" : "no-cost"} className={position === "buy" ? "cost" : "cost-sell"}>Estimated {position === "buy" && this.state.cost ? "Cost " : "Value "}${this.state.cost.toFixed(2)}</div>
                     </form>
                     </div>
-                    <div className="stock-3">{this.state.buyingPower > 0 ? `$${this.state.buyingPower.toFixed(2)} Buying Power Available` : `Not Enough Buying Power`}</div>
+                    <div className="stock-3">
+                        {this.state.buyingPower > 0 ? 
+                        `$${this.state.buyingPower.toFixed(2)} Buying Power Available` : 
+                        `Not Enough Buying Power`}
+                    </div>
                     <div id="shares" className="stock-4">
-                        <div>
-                            {num_stocks} Shares
+                        <div id="shares-inner"> 
+                            <div>
+                                {num_stocks} Shares
+                            </div>
+                            <div>${(num_stocks * currPrice).toFixed(2)}</div>
                         </div>
-                        <div>${(num_stocks * currPrice).toFixed(2)}</div>
                     </div>
                     <button className="addToWatchlist" onClick={watching ? this.removeFromWatchlist : this.addToWatchlist}>{watching ? "Remove from Watchlist" : "Add to Watchlist"}</button>
                 </div>

@@ -146,7 +146,9 @@
 .cost, .cost-sell, #cost {
     display: relative;
     margin: 13px;
+    font-size: 13px;
 }
+
 
 #no-cost {
     display: none;
@@ -168,4 +170,18 @@
 
 .addToWatchlist:hover {
     background-color: rgb(86, 240, 181);
+}
+
+#shares {
+    display: flex;
+    justify-content: center;
+}
+
+#shares-inner {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    font-size: 15px;
+    text-align: center;
+    padding-bottom: 20px;
 }

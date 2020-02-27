@@ -46,15 +46,16 @@ const Navbar = ({ match, currentUser, logout, stock }) => {
         <div>
           {/* <a href="/" className="portfolio">Portfolio</a> */}
         </div>
-        <div className="main-dropdown"> 
+        <div className="main-dropdown" id="main-dropdown"> 
           <button className="drop-button">Account</button>
-          <div className="drop-menu">
+          <div className="drop-menu" id="drop-menu">
             <div className="curr-user">
               <div className="curr-username" href="/" >Hi, {currentUser.username}</div>
             </div>
             <div className="account-div">
               <svg id="drop-logo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.16563 7.32012H14.834V5.43065H9.16563V7.32012ZM21.4472 9.20959V11.0991H2.55249V9.20959C2.55249 8.1666 3.39803 7.32012 4.44196 7.32012H7.27616V5.43065C7.27616 4.38767 8.1217 3.54118 9.16563 3.54118H14.834C15.877 3.54118 16.7235 4.38767 16.7235 5.43065V7.32012H19.5577C20.6007 7.32012 21.4472 8.1666 21.4472 9.20959ZM13.8893 12.9885H21.4472V17.7122C21.4472 18.7561 20.6007 19.6017 19.5577 19.6017H4.44196C3.39803 19.6017 2.55249 18.7561 2.55249 17.7122V12.9885H10.1104V14.878H13.8893V12.9885Z" fill="#000"></path></svg>
-              <Link to="/account" className="account-link">Account</Link>
+              <Account className="account-link" currentUser={ currentUser }/>
+              {/* <Link to="/account" className="account-link">Account</Link> */}
             </div>
             <div className="logout-div">
               <svg id="drop-logo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" clipRule="evenodd" d="M19.4444 4.29L4.55844 4.29885C3.7013 4.29885 3 5.07027 3 6.01313V9.43313H4.55844V5.99599L19.4444 5.98714V18.0129L4.55844 18.0217V14.576H3V18.0131C3 18.956 3.7013 19.7103 4.55844 19.7103L19.4444 19.7014C20.3016 19.7014 21.0029 18.9471 21.0029 18.0043V6.00429C21.0029 5.05286 20.3016 4.29 19.4444 4.29ZM12.0116 15.4331L15.4402 12.0046L12.0116 8.57599V11.1474L3 11.1474V12.8617L12.0116 12.8617V15.4331Z" fill="#000"></path></svg>
@@ -71,6 +72,56 @@ const Navbar = ({ match, currentUser, logout, stock }) => {
   return currentUser ? signedIn() : sessionLinks();
 };
 
+class Account extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      show: false
+    }
+
+    this.showAccount = this.showAccount.bind(this);
+    this.hideAccount = this.hideAccount.bind(this);
+
+  }
+
+  showAccount() {
+    this.setState({ show: true })
+    document.getElementById("drop-menu").style.display = "block";
+  }
+
+  hideAccount() {
+    document.getElementById("drop-menu").style.display = "";
+    this.setState({ show: false })
+  }
+
+  render() {
+    const { currentUser } = this.props;
+    if (this.state.show) {
+      return (
+        <div>
+          <div className="account-button">Account</div>
+          <div className="account">
+            <div className="account-content">
+              <div onClick={this.hideAccount}>&times;</div>
+              <div>
+                <div>Current Balance</div>
+                <div>${currentUser.balance}</div>
+                <form>
+                  <input type="number" min="0.01" placeholder="0"/><br/>
+                  <button onSubmit={this.handleSubmit}>Deposit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    } else {
+      return (
+        <div className="account-button" onClick={this.showAccount}>Account</div>
+      )
+    }
+  }
+}
 
 export default withRouter(Navbar);
 

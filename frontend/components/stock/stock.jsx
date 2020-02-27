@@ -93,7 +93,7 @@ class Stock extends React.Component {
                                         />
                                 </div>
                                 <ul className="options">
-                                    <li id="1d" className="option">1D</li>
+                                    <li id="one_d" className="option">1D</li>
                                     <li className="noption">1W</li>
                                     <li className="noption">1M</li>
                                     <li className="noption">3M</li>
@@ -118,7 +118,12 @@ class Stock extends React.Component {
                         {/* </div> */}
                     </div>
                     <div>
-                        <StockorderContainer currPrice = {currPrice} num_stocks = { num_stocks } stockId = { id } currentUser = { currentUser } ticker = { symbol } />
+                        <StockorderContainer currPrice = {currPrice} 
+                                            num_stocks = { num_stocks } 
+                                            stockId = { id } 
+                                            currentUser = { currentUser } 
+                                            ticker = { symbol } 
+                        />
                     </div>
                 </div>
             )

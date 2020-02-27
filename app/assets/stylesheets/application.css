@@ -335,7 +335,7 @@
 .account-link {
     text-decoration: none;
     color: black;
-
+    cursor: default;
     font-size: 14px;
 }
 
