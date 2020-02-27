@@ -10,7 +10,7 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  balance         :float            not null
-#  watchlist       :string           default([]), is an Array
+#  watchlist       :string           default(["\"0\""]), is an Array
 #
 
 require 'test_helper'

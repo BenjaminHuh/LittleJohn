@@ -10,7 +10,7 @@ class Api::PortfoliosController < ApplicationController
     #         stock[:stock_info2] = HTTParty.get(stock_url2).parsed_response #["quoteResponse"]["result"][0]
     #         stock_url = "https://query1.finance.yahoo.com/v7/finance/quote?symbols=#{stock[:ticker]}"
     #         stock[:stock_info] = HTTParty.get(stock_url).parsed_response["quoteResponse"]["result"][0]   
-    #         stock      
+    #         stock  
     #     end
     def index
         user = User.find(params[:user_id])

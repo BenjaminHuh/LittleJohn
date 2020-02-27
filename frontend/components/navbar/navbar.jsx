@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import SearchContainer from '../search/search_container'
 
 
-const Navbar = ({ match, currentUser, logout, stock }) => {
+const Navbar = ({ match, currentUser, logout, stock, updateUser }) => {
 
   const sessionLinks = () => (
     <div className="navbar">
@@ -54,7 +54,7 @@ const Navbar = ({ match, currentUser, logout, stock }) => {
             </div>
             <div className="account-div">
               <svg id="drop-logo" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.16563 7.32012H14.834V5.43065H9.16563V7.32012ZM21.4472 9.20959V11.0991H2.55249V9.20959C2.55249 8.1666 3.39803 7.32012 4.44196 7.32012H7.27616V5.43065C7.27616 4.38767 8.1217 3.54118 9.16563 3.54118H14.834C15.877 3.54118 16.7235 4.38767 16.7235 5.43065V7.32012H19.5577C20.6007 7.32012 21.4472 8.1666 21.4472 9.20959ZM13.8893 12.9885H21.4472V17.7122C21.4472 18.7561 20.6007 19.6017 19.5577 19.6017H4.44196C3.39803 19.6017 2.55249 18.7561 2.55249 17.7122V12.9885H10.1104V14.878H13.8893V12.9885Z" fill="#000"></path></svg>
-              <Account className="account-link" currentUser={ currentUser }/>
+              <Account className="account-link" currentUser={ currentUser } updateUser={ updateUser }/>
               {/* <Link to="/account" className="account-link">Account</Link> */}
             </div>
             <div className="logout-div">
@@ -76,11 +76,14 @@ class Account extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      show: false
+      show: false,
+      deposit: 0
     }
 
     this.showAccount = this.showAccount.bind(this);
     this.hideAccount = this.hideAccount.bind(this);
+    this.updateAmount = this.updateAmount.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
 
   }
 
@@ -94,6 +97,25 @@ class Account extends React.Component {
     this.setState({ show: false })
   }
 
+  updateAmount(e) {
+    this.setState({deposit: parseFloat(e.target.value)})
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const { currentUser, updateUser } = this.props;
+    const { deposit } = this.state; 
+    if (deposit === 0) {
+      alert("Please select valid amount")
+    } else {
+      currentUser.balance += deposit;
+      updateUser(currentUser);
+      this.setState({ deposit: 0 });
+      document.getElementById("deposit-amount").value = 0;
+      
+    }
+  }
+
   render() {
     const { currentUser } = this.props;
     if (this.state.show) {
@@ -101,15 +123,21 @@ class Account extends React.Component {
         <div>
           <div className="account-button">Account</div>
           <div className="account">
-            <div className="account-content">
-              <div onClick={this.hideAccount}>&times;</div>
-              <div>
-                <div>Current Balance</div>
-                <div>${currentUser.balance}</div>
-                <form>
-                  <input type="number" min="0.01" placeholder="0"/><br/>
-                  <button onSubmit={this.handleSubmit}>Deposit</button>
-                </form>
+            <div className="account-wrapper">
+              <div className="account-content">
+                <div className="close-button" onClick={this.hideAccount}>&times;</div>
+                <div>
+                  <div className="funds">Deposit Funds</div>
+                  <img className="bank" src={window.bank} alt="bank" height="50" width="50"/>
+                  <div className="current-balance">
+                    <div>Current Balance</div>
+                    <div>${currentUser.balance.toFixed(2)}</div>
+                  </div>
+                  <form>
+                    <input className="deposit-amount" id="deposit-amount" onChange={this.updateAmount} type="number" min="0.00" placeholder="$0.00"/><br/>
+                    <button className="deposit-button" onClick={this.handleSubmit}>Deposit</button>
+                  </form>
+                </div>
               </div>
             </div>
           </div>

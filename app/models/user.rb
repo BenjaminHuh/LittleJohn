@@ -10,7 +10,7 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  balance         :float            not null
-#  watchlist       :string           default([]), is an Array
+#  watchlist       :string           default(["\"0\""]), is an Array
 #
 
 class User < ApplicationRecord
@@ -21,6 +21,7 @@ class User < ApplicationRecord
     has_one :account
     has_one :portfolio
     has_many :stock_orders
+    has_many :summaries
 
     has_many :owned_stocks,
         through: :portfolio,

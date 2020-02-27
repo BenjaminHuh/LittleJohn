@@ -3,7 +3,8 @@ import StockContainer from '../stock/stock_container';
 import PortfolioContainer from '../portfolio/portfolio_container';
 import NewsContainer from '../news/news_container';
 import StockorderContainer from '../stockorder/stockorder_container';
-import Chart from '../chart/chart';
+// import Chart from '../chart/chart';
+import SummaryChart from '../chart/summary_chart'
 import { withRouter } from 'react-router-dom';
 
 class Dashboard extends React.Component {
@@ -17,8 +18,16 @@ class Dashboard extends React.Component {
                 <div className="dashboard-inner">
                     <div className="dashboard-port-news">
                         <div className="portfolio-summary">
-                            <div>
-                            </div>
+                            <SummaryChart/>
+                            <ul className="options">
+                                <li id="all" className="noption">All</li>
+                                <li className="option">1D</li>
+                                <li className="noption">1W</li>
+                                <li className="noption">1M</li>
+                                <li className="noption">3M</li>
+                                <li className="noption">1Y</li>
+                                <li className="noption">5Y</li>
+                            </ul>
                         </div>
                         <div className="news">
                             <NewsContainer/>
