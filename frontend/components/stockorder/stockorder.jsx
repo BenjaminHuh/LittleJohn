@@ -62,7 +62,7 @@ class Stockorder extends React.Component {
                 this.props.updateUser(currentUser)
                     .then(this.props.submitOrder({ user_id: currentUser.id, num_stocks, stock_id: stockId }))
                     .then(this.setState({num_stocks: 0}))
-                document.getElementById("howmany").value = 0;
+                document.getElementById("howmany").value = "";
                 alert(`Successfully Added ${num_stocks} ${this.props.ticker} Shares for $${cost.toFixed(2)}`);
             }
         } else {
@@ -75,20 +75,11 @@ class Stockorder extends React.Component {
                 this.props.updateUser(currentUser)
                     .then(this.props.submitOrder({ user_id: currentUser.id, num_stocks: -1 * num_stocks, stock_id: stockId }))
                     .then(this.setState({num_stocks: 0}))
-                document.getElementById("howmany").value = 0;
+                document.getElementById("howmany").value = "";
                 alert(`Successfully Sold ${num_stocks} ${this.props.ticker} Shares for $${(cost).toFixed(2)}`);
             }
         }
-        // if (position === "buy" && num_stocks <= 0) {
-        //     alert("Please select valid amount of stocks to buy");
-        // } else if (this.state.position === "buy" && cost > this.state.buyingPower) {
-        //     alert("Not Enough Buying Power");
-        // } else {
-            
-        //     this.props.updateUser(currentUser);
-        //     this.props.submitOrder({ user_id: currentUser.id, num_stocks, stock_id: stockId })
-        //     alert(`Buy ${num_stocks} ${this.props.ticker} stocks for $${cost}!`)
-        // }
+
     }
 
     addToWatchlist() {
@@ -111,11 +102,6 @@ class Stockorder extends React.Component {
         }
         this.props.updateUser(currentUser).then(() => this.props.getWatchlist(currentUser.id));    
         alert("Removed from Watchlist")
-    }
-
-    componentDidMount() {
-        // const { currentUser, stockId } = this.props;
-        // this.props.getPortfolioItem(currentUser, stockId);
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -172,9 +158,10 @@ class Stockorder extends React.Component {
                     </form>
                     </div>
                     <div className="stock-3">
-                        {this.state.buyingPower > 0 ? 
+                        {`$${this.props.currentUser.balance.toFixed(2)} Buying Power Available`}
+                        {/* {this.state.buyingPower > 0 ? 
                         `$${this.state.buyingPower.toFixed(2)} Buying Power Available` : 
-                        `Not Enough Buying Power`}
+                        `Not Enough Buying Power`} */}
                     </div>
                     <div id="shares" className="stock-4">
                         <div id="shares-inner"> 
@@ -194,22 +181,3 @@ class Stockorder extends React.Component {
 }
 
 export default withRouter(Stockorder);
-
-
-            // <div>
-            //     <div className="stock-order">
-            //         <div className="order-symbol">Buy {symbol.toUpperCase()}</div>
-            //         <div className="stock-2">
-            //         <form>
-            //             <input id="howmany" className="howmany" onChange={this.handleUpdate} type="number" placeholder="0"/><br/>
-            //             <div className="cost">${this.state.cost.toFixed(2)}</div>
-            //             <button className="buy" onClick={this.handleSubmit}>Buy</button>
-            //         </form>
-            //         </div>
-            //         <div className="stock-3">{this.state.buyingPower > 0 ? `$${this.state.buyingPower.toFixed(2)} Buying Power Available` : `Not Enough Buying Power`}</div>
-            //         <div className="stock-4">
-            //             {num_stocks} Shares
-            //         </div>
-            //         <button className="addToWatchlist" onClick={watching ? this.removeFromWatchlist : this.addToWatchlist}>{watching ? "Remove from Watchlist" : "Add to Watchlist"}</button>
-            //     </div>
-            // </div>

@@ -52,9 +52,9 @@ Portfolio.delete_all
 portfolio1 = Portfolio.create!( user_id: user1.id )
 portfolio2 = Portfolio.create!( user_id: user2.id )
 
-Watchlist.delete_all
-watchlist1 = Watchlist.create!( user_id: user1.id )
-watchlist2 = Watchlist.create!( user_id: user2.id )
+# Watchlist.delete_all
+# watchlist1 = Watchlist.create!( user_id: user1.id )
+# watchlist2 = Watchlist.create!( user_id: user2.id )
 
 
 StockOrder.delete_all

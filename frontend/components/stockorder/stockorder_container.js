@@ -8,7 +8,8 @@ import { getStock, getWatchlist, getPortfolio, getPortfolioItem, submitOrder } f
 const mSTP = (state, ownProps) => {
     // debugger
     return ({
-        currentUser: ownProps.currentUser,
+        // currentUser: ownProps.currentUser,
+        currentUser: state.entities.users[state.session.id],
         stockId: ownProps.stockId,
         num_stocks: ownProps.num_stocks
     })

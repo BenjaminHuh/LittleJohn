@@ -1,10 +1,11 @@
 class Api::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
-    @user.balance = rand 5000..1000000000;
+    @user.balance = 0;
 
     if @user.save
       signin(@user)
+      Portfolio.create!(user_id: @user.id)
       render "api/users/show"
     else
       render json: @user.errors.full_messages, status: 422

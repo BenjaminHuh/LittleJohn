@@ -58,7 +58,8 @@ class SummaryChart extends React.Component {
                         <div className="portfolio-summary-header">
                             <div className="portfolio-title">Portfolio</div>
                             <div id="curr-change">
-                                "No snapshot. available. Please deposit funds."
+                                No snapshots available. Please deposit funds and add stocks to your portfolio.<br/>
+                                Portfolio summary updates 4PM PST every weekday.
                             </div>
                         </div>
                     </div>
