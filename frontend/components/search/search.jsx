@@ -35,16 +35,23 @@ class Search extends React.Component {
             let searchResults = document.getElementById("search-results");
             searchResults.innerHTML = `<div class="search-item" style="color:darkgray;">Stock</div>`;
             if (e.target.value === undefined) searchResults.outerHTML = `<div class="search-empty"></div>`;
-            result.splice(0,6).forEach(stock => {
-                searchResults.innerHTML += `<a class="search-link" href="#/stocks/${stock.ticker}">
-                                                <div class="search-item">
-                                                    <div class="search-ticker">${stock.ticker}</div> 
-                                                    <div class="search-space"></div>
-                                                    <div class="search-name">${stock.name}</div>
-                                                </div>
-                                            </a>`;
-                // console.log(stock.ticker + ' ' + stock.name);
-            });
+
+            if (result.length === 0) {
+                searchResults.innerHTML = `<div class="search-item" style="color:darkgray;">No Ticker or Company found</div>`
+            } else {
+
+                result.splice(0,6).forEach(stock => {
+                    searchResults.innerHTML += `<a class="search-link" href="#/stocks/${stock.ticker}">
+                                                    <div class="search-item">
+                                                        <div class="search-ticker">${stock.ticker}</div> 
+                                                        <div class="search-space"></div>
+                                                        <div class="search-name">${stock.name}</div>
+                                                    </div>
+                                                </a>`;
+                    // console.log(stock.ticker + ' ' + stock.name);
+                });
+            }
+            
             // if (searchResults.children[1]) searchResults.children[1].id = "first-result";
             if (e.target.value === "") {
                 searchResults.outerHTML = `<div id="search-empty"></div>`;
