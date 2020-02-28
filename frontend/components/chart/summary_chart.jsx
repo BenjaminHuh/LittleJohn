@@ -75,7 +75,7 @@ class SummaryChart extends React.Component {
             } else {
                 dSign = "+$";
             }            
-            let currChange = `${dSign}${Math.abs(firstTotal - currTotal).toFixed(2)} (${dSign}${Math.abs((firstTotal - currTotal)/firstTotal * 100).toFixed(2)}%) Today`
+            let currChange = `${dSign}${Math.abs(firstTotal - currTotal).toFixed(2)} (${dSign}${Math.abs((firstTotal - currTotal)/firstTotal * 100).toFixed(2)}%)`
             return (
                 <div className="chart-render-outer">
                     <div className="portfolio-summary-render">
