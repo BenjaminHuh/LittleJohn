@@ -12,13 +12,18 @@ class Dashboard extends React.Component {
         super(props);
     }
 
+    componentDidMount() {
+        const { currentUser, getSummary } = this.props;
+        getSummary(currentUser);
+    }
+
     render() {
         return (
             <div className="dashboard-main">
                 <div className="dashboard-inner">
                     <div className="dashboard-port-news">
                         <div className="portfolio-summary">
-                            <SummaryChart/>
+                            <SummaryChart summary={ this.props.summary }/>
                             <ul className="options">
                                 <li id="all" className="noption">All</li>
                                 <li className="option">1D</li>

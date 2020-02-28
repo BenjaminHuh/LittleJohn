@@ -1,4 +1,4 @@
-class SummariesController < ApplicationController
+class Api::SummariesController < ApplicationController
     def create        
         User.all.each do |user|
             summary = Summary.new(:user_id => user.id, 
@@ -24,5 +24,12 @@ class SummariesController < ApplicationController
   
             summary.save
         end
+
+        render json: "Success"
     end
+
+    def index
+        @summaries = Summary.where(user_id: params[:user_id]) 
+    end
+
 end

@@ -6,6 +6,7 @@ import stockReducer from "./stock_reducer";
 import portfoliosReducer from "./portfolios_reducer";
 import watchlistsReducer from "./watchlists_reducer";
 import newsReducer from "./news_reducer";
+import summariesReducer from "./summaries_reducer";
 
 const entitiesReducer = combineReducers({
   users: usersReducer,
@@ -14,6 +15,7 @@ const entitiesReducer = combineReducers({
   portfolio: portfoliosReducer,
   watchlist: watchlistsReducer,
   news: newsReducer,
+  summary: summariesReducer
 });
 
 export default entitiesReducer;

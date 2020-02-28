@@ -80,3 +80,8 @@ export const clearWatchlist = () => dispatch => (
 export const clearStockItem = () => ({
     type: 'CLEAR_STOCK_ITEM'
 })
+
+export const getSummary = user => dispatch => (
+    APIUtil.getSummary(user)
+        .then(summary => dispatch({ type: "GET_SUMMARY", summary }))
+)

@@ -48,3 +48,10 @@ export const submitOrder = stock_order => {
         data: { stock_order }
     })
 }
+
+export const getSummary = user => {
+    return $.ajax({
+        url: `/api/users/${user.id}/summaries`,
+        method: `GET`
+    })
+}

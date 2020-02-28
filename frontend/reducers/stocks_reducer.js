@@ -11,7 +11,7 @@ const stocksReducer = (state = {}, action) => {
                 nextState[id] = action.stocks[id]
             })
             return nextState;
-        
+    
         default:
             return state;
     }
