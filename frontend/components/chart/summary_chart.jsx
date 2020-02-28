@@ -56,7 +56,7 @@ class SummaryChart extends React.Component {
                 <div className="chart-render-outer">
                     <div className="chart-render">
                         <div className="portfolio-summary-header">
-                            <div className="portfolio-title">Portfolio Summary</div>
+                            <div className="portfolio-title">Portfolio</div>
                             <div id="curr-change">
                                 "No snapshot. available. Please deposit funds."
                             </div>
@@ -79,7 +79,7 @@ class SummaryChart extends React.Component {
                 <div className="chart-render-outer">
                     <div className="portfolio-summary-render">
                         <div className="portfolio-summary-header">
-                            <div className="portfolio-title">Portfolio Summary</div>
+                            <div className="portfolio-title">Portfolio </div>
                             <div id="curr-total">${data[data.length - 1].total.toFixed(2)}</div>
                             <div id="curr-change">{currChange}</div>
                         </div>
