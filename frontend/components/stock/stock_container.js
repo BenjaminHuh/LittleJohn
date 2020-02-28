@@ -1,7 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Stock from './stock';
-import { getStock, getWatchlist, getPortfolio, getPortfolioItem } from '../../actions/stocks_actions'
+import { getStock, getWatchlist, 
+    getPortfolio, getPortfolioItem, 
+    clearStock } from '../../actions/stocks_actions'
 
 const mSTP = (state, ownProps) => {
 
@@ -27,6 +29,7 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => ({
     getStock: ticker => dispatch(getStock(ticker)),
+    clearStock: () => dispatch(clearStock()),
     getWatchlist: userId => dispatch(getWatchlist(userId)),
     getPortfolio: userId => dispatch(getPortfolio(userId)),
     getPortfolioItem: (user, stockId) => dispatch(getPortfolioItem(user, stockId))

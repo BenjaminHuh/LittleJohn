@@ -108,3 +108,18 @@
     outline: none;
     background-color: rgb(240, 240, 240);   
 }
+
+#account-msg {
+    display: none;
+    position: absolute;
+    top: 200px;
+    min-width: 100px;
+    background-color: rgba(240, 128, 128, 0.8);
+    border-radius: 5px;
+    padding: 30px;
+    font-size: 14px;
+    font-weight: 300;
+    text-align: center;
+    margin-left: -10px;
+    color: white;
+}

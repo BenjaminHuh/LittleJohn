@@ -16,6 +16,7 @@ class Stockorder extends React.Component {
         this.addToWatchlist = this.addToWatchlist.bind(this);
         this.removeFromWatchlist = this.removeFromWatchlist.bind(this);
         this.updatePosition = this.updatePosition.bind(this);
+        this.showMessage = this.showMessage.bind(this);
     }
 
 
@@ -36,6 +37,12 @@ class Stockorder extends React.Component {
         });
     }
 
+    showMessage(msg) {
+        document.getElementById("message").innerHTML = msg;
+        document.getElementById("message").style.display = "block";
+        setTimeout(function(){ document.getElementById("message").style.display = "none"; }, 1100);
+    }
+    
     handleUpdate(e) {
         // debugger
         this.setState({num_stocks: e.target.value})
@@ -54,29 +61,31 @@ class Stockorder extends React.Component {
 
         if (position === "buy") {
             if (num_stocks <= 0) {
-                alert("Please select valid amount of shares to buy");
+                this.showMessage("Please select valid amount of shares to buy");
             } else if (cost > currentUser.balance) {
-                alert("Not Enough Buying Power");
+                this.showMessage("Not Enough Buying Power");
             } else {
                 currentUser.balance -= cost;
                 this.props.updateUser(currentUser)
                     .then(this.props.submitOrder({ user_id: currentUser.id, num_stocks, stock_id: stockId }))
                     .then(this.setState({num_stocks: 0}))
                 document.getElementById("howmany").value = "";
-                alert(`Successfully Added ${num_stocks} ${this.props.ticker} Shares for $${cost.toFixed(2)}`);
+                this.showMessage(`Successfully Added ${num_stocks} ${this.props.ticker} Shares for $${cost.toFixed(2)}`);
+
             }
         } else {
             if (num_stocks <= 0) {
-                alert("Please select valid amount of shares to sell")
+                
+                this.showMessage("Please select valid amount of shares to sell")
             } else if (num_stocks > owned_stocks) {
-                alert("Not enough shares");
+                this.showMessage("Not enough shares");
             } else {
                 currentUser.balance += cost;
                 this.props.updateUser(currentUser)
                     .then(this.props.submitOrder({ user_id: currentUser.id, num_stocks: -1 * num_stocks, stock_id: stockId }))
                     .then(this.setState({num_stocks: 0}))
                 document.getElementById("howmany").value = "";
-                alert(`Successfully Sold ${num_stocks} ${this.props.ticker} Shares for $${(cost).toFixed(2)}`);
+                this.showMessage(`Successfully Sold ${num_stocks} ${this.props.ticker} Shares for $${(cost).toFixed(2)}`);
             }
         }
 
@@ -86,8 +95,8 @@ class Stockorder extends React.Component {
         const { currentUser, stockId } = this.props;
         currentUser.watchlist.push(`${stockId}`);
         this.props.updateUser(currentUser);
-        
-        alert("Added to Watchlist")
+        this.showMessage("Added to Watchlist");
+
     }
 
     removeFromWatchlist() {
@@ -101,7 +110,7 @@ class Stockorder extends React.Component {
             currentUser.watchlist.push("0");
         }
         this.props.updateUser(currentUser).then(() => this.props.getWatchlist(currentUser.id));    
-        alert("Removed from Watchlist")
+        this.showMessage("Removed from Watchlist")
     }
 
     componentDidUpdate(prevProps, prevState) {
@@ -169,6 +178,8 @@ class Stockorder extends React.Component {
                                 {num_stocks} Shares
                             </div>
                             <div>${(num_stocks * currPrice).toFixed(2)}</div>
+                        </div>
+                        <div id="message">
                         </div>
                     </div>
                     <button className="addToWatchlist" onClick={watching ? this.removeFromWatchlist : this.addToWatchlist}>{watching ? "Remove from Watchlist" : "Add to Watchlist"}</button>

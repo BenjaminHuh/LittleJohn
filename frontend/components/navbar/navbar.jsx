@@ -86,7 +86,7 @@ class Account extends React.Component {
     this.hideAccount = this.hideAccount.bind(this);
     this.updateAmount = this.updateAmount.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-
+    this.showMessage = this.showMessage.bind(this);
   }
 
   showAccount() {
@@ -103,12 +103,18 @@ class Account extends React.Component {
     this.setState({deposit: parseFloat(e.target.value)})
   }
 
+  showMessage(msg) {
+    document.getElementById("account-msg").innerHTML = msg;
+    document.getElementById("account-msg").style.display = "block";
+    setTimeout(function(){ document.getElementById("account-msg").style.display = "none"; }, 1100);
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const { currentUser, updateUser } = this.props;
     const { deposit } = this.state; 
     if (deposit === 0) {
-      alert("Please select valid amount")
+      this.showMessage("Please select valid amount")
     } else {
       currentUser.balance += deposit;
       updateUser(currentUser);
@@ -139,6 +145,8 @@ class Account extends React.Component {
                     <input className="deposit-amount" id="deposit-amount" onChange={this.updateAmount} type="number" min="0.00" placeholder="$0.00"/><br/>
                     <button className="deposit-button" onClick={this.handleSubmit}>Deposit</button>
                   </form>
+                  <div id="account-msg">
+                  </div>
                 </div>
               </div>
             </div>

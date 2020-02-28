@@ -17,6 +17,7 @@ class Stock extends React.Component {
     }
 
     componentDidMount() {
+        // this.props.clearStock()
         this.props.getStock(this.props.match.params.ticker)   
         this.interval = setInterval(() => this.props.getStock(this.props.match.params.ticker), 60000);
     }
@@ -36,7 +37,7 @@ class Stock extends React.Component {
     render() {
         const { stock, currentUser } = this.props;
         // debugger
-        if (!stock || !currentUser || !stock.company) {
+        if (stock === undefined || !currentUser || !stock.company) {
             return "stock component";
         } else {
             const {

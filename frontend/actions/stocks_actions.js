@@ -89,3 +89,7 @@ export const getSummary = user => dispatch => (
 export const clearSummary = () => dispatch => (
     dispatch({ type: "CLEAR_SUMMARY" })
 )
+
+export const clearStock = () => dispatch => (
+    dispatch({ type: "CLEAR_STOCK" })
+)
