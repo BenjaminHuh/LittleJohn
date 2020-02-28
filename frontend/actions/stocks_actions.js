@@ -85,3 +85,7 @@ export const getSummary = user => dispatch => (
     APIUtil.getSummary(user)
         .then(summary => dispatch({ type: "GET_SUMMARY", summary }))
 )
+
+export const clearSummary = () => dispatch => (
+    dispatch({ type: "CLEAR_SUMMARY" })
+)
