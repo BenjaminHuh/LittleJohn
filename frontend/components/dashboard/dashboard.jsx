@@ -5,6 +5,7 @@ import NewsContainer from '../news/news_container';
 import StockorderContainer from '../stockorder/stockorder_container';
 import SummaryChart from '../chart/summary_chart'
 import { withRouter } from 'react-router-dom';
+import NavbarContainer from '../navbar/navbar_container'
 
 class Dashboard extends React.Component {
     constructor(props) {
@@ -20,6 +21,8 @@ class Dashboard extends React.Component {
     render() {
         return (
             <div className="dashboard-main">
+                <NavbarContainer getSummary={ this.props.getSummary } />
+
                 <div className="dashboard-inner">
                     <div className="dashboard-port-news">
                         <div className="portfolio-summary">

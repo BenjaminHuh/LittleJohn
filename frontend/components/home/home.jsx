@@ -13,7 +13,7 @@ const Home = ({ currentUser, history, match }) => {
     const signedIn = () => {
         return (
             <div>
-                <NavbarContainer/>
+                {/* <NavbarContainer/> */}
                 <DashboardContainer className="dashboard" match={ match } history={ history }/>
             </div>
         );

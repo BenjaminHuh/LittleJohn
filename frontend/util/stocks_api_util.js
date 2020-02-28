@@ -58,6 +58,7 @@ export const getSummary = user => {
 
 export const updateSummary = () => {
     return $.ajax({
-        url: `/api/summaries`
+        url: `/api/summaries`,
+        method: 'POST'
     })
 }

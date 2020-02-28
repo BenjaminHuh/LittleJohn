@@ -6,4 +6,4 @@ const mSTP = ({ session, entities: { users } }) => ({
     currentUser: users[session.id]
 });
 
-export default connect(mSTP, null)(Home)
+export default connect(mSTP, null)(Home) 
