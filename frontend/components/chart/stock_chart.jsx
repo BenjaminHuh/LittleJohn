@@ -87,7 +87,7 @@ class StockChart extends React.Component {
                             name="Price"
                             dataKey="average" 
                             stroke={stroke}
-                            strokeWidth={2} 
+                            strokeWidth={3} 
                             dot={false} 
                             connectNulls={true}
                             // onMouseEnter={this.mouseEnter}

@@ -25,13 +25,13 @@ class Dashboard extends React.Component {
                         <div className="portfolio-summary">
                             <SummaryChart summary={ this.props.summary }/>
                             <ul className="options">
-                                <li id="all" className="noption">All</li>
                                 <li className="option">1D</li>
                                 <li className="noption">1W</li>
                                 <li className="noption">1M</li>
                                 <li className="noption">3M</li>
                                 <li className="noption">1Y</li>
                                 <li className="noption">5Y</li>
+                                <li id="all" className="noption">All</li>
                             </ul>
                         </div>
                         <div className="news">

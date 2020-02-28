@@ -48,7 +48,7 @@ class Minichart extends React.Component {
                     <Line type="monotone" 
                         dataKey="average" 
                         stroke={stroke} 
-                        strokeWidth={1} 
+                        strokeWidth={2} 
                         dot={false} 
                         connectNulls={true}
                         isAnimationActive={true}

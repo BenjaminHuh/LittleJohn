@@ -99,6 +99,7 @@ class Stock extends React.Component {
                                     <li className="noption">3M</li>
                                     <li className="noption">1Y</li>
                                     <li className="noption">5Y</li>
+                                    <li className="noption">ALL</li>
                                 </ul>
                                 <div className="company">
 

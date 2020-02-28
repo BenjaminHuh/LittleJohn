@@ -100,7 +100,7 @@ class SummaryChart extends React.Component {
                                 name="Price"
                                 dataKey="total" 
                                 stroke="#72ca9d"
-                                strokeWidth={2} 
+                                strokeWidth={3} 
                                 dot={false} 
                                 connectNulls={true}
                                 // onMouseEnter={this.mouseEnter}

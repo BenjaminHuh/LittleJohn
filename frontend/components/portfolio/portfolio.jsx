@@ -52,9 +52,11 @@ class Portfolio extends React.Component {
             
             return (
                 <div>
-                    <div className="cash-header">Cash</div>
-                    <div className="cash-balance">
-                        ${this.props.currentUser.balance.toFixed(2)}
+                    <div className="cash-wrapper">
+                        <div className="cash-header">Cash</div>
+                        <div className="cash-balance">
+                            ${this.props.currentUser.balance.toFixed(2)}
+                        </div>
                     </div>
                     <br/>
                     <div className="port-header">Portfolio</div>
