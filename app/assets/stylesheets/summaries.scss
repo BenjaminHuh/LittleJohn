@@ -1,3 +1,32 @@
 // Place all the styles related to the summaries controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.portfolio-summary-header {
+    text-align: left;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.portfolio-summary-render {
+    width: 800px;
+    height: 570px;
+}
+
+.portfolio-title {
+    font-family: 'Source Sans Pro';
+    font-weight: 500;
+    font-size: 37px;
+}
+
+#curr-total {
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 35px
+}
+
+#curr-change {
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 14px   
+}

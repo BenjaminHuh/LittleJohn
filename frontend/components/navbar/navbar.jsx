@@ -72,6 +72,8 @@ const Navbar = ({ match, currentUser, logout, stock, updateUser }) => {
   return currentUser ? signedIn() : sessionLinks();
 };
 
+import { updateSummary } from "../../util/stocks_api_util"
+
 class Account extends React.Component {
   constructor (props) {
     super(props);

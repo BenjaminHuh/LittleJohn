@@ -55,3 +55,9 @@ export const getSummary = user => {
         method: `GET`
     })
 }
+
+export const updateSummary = () => {
+    return $.ajax({
+        url: `/api/summaries`
+    })
+}
