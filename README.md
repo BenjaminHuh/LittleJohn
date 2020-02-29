@@ -68,7 +68,7 @@ componentDidUpdate(prevProps) {
 
 ### Search
 * Allows users to search by either ticker name or company name, and opens the stock's show page
-* Using address params, make api calls to fetch proper stock information
+* Using address params, make api calls to fetch proper stock and company information
 
 ``` javascript
 handleSubmit(e) {
@@ -95,8 +95,5 @@ end
 
 ![search](./readme/search.gif)
 
-### Next Steps
-* Implement Buy/Sell functionality
-* Provide account summary/history on the dashboard
 
 
