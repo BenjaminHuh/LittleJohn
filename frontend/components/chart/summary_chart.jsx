@@ -26,7 +26,7 @@ class SummaryChart extends React.Component {
             let firstTotal = data[0].total;
             let currTotal = data[data.length - 1].total.toFixed(2);
             if (active && payload[0]) {
-                document.getElementById("curr-total").innerHTML = `$${payload[0].value.toFixed(2)}`;
+                document.getElementById("curr-total").innerHTML = `$${parseFloat(payload[0].value.toFixed(2)).toLocaleString('en-US', {minimumFractionDigits:2})}`;
                 let dSign;
                 if ( firstTotal > payload[0].value) {
                     dSign = "-$"; 
@@ -34,17 +34,17 @@ class SummaryChart extends React.Component {
                     dSign = "+$";
                 }
                 // debugger;
-                document.getElementById("curr-change").innerHTML = `${dSign}${Math.abs(firstTotal - payload[0].value).toFixed(2)} (${dSign}${Math.abs((firstTotal - payload[0].value)/firstTotal * 100).toFixed(2)}%) on ${payload[0].payload.date}`
+                document.getElementById("curr-change").innerHTML = `${dSign}${parseFloat(Math.abs(firstTotal - payload[0].value).toFixed(2)).toLocaleString('en-US', {minimumFractionDigits:2})} (${dSign}${Math.abs((firstTotal - payload[0].value)/firstTotal * 100).toFixed(2)}%) on ${payload[0].payload.date}`
             }
             else if (!active && document.getElementById("curr-total")){
-                document.getElementById("curr-total").innerHTML = `$${currTotal}`;
+                document.getElementById("curr-total").innerHTML = `$${parseFloat(currTotal).toLocaleString('en-US', {minimumFractionDigits:2})}`;
                 let dSign;
                 if ( firstTotal > currTotal) {
                     dSign = "-$"; 
                 } else {
                     dSign = "+$";
                 }
-                document.getElementById("curr-change").innerHTML = `${dSign}${Math.abs(firstTotal - currTotal).toFixed(2)} (${dSign}${Math.abs((firstTotal - currTotal)/firstTotal * 100).toFixed(2)}%)`;
+                document.getElementById("curr-change").innerHTML = `${dSign}${parseFloat(Math.abs(firstTotal - currTotal).toFixed(2)).toLocaleString('en-US', {minimumFractionDigits:2})} (${dSign}${Math.abs((firstTotal - currTotal)/firstTotal * 100).toFixed(2)}%)`;
             }
         }
     }
@@ -75,13 +75,13 @@ class SummaryChart extends React.Component {
             } else {
                 dSign = "+$";
             }            
-            let currChange = `${dSign}${Math.abs(firstTotal - currTotal).toFixed(2)} (${dSign}${Math.abs((firstTotal - currTotal)/firstTotal * 100).toFixed(2)}%)`
+            let currChange = `${dSign}${parseFloat(Math.abs(firstTotal - currTotal).toFixed(2)).toLocaleString('en-US', {minimumFractionDigits:2})} (${dSign}${Math.abs((firstTotal - currTotal)/firstTotal * 100).toFixed(2)}%)`
             return (
                 <div className="chart-render-outer">
                     <div className="portfolio-summary-render">
                         <div className="portfolio-summary-header">
                             <div className="portfolio-title">Portfolio </div>
-                            <div id="curr-total">${data[data.length - 1].total.toFixed(2)}</div>
+                            <div id="curr-total">${parseFloat(data[data.length - 1].total.toFixed(2)).toLocaleString('en-US', {minimumFractionDigits:2})}</div>
                             <div id="curr-change">{currChange}</div>
                         </div>
                         {
