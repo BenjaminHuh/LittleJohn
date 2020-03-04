@@ -55,7 +55,7 @@ class Portfolio extends React.Component {
                     <div className="cash-wrapper">
                         <div className="cash-header">Cash</div>
                         <div className="cash-balance">
-                            ${this.props.currentUser.balance.toFixed(2)}
+                            ${parseFloat(this.props.currentUser.balance.toFixed(2)).toLocaleString('en-US', {minimumFractionDigits:2})}
                         </div>
                     </div>
                     <br/>

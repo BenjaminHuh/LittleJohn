@@ -139,7 +139,7 @@ class Account extends React.Component {
                   <img className="bank" src={window.bank} alt="bank" height="50" width="50"/>
                   <div className="current-balance">
                     <div>Current Balance</div>
-                    <div>${currentUser.balance.toFixed(2)}</div>
+                    <div>${parseFloat(currentUser.balance.toFixed(2)).toLocaleString('en-US', {minimumFractionDigits:2})}</div>
                   </div>
                   <form>
                     <input className="deposit-amount" id="deposit-amount" onChange={this.updateAmount} type="number" min="0.00" placeholder="$0.00"/><br/>

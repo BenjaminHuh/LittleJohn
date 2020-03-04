@@ -177,7 +177,7 @@ class Stockorder extends React.Component {
                             <div>
                                 {num_stocks} Shares
                             </div>
-                            <div>${(num_stocks * currPrice).toFixed(2)}</div>
+                            <div>${parseFloat((num_stocks * currPrice).toFixed(2)).toLocaleString('en-US', {minimumFractionDigits:2})}</div>
                         </div>
                         <div id="message">
                         </div>
