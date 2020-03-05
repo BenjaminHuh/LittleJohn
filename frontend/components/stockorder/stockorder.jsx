@@ -163,11 +163,11 @@ class Stockorder extends React.Component {
                         />
                         <br/>
                         <button className={position === "buy" ? "buy" : "sell"} onClick={this.handleSubmit}>{position === "buy" ? "Buy" : "Sell"}</button>
-                        <div id={this.state.cost !== 0 ? "cost" : "no-cost"} className={position === "buy" ? "cost" : "cost-sell"}>Estimated {position === "buy" && this.state.cost ? "Cost " : "Value "}${this.state.cost.toFixed(2)}</div>
+                        <div id={this.state.cost !== 0 ? "cost" : "no-cost"} className={position === "buy" ? "cost" : "cost-sell"}>Estimated {position === "buy" && this.state.cost ? "Cost " : "Value "}${parseFloat(this.state.cost.toFixed(2)).toLocaleString('en-US', {minimumFractionDigits:2})}</div>
                     </form>
                     </div>
                     <div className="stock-3">
-                        {`$${this.props.currentUser.balance.toFixed(2)} Buying Power Available`}
+                        {`$${parseFloat(this.props.currentUser.balance.toFixed(2)).toLocaleString('en-US', {minimumFractionDigits:2})} Buying Power Available`}
                         {/* {this.state.buyingPower > 0 ? 
                         `$${this.state.buyingPower.toFixed(2)} Buying Power Available` : 
                         `Not Enough Buying Power`} */}
