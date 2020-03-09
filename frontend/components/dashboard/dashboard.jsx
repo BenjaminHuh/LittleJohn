@@ -27,7 +27,7 @@ class Dashboard extends React.Component {
                     <div className="dashboard-port-news">
                         <div className="portfolio-summary">
                             <SummaryChart summary={ this.props.summary }/>
-                            <ul className="options">
+                            {/* <ul className="options">
                                 <li className="option">1D</li>
                                 <li className="noption">1W</li>
                                 <li className="noption">1M</li>
@@ -35,7 +35,7 @@ class Dashboard extends React.Component {
                                 <li className="noption">1Y</li>
                                 <li className="noption">5Y</li>
                                 <li id="all" className="noption">All</li>
-                            </ul>
+                            </ul> */}
                         </div>
                         <div className="news">
                             <NewsContainer/>

@@ -1,7 +1,7 @@
 .company-div {
     z-index: -1;
     padding: 30px;
-    top: 500px;
+    top: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
