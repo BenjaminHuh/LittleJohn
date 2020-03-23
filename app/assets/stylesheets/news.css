@@ -1,19 +1,13 @@
 .news-div {
     z-index: -1;
     padding: 30px;
-    /* top: 1000px; */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* position: absolute; */
     border-radius: 3px;
-    /* left: 10%; */
     background-color: white;
     width: 700px;
-    /* -webkit-box-shadow: -1px 0px 23px 5px rgba(0,0,0,0.22);
-    -moz-box-shadow: -1px 0px 23px 5px rgba(0,0,0,0.22);
-    box-shadow: -1px 0px 23px 5px rgba(0,0,0,0.22); */
-    
+
 }
 
 .news-heading {
@@ -22,7 +16,6 @@
     text-align: left;
     margin-left: 20px;
     border-bottom: black;
-    /* margin-top: 100px; */
     margin-bottom: 20px;
 }
 .news-article {
