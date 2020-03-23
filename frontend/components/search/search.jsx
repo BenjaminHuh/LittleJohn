@@ -40,7 +40,7 @@ class Search extends React.Component {
             if (e.target.value === undefined) searchResults.outerHTML = `<div class="search-empty"></div>`;
 
             if (result.length === 0) {
-                searchResults.innerHTML = `<div class="search-item" style="color:darkgray;">No Ticker or Company found</div>`
+                searchResults.innerHTML = `<div class="search-item" style="color:darkgray;">No Ticker or Company found in NASDAQ or NYSE. Other exchange implementation coming soon!</div>`
             } else {
                 if (result && resultMatch && result.includes(resultMatch[0])) {
                     result.splice(result.indexOf(resultMatch[0], 1));
