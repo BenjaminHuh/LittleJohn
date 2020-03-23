@@ -33,7 +33,6 @@ class SummaryChart extends React.Component {
                 } else {
                     dSign = "+$";
                 }
-                // debugger;
                 document.getElementById("curr-change").innerHTML = `${dSign}${parseFloat(Math.abs(firstTotal - payload[0].value).toFixed(2)).toLocaleString('en-US', {minimumFractionDigits:2})} (${dSign}${Math.abs((firstTotal - payload[0].value)/firstTotal * 100).toFixed(2)}%) on ${payload[0].payload.date}`
             }
             else if (!active && document.getElementById("curr-total")){

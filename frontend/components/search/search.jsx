@@ -15,21 +15,24 @@ class Search extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     
-    // componentDidMount() {
-    //     // this.props.getStocks();
-    // }
-    
     update() {
+        
         return (e) => {
-            this.setState({ query: e.target.value })
+            this.setState({ query: e.target.value });
+            let resultMatch;
+            if (Object.keys(stocks).some(key => {
+                return stocks[key].ticker === e.target.value.toUpperCase();
+                })) {
+                resultMatch = Object.values(stocks).filter(obj => 
+                    obj.ticker === e.target.value.toUpperCase());
+            }
+
             let result = Object.values(stocks).filter(obj => 
                 obj.ticker.toLowerCase()
                 .includes(e.target.value.toLowerCase()) || 
-                    obj.name.toLowerCase()
-                    .includes(e.target.value.toLowerCase()));
-            // result.splice(0, 9).forEach(stock => {
-            //     console.log(stock.ticker + " " + stock.name)
-            // })
+                obj.name.toLowerCase()
+                .includes(e.target.value.toLowerCase()));    
+
             let emptySearch = document.getElementById("search-empty");
             if (emptySearch) emptySearch.outerHTML = `<div id="search-results"></div>`;
             let searchResults = document.getElementById("search-results");
@@ -39,8 +42,12 @@ class Search extends React.Component {
             if (result.length === 0) {
                 searchResults.innerHTML = `<div class="search-item" style="color:darkgray;">No Ticker or Company found</div>`
             } else {
-
-                result.splice(0,6).forEach(stock => {
+                if (result && resultMatch && result.includes(resultMatch[0])) {
+                    result.splice(result.indexOf(resultMatch[0], 1));
+                    result.unshift(resultMatch[0]);
+                }
+                
+                result.splice(0, 6).forEach(stock => {
                     searchResults.innerHTML += `<a class="search-link" href="#/stocks/${stock.ticker}">
                                                     <div class="search-item">
                                                         <div class="search-ticker">${stock.ticker}</div> 
@@ -48,11 +55,9 @@ class Search extends React.Component {
                                                         <div class="search-name">${stock.name}</div>
                                                     </div>
                                                 </a>`;
-                    // console.log(stock.ticker + ' ' + stock.name);
                 });
             }
             
-            // if (searchResults.children[1]) searchResults.children[1].id = "first-result";
             if (e.target.value === "") {
                 searchResults.outerHTML = `<div id="search-empty"></div>`;
                 searchResults.innerHTML = "";
@@ -78,20 +83,12 @@ class Search extends React.Component {
         let result = searchResults.children[1].children[0].children[0].innerHTML;
         document.getElementById("searchbar").value = "";
         searchResults.outerHTML = `<div id="search-empty"></div>`;
-        // debugger
         this.props.getStock(result).then(() => {
             this.props.history.push(`/stocks/${result}`)
-            // return (
-            //     <Route
-            //         path={`/stocks/${result}`}
-            //         render={props => <StockHome {...props} stock={stock} />}
-            //     />
-            // )
         });
     }
 
     render() {
-        // debugger;
         return (
             <div>
                 <div> 
@@ -105,8 +102,6 @@ class Search extends React.Component {
                             onChange={this.update()}
                             required
                         />
-
-                        {/* <button type="submit" onClick={() => this.props.history.push(`/stocks/${this.state.query}`)}></button> */}
                         <button type="submit" onClick={this.handleSubmit}></button>
                     </form>
                 </div>
