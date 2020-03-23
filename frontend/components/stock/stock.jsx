@@ -93,7 +93,7 @@ class Stock extends React.Component {
                                         currChange={ currChange }
                                         />
                                 </div>
-                                {/* <ul className="options">
+                                <ul className="options">
                                     <li id="one_d" className="option">1D</li>
                                     <li className="noption">1W</li>
                                     <li className="noption">1M</li>
@@ -101,7 +101,7 @@ class Stock extends React.Component {
                                     <li className="noption">1Y</li>
                                     <li className="noption">5Y</li>
                                     <li className="noption">ALL</li>
-                                </ul> */}
+                                </ul>
                                 <div className="company">
 
                                 </div>
