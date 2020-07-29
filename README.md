@@ -14,6 +14,7 @@ LittleJohn is a clone of Robinhood, which is  a commission-free investment platf
 ### User
 * Allows users to sign up, sign in, and log out
 * User dashboard shows market news and a list of stocks in the user's portfolio and watchlist
+* Displays user's total asset and its change over time
 
 ### Portfolio / Watchlist
 * Lists real-time market value of the stocks the signed in user owns
